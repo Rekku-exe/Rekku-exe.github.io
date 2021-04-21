@@ -30,12 +30,14 @@ function actu(){
                 document.getElementById(i + "-" + j).className = "box";
             } else if(tab[i][j] == 1){
                 document.getElementById(i + "-" + j).className = "box redBox";
+            } else if(tab[i][j] == 2){
+                document.getElementById(i + "-" + j).className = "box greenBox";
             }
         }
     }
 }
 
-posX = 0;
+posX = 4;
 posY = 0;
 
 document.addEventListener("keydown", function onEvent(e) {
@@ -44,13 +46,11 @@ document.addEventListener("keydown", function onEvent(e) {
         posX--;
     } else if(e.key == "ArrowRight" && posX < 9){
     posX++;
-    }/* else if(e.key == "ArrowDown" && posY < 25){
+    } else if(e.key == "ArrowDown" && posY < 24){
         posY++;
-    }*/
+    }
     tab[posY][posX] = 1;
     actu();
-    console.log(e.key);
-    console.log("---");
 });
 
 /*onmessage = function (event) {
