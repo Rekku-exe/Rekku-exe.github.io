@@ -33,9 +33,9 @@ async function actu(){
             }
         }
     }
+    console.clear();
     console.log("posX:"+posX);
     console.log("posY:"+posY);
-    console.log("----------");
 }
 
 posX = 0;
