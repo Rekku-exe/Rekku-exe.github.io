@@ -4,5 +4,5 @@ onmessage = function (event) {
     event = JSON.parse(JSON.stringify(event));
     
     console.log(mainData)
-    postMessage(event);
+    parent.postMessage({"posY":2});
 };

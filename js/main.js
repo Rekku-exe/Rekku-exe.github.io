@@ -45,7 +45,7 @@ $('body').keydown(function(e) {
 
 var gravity = new Worker("js/gravity.js");
 gravity.addEventListener("message", function (event) {
-    var returnedData = event;
+    var returnedData = event.data;
 });
 gravity.postMessage({"posY":posY});
 
