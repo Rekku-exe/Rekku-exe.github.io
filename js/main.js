@@ -150,9 +150,132 @@ function putting(arg){
     }
 }
 
+function collision(dir){
+    if(forme == "I1"){
+        if(dir == "g"){
+            return (PosX > 0 && tab[posY-1][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else if(dir == "d"){
+            return (PosX < 9 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else if(dir == "b") {
+            return (PosY > 24 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else {
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        }
+    } else if(forme == "I2"){
+        if(dir == "g"){
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else if(dir == "d"){
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else if(dir == "b") {
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else {
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        }
+    } else if(forme == "L1"){
+        if(dir == "g"){
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else if(dir == "d"){
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else if(dir == "b") {
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else {
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        }
+    } else if(forme == "L2"){
+        if(dir == "g"){
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else if(dir == "d"){
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else if(dir == "b") {
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else {
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        }
+    } else if(forme == "L3"){
+        if(dir == "g"){
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else if(dir == "d"){
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else if(dir == "b") {
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        } else {
+            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+        }
+    } else if(forme == "L4"){
+        tab[posY-1][posX+1] = arg;//
+        tab[posY][posX-1] = arg;//      X
+        tab[posY][posX] = arg;//    X X X
+        tab[posY][posX+1] = arg;//
+    } else if(forme == "l1"){
+        tab[posY-1][posX] = arg;//    X
+        tab[posY][posX] = arg;//      X
+        tab[posY+1][posX] = arg;//  X X
+        tab[posY+1][posX-1] = arg;//
+    } else if(forme == "l2"){
+        tab[posY][posX-1] = arg;//
+        tab[posY][posX] = arg;//     X
+        tab[posY-1][posX-1] = arg;// X X X
+        tab[posY][posX+1] = arg;//
+    } else if(forme == "l3"){
+        tab[posY-1][posX+1] = arg;// X X
+        tab[posY-1][posX] = arg;//   X  
+        tab[posY][posX] = arg;//     X
+        tab[posY+1][posX] = arg;//
+    } else if(forme == "l4"){
+        tab[posY][posX-1] = arg;//
+        tab[posY][posX] = arg;//     X X X
+        tab[posY][posX+1] = arg;//   X
+        tab[posY+1][posX-1] = arg;//
+    } else if(forme == "O1"){
+        tab[posY][posX] = arg;//
+        tab[posY+1][posX] = arg;//    X X
+        tab[posY][posX+1] = arg;//    X X
+        tab[posY+1][posX+1] = arg;//
+    } else if(forme == "S1"){
+        tab[posY][posX+1] = arg;//
+        tab[posY][posX] = arg;//       X X
+        tab[posY+1][posX] = arg;//   X X
+        tab[posY+1][posX-1] = arg;//
+    } else if(forme == "S2"){
+        tab[posY-1][posX] = arg;//    X
+        tab[posY][posX] = arg;//      X X
+        tab[posY][posX+1] = arg;//      X
+        tab[posY+1][posX+1] = arg;//
+    } else if(forme == "Z1"){
+        tab[posY][posX-1] = arg;//
+        tab[posY][posX] = arg;//     X X
+        tab[posY+1][posX] = arg;//     X X
+        tab[posY+1][posX+1] = arg;//
+    } else if(forme == "Z2"){
+        tab[posY-1][posX] = arg;//      X
+        tab[posY][posX] = arg;//      X X
+        tab[posY][posX-1] = arg;//    X
+        tab[posY+1][posX-1] = arg;//
+    } else if(forme == "T1"){
+        tab[posY][posX-1] = arg;//
+        tab[posY][posX] = arg;//     X X X
+        tab[posY][posX+1] = arg;//     X
+        tab[posY+1][posX] = arg;//
+    } else if(forme == "T2"){
+        tab[posY-1][posX] = arg;//    X
+        tab[posY][posX] = arg;//    X X
+        tab[posY+1][posX] = arg;//    X
+        tab[posY][posX-1] = arg;//
+    } else if(forme == "T3"){
+        tab[posY-1][posX] = arg;//
+        tab[posY][posX] = arg;//       X
+        tab[posY][posX-1] = arg;//   X X X
+        tab[posY][posX+1] = arg;//
+    } else if(forme == "T4"){
+        tab[posY-1][posX] = arg;//     X
+        tab[posY][posX] = arg;//       X X
+        tab[posY+1][posX] = arg;//     X
+        tab[posY][posX+1] = arg;//
+    }
+}
+
 posX = 4;
 posY = 0;
-forme = listForme[Math.floor(Math.random() * 7)][0];
 listForme = [
     ["I1", "I2", "I1", "I2"],
     ["L1", "L2", "L3", "I4"],
@@ -162,6 +285,7 @@ listForme = [
     ["Z1", "Z2", "Z1", "Z2"],
     ["T1", "T2", "T3", "T4"]
 ];
+forme = listForme[Math.floor(Math.random() * 7)][0];
 
 document.addEventListener("keydown", function onEvent(e) {
     putting(0);
