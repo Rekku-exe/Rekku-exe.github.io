@@ -38,8 +38,7 @@ async function actu(){
 posX = 0;
 posY = 0;
 
-document.onkeypress = function(e) {
-    console.log(e.key);
+$('document').on("keydown"), function(e) {
     tab[posY][posX] = 0;
     if(e.key == "ArrowLeft" && posX > 0){
         posX--;
@@ -52,7 +51,6 @@ document.onkeypress = function(e) {
     }*/
     tab[posY][posX] = 1;
     actu();
-    console.log(e);
     console.log(e.key);
     console.log("---");
 };
