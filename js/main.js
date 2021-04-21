@@ -34,20 +34,20 @@ async function actu(){
             }
         }
     }
-    console.log("posX"+posX);
-    console.log("posY"+posY);
+    console.log("posX:"+posX);
+    console.log("posY:"+posY);
 }
 
-posX = 1;
-posY = 1;
+posX = 0;
+posY = 0;
 
 $('body').keydown(function(e) {
     console.log(e.key);
     tab[posY][posX] = 0;
-    if(e.key == "ArrowLeft" && posX > 1){
+    if(e.key == "ArrowLeft" && posX > 0){
         posX--;
     }
-    if(e.key == "ArrowRight" && posX < 10){
+    if(e.key == "ArrowRight" && posX < 9){
     posX++;
     }
     /*if(e.key == "ArrowDown" && posY < 25){
