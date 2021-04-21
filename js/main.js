@@ -53,12 +53,15 @@ document.addEventListener("keydown", function onEvent(e) {
     console.log("---");
 });
 
-/*var gravity = new Worker("js/gravity.js");
 onmessage = function (event) {
-    returnedData = event.data;
-    console.log(returnedData);
-};
-gravity.postMessage({"posY":posY});*/
+    tab[posY][posX] = 0;
+    if(posY < 24){
+        posY++;
+    } else {
+        window.cancelAnimationFrame( MyGame );
+    }
+    tab[posY][posX] = 1;
+}
 
 var MyGame;
 var tNow = window.performance.now();
@@ -67,15 +70,7 @@ var tNow = window.performance.now();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
         
-        tab[posY][posX] = 0;
-        if(posY < 24){
-            posY++;
-        } else {
-            window.cancelAnimationFrame( MyGame );
-        }
-        tab[posY][posX] = 1;
         actu();
-        sleep(1000);
     }
     main();
 })();
