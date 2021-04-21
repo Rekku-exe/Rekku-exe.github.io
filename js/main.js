@@ -71,7 +71,7 @@ var tNow = window.performance.now();
         MyGame = window.requestAnimationFrame( main );
         
         tab[posY][posX] = 0;
-        if(posY < 25){
+        if(posY < 24){
             posY++;
         } else {
             window.cancelAnimationFrame( MyGame );
