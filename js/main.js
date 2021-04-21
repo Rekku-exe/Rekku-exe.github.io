@@ -1,7 +1,7 @@
 //const worker = require('worker_threads');
 
 function init(){
-    var tab = [];
+    tab = [];
     for(var i = 1; i<=25; i++){
         tab.push([]);
         for(var j = 1; j<=10; j++){
@@ -36,9 +36,9 @@ function actu(){
     }
 }
 
-var posX = 1;
-var posY = 1;
-var key;
+posX = 1;
+posY = 1;
+key;
 
 $('body').keydown(function(e) {
     console.log(e.key);
