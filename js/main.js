@@ -29,6 +29,7 @@ function actu(){
 function ligne(){
     for(var i = 0; i<25; i++){
         console.log(tab[i]);
+        console.log([2, 2, 2, 2, 2, 2, 2, 2, 2, 2]);
         if(tab[i] == [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]){
             for(var j = i; j>0; j--){
                 for(var k = 0; k<10; k++){
