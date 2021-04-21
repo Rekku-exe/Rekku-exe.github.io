@@ -58,12 +58,12 @@ $('body').keydown(function(e) {
     key = e.key;
 });
 
-var gravity = new Worker("js/gravity.js");
+/*var gravity = new Worker("js/gravity.js");
 onmessage = function (event) {
-    var returnedData = event.data;
+    returnedData = event.data;
     console.log(returnedData);
 };
-gravity.postMessage({"posY":posY});
+gravity.postMessage({"posY":posY});*/
 
 var MyGame;
 var tNow = window.performance.now();

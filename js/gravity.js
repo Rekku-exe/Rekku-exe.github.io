@@ -6,4 +6,4 @@ onmessage = function (event) {
     
     console.log(mainData)
     parent.postMessage({"posY":2});
-};
+}
