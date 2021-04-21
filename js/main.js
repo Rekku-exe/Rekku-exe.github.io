@@ -76,7 +76,7 @@ var tNow = window.performance.now();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
 
-        clock.postMessage();
+        clock.postMessage("NaN");
         actu();
     }
     main();
