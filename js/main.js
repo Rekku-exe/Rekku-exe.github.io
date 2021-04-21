@@ -6,7 +6,7 @@ for(var i = 1; i<=25; i++){
     tab.push([]);
     for(var j = 1; j<=10; j++){
         tab[i-1].push(0);
-        $('#board').append('<div id=\"' + i + '-' + j + '\" class=\"box\"></div>');
+        $('#board').append('<div id=\"' + j + '-' + j + '\" class=\"box\"></div>');
     }
 }
 console.log("init done");
