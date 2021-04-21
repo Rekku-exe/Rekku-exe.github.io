@@ -35,7 +35,6 @@ function ligne(){
             }
         }
         if(val){
-            console.log("une ligne !");
             for(var j = i; j>0; j--){
                 for(var k = 0; k<10; k++){
                     tab[j][k] = tab[j-1][k];
