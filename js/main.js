@@ -29,7 +29,7 @@ function actu(){
 function ligne(){
     for(var i = 0; i<25; i++){
         console.log(tab[i]);
-        if(tab[i].match(exLigne)){
+        if(tab[i].equals(exLigne)){
             console.log("une ligne !");
             for(var j = i; j>0; j--){
                 for(var k = 0; k<10; k++){
