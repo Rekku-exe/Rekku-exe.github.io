@@ -5,6 +5,6 @@ onmessage = function (event) {
         function () {
             postMessage(mainThreadData);
         },
-        1000
+        100
     );
 };
