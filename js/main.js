@@ -38,7 +38,6 @@ function actu(){
 
 posX = 1;
 posY = 1;
-key;
 
 $('body').keydown(function(e) {
     console.log(e.key);
