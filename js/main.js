@@ -6,7 +6,7 @@ for(var i = 1; i<=25; i++){
     tab.push([]);
     for(var j = 1; j<=10; j++){
         tab[i-1].push(0);
-        $('#board').append("<div id=\"" + j + "-" + i + "\" class=\"box\"></div>");
+        document.getElementById('board').append("<div id=\"" + j + "-" + i + "\" class=\"box\"></div>");
     }
 }
 console.log("init");
@@ -44,9 +44,9 @@ $('body').keydown(function(e) {
 });
 
 var gravity = new Worker("js/gravity.js");
-gravity.addEventListener("message", function (event) {
+onmessage = function (event) {
     var returnedData = event.data;
-});
+};
 gravity.postMessage({"posY":posY});
 
 var MyGame;
@@ -55,13 +55,13 @@ var tNow = window.performance.now();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
         
-        $(posX + "-" + posY).attr("class","box");
+        document.getElementById(posX + "-" + posY).className = "box";
         if(posY < 25){
             posY++;
         } else {
             window.cancelAnimationFrame( MyGame );
         }
-        $(posX + "-" + posY).attr("class","box redBox");
+        document.getElementById(posX + "-" + posY).className = "box redBox";
         sleep(1000);
     }
     main();
