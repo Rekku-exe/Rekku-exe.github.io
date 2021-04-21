@@ -58,7 +58,7 @@ document.addEventListener("keydown", function onEvent(e) {
     
 }*/
 
-tmp = Date.now().getSeconds();
+tmp = Date().getSeconds();
 
 var MyGame;
 var tNow = window.performance.now();
@@ -67,7 +67,7 @@ var tNow = window.performance.now();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
 
-        if(tmp != Date.now().getSeconds()){
+        if(tmp != Date().getSeconds()){
             tab[posY][posX] = 0;
             if(posY < 24){
                 posY++;
@@ -75,7 +75,7 @@ var tNow = window.performance.now();
                 window.cancelAnimationFrame( MyGame );
             }
             tab[posY][posX] = 1;
-            tmp = Date.now().getSeconds();
+            tmp = Date().getSeconds();
         }
 
         actu();
