@@ -38,22 +38,20 @@ async function actu(){
 posX = 0;
 posY = 0;
 
-$('document').on("keydown"), function(e) {
+document.addEventListener("keypress", function onEvent(e) {
     tab[posY][posX] = 0;
     if(e.key == "ArrowLeft" && posX > 0){
         posX--;
-    }
-    if(e.key == "ArrowRight" && posX < 9){
+    } else if(e.key == "ArrowRight" && posX < 9){
     posX++;
-    }
-    /*if(e.key == "ArrowDown" && posY < 25){
+    }/* else if(e.key == "ArrowDown" && posY < 25){
         posY++;
     }*/
     tab[posY][posX] = 1;
     actu();
     console.log(e.key);
     console.log("---");
-};
+});
 
 /*var gravity = new Worker("js/gravity.js");
 onmessage = function (event) {
