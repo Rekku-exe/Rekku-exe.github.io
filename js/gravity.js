@@ -1,11 +1,5 @@
 onmessage = function (event) {
-    var mainThreadData = event.data;
-    postMessage(event);
+    var mainData = event.data;
     
-    setTimeout(
-        function () {
-            postMessage(event);
-        },
-        100
-    );
+    postMessage(mainData);
 };

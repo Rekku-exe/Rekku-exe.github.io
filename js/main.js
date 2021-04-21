@@ -63,7 +63,7 @@ var tNow = window.performance.now();
         }
         $(posX + "-" + posY).attr("class","box redBox");
         console.log(returnedData);
-        //sleep(1000);
+        sleep(1000);
     }
     main();
 })();    
