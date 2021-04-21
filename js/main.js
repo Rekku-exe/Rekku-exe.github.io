@@ -26,9 +26,9 @@ function sleep(milliseconds) {
 function actu(){
     for(var i = 1; i<=25; i++){
         for(var j = 1; j<=10; j++){
-            if(tab[i][j] == 0){
+            if(tab[i-1][j-1] == 0){
                 document.getElementById(j + "-" + i).className = "box";
-            } else if(tab[i][j] == 1){
+            } else if(tab[i-1][j-1] == 1){
                 document.getElementById(j + "-" + i).className = "box redBox";
             }
         }
@@ -48,10 +48,7 @@ $('body').keydown(function(e) {
     if(e.key == "ArrowRight" && posX < 10){
     posX++;
     }
-    /*if(e.key == "ArrowUp" && posY > 1){
-        posY--;
-    }
-    if(e.key == "ArrowDown" && posY < 25){
+    /*if(e.key == "ArrowDown" && posY < 25){
         posY++;
     }*/
     tab[posX][posY] = 1;
@@ -81,4 +78,4 @@ var tNow = window.performance.now();
         sleep(1000);
     }
     main();
-})();
+})(jQuery);
