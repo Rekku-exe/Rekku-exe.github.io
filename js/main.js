@@ -27,9 +27,9 @@ function actu(){
     for(var i = 1; i<=25; i++){
         for(var j = 1; j<=10; j++){
             if(tab[i-1][j-1] == 0){
-                document.getElementById(j + "-" + i).className = "box";
+                document.getElementById(i + "-" + j).className = "box";
             } else if(tab[i-1][j-1] == 1){
-                document.getElementById(j + "-" + i).className = "box redBox";
+                document.getElementById(i + "-" + j).className = "box redBox";
             }
         }
     }
