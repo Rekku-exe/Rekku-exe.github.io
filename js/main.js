@@ -14,7 +14,7 @@ function init(){
 
 
 
-function sleep(milliseconds) {
+async function sleep(milliseconds) {
     const date = Date.now();
     let currentDate = null;
     do {
@@ -24,7 +24,7 @@ function sleep(milliseconds) {
     };
 }
 
-function actu(){
+async function actu(){
     for(var i = 1; i<=25; i++){
         for(var j = 1; j<=10; j++){
             if(tab[i-1][j-1] == 0){
