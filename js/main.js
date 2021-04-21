@@ -31,7 +31,6 @@ function actu(){
             } else if(tab[i-1][j-1] == 1){
                 document.getElementById(i + "-" + j).className = "box redBox";
             }
-            console.log("log");
         }
     }
 }
@@ -77,6 +76,7 @@ var tNow = window.performance.now();
             window.cancelAnimationFrame( MyGame );
         }
         tab[posY][posX] = 1;
+        console.log(tab);
         actu();
         sleep(1000);
     }
