@@ -3,9 +3,9 @@
 function init() {
     var tab = [];
     for(var i = 1; i<=25; i++){
-        tab.append([]);
+        tab.push([]);
         for(var j = 1; j<=10; j++){
-            tab[i-1].append(0);
+            tab[i-1].push(0);
             $('#board').append("<div id=\"" + j + "-" + i + "\" class=\"box\"></div>");
         }
     }
