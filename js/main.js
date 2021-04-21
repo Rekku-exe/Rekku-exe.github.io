@@ -38,7 +38,7 @@ async function actu(){
 posX = 0;
 posY = 0;
 
-document.keydown(function(e) {
+document.onkeypress = function(e) {
     console.log(e.key);
     tab[posY][posX] = 0;
     if(e.key == "ArrowLeft" && posX > 0){
@@ -55,7 +55,7 @@ document.keydown(function(e) {
     console.log(e);
     console.log(e.key);
     console.log("---");
-});
+};
 
 /*var gravity = new Worker("js/gravity.js");
 onmessage = function (event) {
