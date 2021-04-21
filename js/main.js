@@ -33,15 +33,12 @@ async function actu(){
             }
         }
     }
-    console.clear();
-    console.log("posX:"+posX);
-    console.log("posY:"+posY);
 }
 
 posX = 0;
 posY = 0;
 
-$('body').keydown(function(e) {
+document.keydown(function(e) {
     console.log(e.key);
     tab[posY][posX] = 0;
     if(e.key == "ArrowLeft" && posX > 0){
@@ -55,7 +52,9 @@ $('body').keydown(function(e) {
     }*/
     tab[posY][posX] = 1;
     actu();
-    key = e.key;
+    console.log(e);
+    console.log(e.key);
+    console.log("---");
 });
 
 /*var gravity = new Worker("js/gravity.js");
