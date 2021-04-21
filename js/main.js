@@ -55,6 +55,7 @@ document.addEventListener("keydown", function onEvent(e) {
 
 tmp = 0;
 onmessage = function (event) {
+    console.log(event)
     if(event != tmp){
         tab[posY][posX] = 0;
         if(posY < 24){
