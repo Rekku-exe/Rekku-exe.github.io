@@ -28,8 +28,13 @@ function actu(){
 
 function ligne(){
     for(var i = 0; i<25; i++){
-        console.log(tab[i]);
-        if(tab[i].equals(exLigne)){
+        var val = true;
+        for(var l = 0; l<10; l++){
+            if(tab[i][l] != 2){
+                val = false;
+            }
+        }
+        if(val){
             console.log("une ligne !");
             for(var j = i; j>0; j--){
                 for(var k = 0; k<10; k++){
@@ -64,10 +69,6 @@ document.addEventListener("keydown", function onEvent(e) {
 }*/
 
 tmp = (new Date()).getSeconds();
-exLigne = []
-for(var $i; $i<10; $i++){
-    exLigne.push(2);
-}
 
 var MyGame;
 var tNow = window.performance.now();
