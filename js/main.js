@@ -74,7 +74,7 @@ var tNow = window.performance.now();
         } else {
             window.cancelAnimationFrame( MyGame );
         }
-        tab[posX][posY] = 0;
+        tab[posX][posY] = 1;
         sleep(1000);
     }
     main();
