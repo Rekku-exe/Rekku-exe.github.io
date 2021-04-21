@@ -189,7 +189,7 @@ var tNow = window.performance.now();
 
         if(tmp != (new Date()).getSeconds()){
             putting(0);
-            if(posY < 24 && tab[posY +1][posX] == 0){
+            if(posY < 20 && tab[posY +2][posX] == 0){
                 posY++;
             } else {
                 putting(2);
