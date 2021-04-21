@@ -39,15 +39,16 @@ $('body').keydown(async function(e) {
 });
 
 
-var gravity = new Worker("js/gravity.js");
-gravity.addEventListener("message", function (event) {
-    var returnedData = event.data;
-});
-gravity.postMessage("");
 
 var MyGame;
 var tNow = window.performance.now();
 (function () {
+    var gravity = new Worker("js/gravity.js");
+    gravity.addEventListener("message", function (event) {
+        var returnedData = event.data;
+    });
+    gravity.postMessage("");
+
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
         
