@@ -12,17 +12,6 @@ function init(){
     console.log("init done");
 }
 
-
-
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    while (currentDate - date < milliseconds) {
-        currentDate = Date.now();
-        actu();
-    }
-}
-
 function actu(){
     for(var i = 0; i<25; i++){
         for(var j = 0; j<10; j++){
@@ -32,6 +21,18 @@ function actu(){
                 document.getElementById(i + "-" + j).className = "box redBox";
             } else if(tab[i][j] == 2){
                 document.getElementById(i + "-" + j).className = "box greenBox";
+            }
+        }
+    }
+}
+
+function ligne(){
+    for(var i = 0; i<25; i++){
+        if(tab[i] == [2,2,2,2,2,2,2,2,2,2]){
+            for(var j = i; j>0; j--){
+                for(var k = 0; k<10; k++){
+                    tab[j][k] = tab[j-1][k];
+                }
             }
         }
     }
@@ -76,6 +77,7 @@ var tNow = window.performance.now();
             } else {
                 tab[posY][posX] = 2;
                 posY = 0;
+                ligne();
             }
             tab[posY][posX] = 1;
             tmp = (new Date()).getSeconds();
