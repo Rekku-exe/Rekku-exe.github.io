@@ -1,3 +1,4 @@
+var parent = new Worker("js/main.js");
 onmessage = function (event) {
     var mainData = event.data;
 
