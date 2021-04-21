@@ -184,6 +184,7 @@ var MyGame;
 var tNow = window.performance.now();
 (function () {
     init();
+    rollForme();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
 
