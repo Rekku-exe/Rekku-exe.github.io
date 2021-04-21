@@ -104,6 +104,9 @@ footer {
 .redBox {
     background-color: red;
 }
+.semiRedBox {
+    background-color: lightcoral;
+}
 .greenBox {
     background-color: green;
 }

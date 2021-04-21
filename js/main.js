@@ -16,7 +16,11 @@ function actu(){
     for(var i = 0; i<25; i++){
         for(var j = 0; j<10; j++){
             if(tab[i][j] == 0){
-                document.getElementById(i + "-" + j).className = "box";
+                if(j != posX){
+                    document.getElementById(i + "-" + j).className = "box";
+                } else {
+                    document.getElementById(i + "-" + j).className = "box semiRedBox";
+                }
             } else if(tab[i][j] == 1){
                 document.getElementById(i + "-" + j).className = "box redBox";
             } else if(tab[i][j] == 2){
@@ -35,7 +39,6 @@ function ligne(){
             }
         }
         if(val){
-            console.log("une ligne !");
             for(var j = i; j>0; j--){
                 for(var k = 0; k<10; k++){
                     tab[j][k] = tab[j-1][k];
