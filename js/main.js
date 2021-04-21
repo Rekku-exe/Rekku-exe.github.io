@@ -1,12 +1,15 @@
 //const worker = require('worker_threads');
 
 function init() {
-    console.log("init");
+    var tab = [];
     for(var i = 1; i<=25; i++){
+        tab.append([]);
         for(var j = 1; j<=10; j++){
+            tab[i-1].append(0);
             $('#board').append("<div id=\"" + j + "-" + i + "\" class=\"box\"></div>");
         }
     }
+    console.log("init");
 }
 
 function sleep(milliseconds) {
