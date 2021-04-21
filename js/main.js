@@ -152,7 +152,7 @@ function putting(arg){
 
 posX = 4;
 posY = 0;
-forme = "";
+forme = listForme[Math.floor(Math.random() * 7)][0];
 listForme = [
     ["I1", "I2", "I1", "I2"],
     ["L1", "L2", "L3", "I4"],
@@ -169,9 +169,9 @@ document.addEventListener("keydown", function onEvent(e) {
         posX--;
     } else if(e.key == "ArrowRight" && posX < 9 && tab[posY][posX +1] == 0){
     posX++;
-    } else if(e.key == "ArrowDown" && posY < 24 && tab[posY +1][posX] == 0){
+    }/* else if(e.key == "ArrowDown" && posY < 24 && tab[posY +1][posX] == 0){
         posY++;
-    } else if(e.key == "e"){
+    }*/ else if(e.key == "e"){
         window.cancelAnimationFrame( MyGame );
     }
     putting(1);
@@ -184,7 +184,6 @@ var MyGame;
 var tNow = window.performance.now();
 (function () {
     init();
-    rollForme();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
 
