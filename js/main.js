@@ -55,13 +55,13 @@ var tNow = window.performance.now();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
         
-        document.getElementById(posX + "-" + posY).className = "box";
+        $(posX + "-" + posY).attr("class","box");
         if(posY < 25){
             posY++;
         } else {
             window.cancelAnimationFrame( MyGame );
         }
-        document.getElementById(posX + "-" + posY).className = "box redBox";
+        $(posX + "-" + posY).attr("class","box redBox");
         console.log(returnedData);
         //sleep(1000);
     }
