@@ -42,9 +42,9 @@ posY = 0;
 
 document.addEventListener("keydown", function onEvent(e) {
     tab[posY][posX] = 0;
-    if(e.key == "ArrowLeft" && posX > 0){
+    if(e.key == "ArrowLeft" && posX > 0 && tab[posY][posX -1] == 0){
         posX--;
-    } else if(e.key == "ArrowRight" && posX < 9){
+    } else if(e.key == "ArrowRight" && posX < 9 && tab[posY][posX +1] == 0){
     posX++;
     } else if(e.key == "ArrowDown" && posY < 24 && tab[posY +1][posX] == 0){
         posY++;
