@@ -18,9 +18,7 @@ function sleep(milliseconds) {
     let currentDate = null;
     do {
       currentDate = Date.now();
-    } while (currentDate - date < milliseconds){
-        actu();
-    };
+    } while (currentDate - date < milliseconds);
 }
 
 function actu(){
@@ -53,6 +51,7 @@ $('body').keydown(function(e) {
     }*/
     tab[posX][posY] = 1;
     actu();
+    console.log(tab);
     key = e.key;
 });
 
@@ -76,8 +75,9 @@ var tNow = window.performance.now();
             window.cancelAnimationFrame( MyGame );
         }
         tab[posX][posY] = 1;
+        actu();
+        console.log(tab);
         sleep(1000);
     }
     main();
 })();
-console.log(tab);
