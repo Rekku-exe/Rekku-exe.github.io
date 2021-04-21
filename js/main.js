@@ -40,29 +40,15 @@ $('body').keydown(async function(e) {
     key = e.key;
 });
 
-
+var gravity = new Worker("js/gravity.js");
+gravity.addEventListener("message", function (event) {
+    var returnedData = event.data;
+});
+gravity.postMessage({"posY":posY});
 
 var MyGame;
 var tNow = window.performance.now();
 (function () {
-    var gravity = new Worker("js/gravity.js", {
-        onmessage = function (event) {
-            var mainThreadData = event.data;
-            postMessage(mainThreadData);
-            
-            setTimeout(
-                function () {
-                    postMessage(mainThreadData);
-                },
-                100
-            );
-        }
-    });
-    gravity.addEventListener("message", function (event) {
-        var returnedData = event.data;
-    });
-    gravity.postMessage("t");
-
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
         
