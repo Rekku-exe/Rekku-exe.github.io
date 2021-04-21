@@ -1,15 +1,16 @@
 //const worker = require('worker_threads');
 
-
-var tab = [];
-for(var i = 1; i<=25; i++){
-    tab.push([]);
-    for(var j = 1; j<=10; j++){
-        tab[i-1].push(0);
-        $('#board').append('<div id=\"' + j + '-' + j + '\" class=\"box\"></div>');
+function init(){
+    var tab = [];
+    for(var i = 1; i<=25; i++){
+        tab.push([]);
+        for(var j = 1; j<=10; j++){
+            tab[i-1].push(0);
+            $('#board').append('<div id=\"' + j + '-' + j + '\" class=\"box\"></div>');
+        }
     }
+    console.log("init done");
 }
-console.log("init done");
 
 
 
@@ -66,6 +67,7 @@ gravity.postMessage({"posY":posY});
 var MyGame;
 var tNow = window.performance.now();
 (function () {
+    init();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
         
@@ -76,7 +78,6 @@ var tNow = window.performance.now();
             window.cancelAnimationFrame( MyGame );
         }
         tab[posY][posX] = 1;
-        console.log(tab);
         actu();
         sleep(1000);
     }
