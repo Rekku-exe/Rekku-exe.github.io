@@ -38,7 +38,7 @@ async function actu(){
 posX = 0;
 posY = 0;
 
-document.addEventListener("keypress", function onEvent(e) {
+document.addEventListener("keydown", function onEvent(e) {
     tab[posY][posX] = 0;
     if(e.key == "ArrowLeft" && posX > 0){
         posX--;
