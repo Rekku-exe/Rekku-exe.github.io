@@ -5,5 +5,6 @@ while(true){
     while (currentDate - date < 1000) {
         currentDate = Date.now();
     }
+    console.log("blbl");
     main.postMessage(currentDate);
 }
