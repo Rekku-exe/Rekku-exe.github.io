@@ -27,9 +27,9 @@ function actu(){
     for(var i = 1; i<=25; i++){
         for(var j = 1; j<=10; j++){
             if(tab[i-1][j-1] == 0){
-                document.getElementById(i + "-" + j).className = "box";
+                document.getElementById(j + "-" + j).className = "box";
             } else if(tab[i-1][j-1] == 1){
-                document.getElementById(i + "-" + j).className = "box redBox";
+                document.getElementById(j + "-" + j).className = "box redBox";
             }
         }
     }
@@ -79,4 +79,4 @@ var tNow = window.performance.now();
         sleep(1000);
     }
     main();
-})(jQuery);
+})();
