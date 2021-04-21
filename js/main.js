@@ -29,7 +29,7 @@ function actu(){
 function ligne(){
     for(var i = 0; i<25; i++){
         console.log(tab[i]);
-        if(tab[i] == exLigne){
+        if(tab[i].matches([2, 2, 2, 2, 2, 2, 2, 2, 2, 2])){
             console.log("une ligne !");
             for(var j = i; j>0; j--){
                 for(var k = 0; k<10; k++){
@@ -65,7 +65,7 @@ document.addEventListener("keydown", function onEvent(e) {
 
 tmp = (new Date()).getSeconds();
 exLigne = []
-for(var $i; i<10; i++){
+for(var $i; $i<10; $i++){
     exLigne.push(2);
 }
 
