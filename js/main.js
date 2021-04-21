@@ -27,14 +27,14 @@ function actu(){
 }
 
 function ligne(){
-    console.log(tab);
     for(var i = 0; i<25; i++){
-        if(tab[i] == [2,2,2,2,2,2,2,2,2,2]){
+        if(tab[i] == [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]){
             for(var j = i; j>0; j--){
                 for(var k = 0; k<10; k++){
                     tab[j][k] = tab[j-1][k];
                 }
             }
+            console.log("une ligne !");
         }
     }
 }
