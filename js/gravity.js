@@ -3,5 +3,6 @@ onmessage = function (event) {
 
     event = JSON.parse(JSON.stringify(event));
     
+    console.log(event)
     postMessage(event);
 };
