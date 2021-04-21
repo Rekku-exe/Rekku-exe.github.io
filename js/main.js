@@ -24,7 +24,7 @@ var posX = 1;
 var posY = 1;
 var key;
 
-$('body').keydown(async function(e) {
+$('body').keydown(function(e) {
     console.log(e.key);
     document.getElementById(posX + "-" + posY).className = "box";
     if(e.key == "ArrowLeft" && posX > 1){
@@ -62,9 +62,8 @@ var tNow = window.performance.now();
             window.cancelAnimationFrame( MyGame );
         }
         $(posX + "-" + posY).attr("class","box redBox");
-        console.log(returnedData);
         sleep(1000);
     }
     main();
 })();    
-        
+console.log(returnedData);
