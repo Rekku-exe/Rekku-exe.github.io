@@ -48,6 +48,8 @@ document.addEventListener("keydown", function onEvent(e) {
     posX++;
     } else if(e.key == "ArrowDown" && posY < 24){
         posY++;
+    } else if(e.key == "e"){
+        window.cancelAnimationFrame( MyGame );
     }
     tab[posY][posX] = 1;
     actu();
@@ -69,10 +71,11 @@ var tNow = window.performance.now();
 
         if(tmp != (new Date()).getSeconds()){
             tab[posY][posX] = 0;
-            if(posY < 24){
+            if(posY < 24 && tab[posY +1][posX] == 0){
                 posY++;
             } else {
-                window.cancelAnimationFrame( MyGame );
+                tab[posY][posX] = 2;
+                posY = 0;
             }
             tab[posY][posX] = 1;
             tmp = (new Date()).getSeconds();
