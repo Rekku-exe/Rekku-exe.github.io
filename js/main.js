@@ -19,9 +19,8 @@ function sleep(milliseconds) {
     let currentDate = null;
     do {
       currentDate = Date.now();
-    } while (currentDate - date < milliseconds){
-        actu();
-    };
+      actu();
+    } while (currentDate - date < milliseconds);
 }
 
 async function actu(){
