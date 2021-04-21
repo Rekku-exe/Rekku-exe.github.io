@@ -1,0 +1,101 @@
+
+body {
+    background-color:  #2f3136;
+    color:  #c9c9c9;
+    font-family: sans-serif;
+    margin-right: 10px;
+}
+textarea:focus, input:focus, button:focus {
+    outline: none;
+}
+
+a,a:hover,a:visited {
+    color: #c9c9c9;
+    text-decoration: none;
+}
+a:hover,a:visited {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #202225;
+    margin: -10px;
+    margin-bottom: 10px;
+    display: flex;
+    height: 80px;
+}
+
+main {
+    color: #c9c9c9;
+    display: flex;
+}
+
+#logo {
+    height: 60px;
+    width: auto;
+    margin: auto;
+    margin-right: 10px;
+    border: solid 1px black;
+    border-radius: 20px;
+}
+
+footer {
+    display: flex;
+}
+#copyright {
+    color: #626770;
+    margin: auto;
+    margin-top: 30px;
+    font-weight: bolder;
+}
+
+/* ---------------------------------------------- */
+/*                  SCROLLBAR                     */ 
+/* ---------------------------------------------- */ 
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track { background: var(--dark); }
+
+/* Handle */
+::-webkit-scrollbar-thumb { background: #888; border-radius: 1rem;}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+
+
+/* --------------------------------------------- */
+/*                   LE JEU                      */ 
+/* --------------------------------------------- */
+
+#leJeu {
+    height: 800px;
+    width: 900px;
+    background-color: #c9c9c9;
+    margin: auto;
+    border-radius: 5px;
+}
+
+#test {
+    color: black;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 300px;
+}
+
+.box {
+    width: 28px;
+    height: 28px;
+    border: solid 1px black;
+}
+
+.redBox {
+    background-color: red;
+}
