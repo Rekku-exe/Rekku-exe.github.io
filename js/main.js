@@ -14,7 +14,7 @@ function init(){
 
 
 
-async function sleep(milliseconds) {
+function sleep(milliseconds) {
     const date = Date.now();
     let currentDate = null;
     do {
@@ -34,6 +34,8 @@ async function actu(){
             }
         }
     }
+    console.log("posX"+posX);
+    console.log("posY"+posY);
 }
 
 posX = 1;
