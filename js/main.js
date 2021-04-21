@@ -18,7 +18,9 @@ function sleep(milliseconds) {
     let currentDate = null;
     do {
       currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
+    } while (currentDate - date < milliseconds){
+        actu();
+    };
 }
 
 function actu(){
@@ -29,6 +31,7 @@ function actu(){
             } else if(tab[i-1][j-1] == 1){
                 document.getElementById(i + "-" + j).className = "box redBox";
             }
+            console.log("log");
         }
     }
 }
@@ -39,7 +42,7 @@ var key;
 
 $('body').keydown(function(e) {
     console.log(e.key);
-    tab[posX][posY] = 0;
+    tab[posY][posX] = 0;
     if(e.key == "ArrowLeft" && posX > 1){
         posX--;
     }
@@ -49,9 +52,8 @@ $('body').keydown(function(e) {
     /*if(e.key == "ArrowDown" && posY < 25){
         posY++;
     }*/
-    tab[posX][posY] = 1;
+    tab[posY][posX] = 1;
     actu();
-    console.log(tab);
     key = e.key;
 });
 
@@ -68,15 +70,14 @@ var tNow = window.performance.now();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
         
-        tab[posX][posY] = 0;
+        tab[posY][posX] = 0;
         if(posY < 25){
             posY++;
         } else {
             window.cancelAnimationFrame( MyGame );
         }
-        tab[posX][posY] = 1;
+        tab[posY][posX] = 1;
         actu();
-        console.log(tab);
         sleep(1000);
     }
     main();
