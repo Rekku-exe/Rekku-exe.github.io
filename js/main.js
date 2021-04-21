@@ -53,15 +53,20 @@ document.addEventListener("keydown", function onEvent(e) {
     console.log("---");
 });
 
+tmp = 0;
 onmessage = function (event) {
-    tab[posY][posX] = 0;
-    if(posY < 24){
-        posY++;
-    } else {
-        window.cancelAnimationFrame( MyGame );
+    if(event != tmp){
+        tab[posY][posX] = 0;
+        if(posY < 24){
+            posY++;
+        } else {
+            window.cancelAnimationFrame( MyGame );
+        }
+        tab[posY][posX] = 1;
     }
-    tab[posY][posX] = 1;
 }
+
+var clock = new Worker("js/clock.js");
 
 var MyGame;
 var tNow = window.performance.now();
