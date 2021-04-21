@@ -1,3 +1,5 @@
+const worker = require('worker_threads');
+
 function init() {
     console.log("init");
     for(var i = 1; i<=25; i++){
@@ -43,11 +45,23 @@ $('body').keydown(async function(e) {
 var MyGame;
 var tNow = window.performance.now();
 (function () {
-    var gravity = new Worker("js/gravity.js");
+    var gravity = new Worker("js/gravity.js", {
+        onmessage = function (event) {
+            var mainThreadData = event.data;
+            postMessage(mainThreadData);
+            
+            setTimeout(
+                function () {
+                    postMessage(mainThreadData);
+                },
+                100
+            );
+        }
+    });
     gravity.addEventListener("message", function (event) {
         var returnedData = event.data;
     });
-    gravity.postMessage("");
+    gravity.postMessage("t");
 
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
