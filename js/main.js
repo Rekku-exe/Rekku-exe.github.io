@@ -23,7 +23,7 @@ function sleep(milliseconds) {
     }
 }
 
-async function actu(){
+function actu(){
     for(var i = 0; i<25; i++){
         for(var j = 0; j<10; j++){
             if(tab[i][j] == 0){
@@ -53,21 +53,12 @@ document.addEventListener("keydown", function onEvent(e) {
     console.log("---");
 });
 
-tmp = 0;
-onmessage = function (event) {
+/*onmessage = function (event) {
     console.log(event)
-    if(event != tmp){
-        tab[posY][posX] = 0;
-        if(posY < 24){
-            posY++;
-        } else {
-            window.cancelAnimationFrame( MyGame );
-        }
-        tab[posY][posX] = 1;
-    }
-}
+    
+}*/
 
-var clock = new Worker("js/clock.js");
+tmp = Date.now().getSeconds();
 
 var MyGame;
 var tNow = window.performance.now();
@@ -76,7 +67,17 @@ var tNow = window.performance.now();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
 
-        clock.postMessage("NaN");
+        if(tmp != Date.now().getSeconds()){
+            tab[posY][posX] = 0;
+            if(posY < 24){
+                posY++;
+            } else {
+                window.cancelAnimationFrame( MyGame );
+            }
+            tab[posY][posX] = 1;
+            tmp = Date.now().getSeconds();
+        }
+
         actu();
     }
     main();
