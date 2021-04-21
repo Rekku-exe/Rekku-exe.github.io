@@ -46,7 +46,7 @@ document.addEventListener("keydown", function onEvent(e) {
         posX--;
     } else if(e.key == "ArrowRight" && posX < 9){
     posX++;
-    } else if(e.key == "ArrowDown" && posY < 24){
+    } else if(e.key == "ArrowDown" && posY < 24 && tab[posY +1][posX] == 0){
         posY++;
     } else if(e.key == "e"){
         window.cancelAnimationFrame( MyGame );
