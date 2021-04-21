@@ -80,3 +80,4 @@ var tNow = window.performance.now();
     }
     main();
 })();
+console.log(tab);
