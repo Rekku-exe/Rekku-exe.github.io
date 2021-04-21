@@ -1,14 +1,16 @@
 //const worker = require('worker_threads');
 
-var tab = [];
-for(var i = 1; i<=25; i++){
-    tab.push([]);
-    for(var j = 1; j<=10; j++){
-        tab[i-1].push(0);
-        $('#board').append('<div id=\"' + j + '-' + i + '\" class=\"box\"></div>');
+function init(){
+    var tab = [];
+    for(var i = 1; i<=25; i++){
+        tab.push([]);
+        for(var j = 1; j<=10; j++){
+            tab[i-1].push(0);
+            $('#board').append('<div id=\"' + j + '-' + i + '\" class=\"box\"></div>');
+        }
     }
-}(jQuery);
-console.log("init");
+    console.log("init done");
+}
 
 
 function sleep(milliseconds) {
