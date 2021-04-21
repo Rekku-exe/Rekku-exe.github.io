@@ -29,14 +29,13 @@ function actu(){
 function ligne(){
     for(var i = 0; i<25; i++){
         console.log(tab[i]);
-        console.log([2, 2, 2, 2, 2, 2, 2, 2, 2, 2]);
-        if(tab[i] == [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]){
+        if(tab[i] == exLigne){
+            console.log("une ligne !");
             for(var j = i; j>0; j--){
                 for(var k = 0; k<10; k++){
                     tab[j][k] = tab[j-1][k];
                 }
             }
-            console.log("une ligne !");
         }
     }
 }
@@ -65,6 +64,10 @@ document.addEventListener("keydown", function onEvent(e) {
 }*/
 
 tmp = (new Date()).getSeconds();
+exLigne = []
+for(var $i; i<10; i++){
+    exLigne.push(2);
+}
 
 var MyGame;
 var tNow = window.performance.now();
