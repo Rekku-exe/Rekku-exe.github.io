@@ -2,9 +2,9 @@
 
 function init(){
     tab = [];
-    for(var i = 1; i<=25; i++){
+    for(var i = 0; i<25; i++){
         tab.push([]);
-        for(var j = 1; j<=10; j++){
+        for(var j = 0; j<10; j++){
             tab[i-1].push(0);
             $('#board').append('<div id=\"' + i + '-' + j + '\" class=\"box\"></div>');
         }
@@ -25,17 +25,18 @@ function sleep(milliseconds) {
 }
 
 async function actu(){
-    for(var i = 1; i<=25; i++){
-        for(var j = 1; j<=10; j++){
-            if(tab[i-1][j-1] == 0){
+    for(var i = 0; i<25; i++){
+        for(var j = 0; j<10; j++){
+            if(tab[i][j] == 0){
                 document.getElementById(i + "-" + j).className = "box";
-            } else if(tab[i-1][j-1] == 1){
+            } else if(tab[i][j] == 1){
                 document.getElementById(i + "-" + j).className = "box redBox";
             }
         }
     }
     console.log("posX:"+posX);
     console.log("posY:"+posY);
+    console.log("----------");
 }
 
 posX = 0;
