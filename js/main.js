@@ -1,4 +1,4 @@
-const worker = require('worker_threads');
+//const worker = require('worker_threads');
 
 function init() {
     console.log("init");
