@@ -185,9 +185,9 @@ function collision(dir){
         }
     } else if(forme == "L3"){
         if(dir == "g"){
-            return (posX > 1 && tab[posY-1][posX-2] == 0 && tab[posY][posX-1] == 0 && tab[posY+1][posX-1]);
+            return (posX > 1 && tab[posY-1][posX-2] == 0 && tab[posY][posX-1] == 0 && tab[posY+1][posX-1] == 0);
         } else if(dir == "d"){
-            return (posX < 9 && tab[posY-1][posX+1] == 0 && tab[posY][posX+1] == 0 && tab[posY+1][posX+1]);
+            return (posX < 9 && tab[posY-1][posX+1] == 0 && tab[posY][posX+1] == 0 && tab[posY+1][posX+1] == 0);
         } else if(dir == "b") {
             return (posY < 23 && tab[posY][posX-1] == 0 && tab[posY+2][posX] == 0);
         } 
