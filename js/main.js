@@ -261,7 +261,7 @@ function collision(dir){
         } else if(dir == "d"){
             return (posX < 8 && tab[posY][posX+1] == 0 && tab[posY+1][posX+2] == 0);
         } else if(dir == "b") {
-            return (posY < 23 && tab[posY+1][posX+1] == 0 && tab[posY+2][posX] == 0 && tab[posY+2][posX+1] == 0);
+            return (posY < 23 && tab[posY+1][posX-1] == 0 && tab[posY+2][posX] == 0 && tab[posY+2][posX+1] == 0);
         }
     } else if(forme == "Z2"){
         if(dir == "g"){
