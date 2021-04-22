@@ -287,7 +287,7 @@ function canExist(f){
 }
 
 posX = 4;
-posY = 0;
+posY = 1;
 listForme = [
     ["I1", "I2", "I1", "I2"],
     ["L1", "L2", "L3", "I4"],
