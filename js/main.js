@@ -239,36 +239,70 @@ function collision(dir){
         } else if(dir == "b") {
             return (PosY < 23 && tab[posY+2][posX] == 0 && tab[posY+2][posX+1] == 0);
         } 
-    } else if(forme == "S1"){///////////////////////////
-        if(dir == "g"){
-            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+    } else if(forme == "S1"){//    X X
+        if(dir == "g"){//        X X
+            return (PosX > 1 && tab[posY][posX-1] == 0 && tab[posY+1][posX-2] == 0);
         } else if(dir == "d"){
-            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+            return (PosX < 8 && tab[posY][posX+2] == 0 && tab[posY+1][posX+1] == 0);
         } else if(dir == "b") {
-            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+            return (PosY < 23 && tab[posY+2][posX-1] == 0 && tab[posY+2][posX] == 0 && tab[posY+1][posX+1] == 0);
         }
     } else if(forme == "S2"){
         if(dir == "g"){
-            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+            return (PosX > 0 && tab[posY-1][posX-1] == 0 && tab[posY][posX-1] == 0 && tab[posY+1][posX] == 0);
         } else if(dir == "d"){
-            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+            return (PosX < 8 && tab[posY-1][posX+1] == 0 && tab[posY][posX+2] == 0 && tab[posY+1][posX+2] == 0);
         } else if(dir == "b") {
-            return (tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0 && tab[posY][posX] == 0);
+            return (PosY < 23 && tab[posY+1][posX] == 0 && tab[posY+2][posX+1] == 0);
         }
-    } else if(forme == "Z1"){
-        tab[posY][posX-1] = arg;//
-        tab[posY][posX] = arg;//     X X
-        tab[posY+1][posX] = arg;//     X X
-        tab[posY+1][posX+1] = arg;//
+    } else if(forme == "Z1"){//  X X
+        if(dir == "g"){//          X X
+            return (PosX > 1 && tab[posY][posX-2] == 0 && tab[posY+1][posX-1] == 0);
+        } else if(dir == "d"){
+            return (PosX < 8 && tab[posY][posX+1] == 0 && tab[posY+1][posX+2] == 0);
+        } else if(dir == "b") {
+            return (PosY < 23 && tab[posY+1][posX+1] == 0 && tab[posY+2][posX] == 0 && tab[posY+2][posX+1] == 0);
+        }
     } else if(forme == "Z2"){
-    } else if(forme == "T1"){
-        tab[posY][posX-1] = arg;//
-        tab[posY][posX] = arg;//     X X X
-        tab[posY][posX+1] = arg;//     X
-        tab[posY+1][posX] = arg;//
+        if(dir == "g"){
+            return (PosX > 1 && tab[posY-1][posX-1] == 0 && tab[posY][posX-2] == 0 && tab[posY+1][posX-2] == 0);
+        } else if(dir == "d"){
+            return (PosX < 9 && tab[posY-1][posX+1] == 0 && tab[posY][posX+1] == 0 && tab[posY+1][posX] == 0);
+        } else if(dir == "b") {
+            return (PosY < 23 && tab[posY+2][posX-1] == 0 && tab[posY+1][posX] == 0);
+        }
+    } else if(forme == "T1"){//    X X X
+        if(dir == "g"){//            X
+            return (PosX > 1 && tab[posY][posX-2] == 0 && tab[posY+1][posX-1]);
+        } else if(dir == "d"){
+            return (PosX < 8 && tab[posY][posX+2] == 0 && tab[posY+1][posX+1]);
+        } else if(dir == "b") {
+            return (PosY < 23 && tab[posY+1][posX-1] == 0 && tab[posY+2][posX] == 0 && tab[posY+1][posX+1] == 0);
+        }
     } else if(forme == "T2"){
+        if(dir == "g"){
+            return (PosX > 1 && tab[posY-1][posX-1] == 0 && tab[posY][posX-2] == 0 && tab[posY+1][posX-1] == 0);
+        } else if(dir == "d"){
+            return (PosX < 9 && tab[posY-1][posX+1] == 0 && tab[posY][posX+1] == 0 && tab[posY+1][posX+1] == 0);
+        } else if(dir == "b") {
+            return (PosY < 23 && tab[posY+1][posX-1] == 0 && tab[posY+2][posX] == 0);
+        }
     } else if(forme == "T3"){
-    } else if(forme == "T4"){
+        if(dir == "g"){
+            return (PosX > 1 && tab[posY-1][posX-1] == 0 && tab[posY][posX-2]);
+        } else if(dir == "d"){
+            return (PosX < 8 && tab[posY+1][posX+1] == 0 && tab[posY][posX+2]);
+        } else if(dir == "b") {
+            return (PosY < 24 && tab[posY+1][posX-1] == 0 && tab[posY+1][posX] == 0 && tab[posY+1][posX+1] == 0);
+        }
+    } else if(forme == "T4"){///////////////////////
+        if(dir == "g"){
+            return (PosX > 0 && tab[posY-1][posX-1] == 0 && tab[posY][posX-1] == 0 && tab[posY+1][posX-1] == 0);
+        } else if(dir == "d"){
+            return (PosX < 8 && tab[posY-1][posX+1] == 0 && tab[posY][posX+2] == 0 && tab[posY+1][posX+1] == 0);
+        } else if(dir == "b") {
+            return (PosY < 23 && tab[posY+2][posX] == 0 && tab[posY+1][posX+1] == 0);
+        }
     }
 }
 
@@ -301,13 +335,13 @@ forme = listForme[Math.floor(Math.random() * 7)][0];
 
 document.addEventListener("keydown", function onEvent(e) {
     putting(0);
-    if(e.key == "ArrowLeft" && posX > 0 && tab[posY][posX -1] == 0){
+    if(e.key == "ArrowLeft" && collision("g")){
         posX--;
-    } else if(e.key == "ArrowRight" && posX < 9 && tab[posY][posX +1] == 0){
+    } else if(e.key == "ArrowRight" && collision("d")){
     posX++;
-    }/* else if(e.key == "ArrowDown" && posY < 24 && tab[posY +1][posX] == 0){
+    } else if(e.key == "ArrowDown" && collision("b")){
         posY++;
-    }*/ else if(e.key == "e"){
+    } else if(e.key == "e"){
         window.cancelAnimationFrame( MyGame );
     }
     putting(1);
@@ -325,7 +359,7 @@ var tNow = window.performance.now();
 
         if(tmp != (new Date()).getSeconds()){
             putting(0);
-            if(posY < 20 && tab[posY +2][posX] == 0){
+            if(collision("b")){
                 posY++;
             } else {
                 putting(2);
