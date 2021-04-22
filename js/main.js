@@ -353,13 +353,24 @@ function rotate(dir){
     putting(0);
     var formeT = "";
     if(forme.split('')[0] == "L" || forme.split('')[0] == "l" || forme.split('')[0] == "T"){
+        var num = parseInt(forme.split('')[1]);
         if(dir == "d"){
-            formeT = forme.split('')[0] + (parseInt(forme.split('')[1])+1)%4+1;
+            if(num == 4){
+                num = 1
+            } else {
+                num++;
+            }
+            formeT = forme.split('')[0] + num;
         } else if(dir == "g"){
-            formeT = forme.split('')[0] + (parseInt(forme.split('')[1])-1)%4+1;
+            if(num == 1){
+                num = 4
+            } else {
+                num--;
+            }
+            formeT = forme.split('')[0] + num;
         }
     }
-    if(forme.split('')[0] == "I" || forme.split('')[0] == "S" || forme.split('')[0] == "S"){
+    if(forme.split('')[0] == "I" || forme.split('')[0] == "S" || forme.split('')[0] == "Z"){
         if(forme.split('')[1] == "1"){
             formeT = forme.split('')[0] + "2";
         } else if(forme.split('')[1] == "2") {
