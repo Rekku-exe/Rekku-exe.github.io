@@ -273,9 +273,9 @@ function collision(dir){
         }
     } else if(forme == "T1"){//    X X X
         if(dir == "g"){//            X
-            return (posX > 1 && tab[posY][posX-2] == 0 && tab[posY+1][posX-1]);
+            return (posX > 1 && tab[posY][posX-2] == 0 && tab[posY+1][posX-1] == 0);
         } else if(dir == "d"){
-            return (posX < 8 && tab[posY][posX+2] == 0 && tab[posY+1][posX+1]);
+            return (posX < 8 && tab[posY][posX+2] == 0 && tab[posY+1][posX+1] == 0);
         } else if(dir == "b") {
             return (posY < 23 && tab[posY+1][posX-1] == 0 && tab[posY+2][posX] == 0 && tab[posY+1][posX+1] == 0);
         }
@@ -289,13 +289,13 @@ function collision(dir){
         }
     } else if(forme == "T3"){
         if(dir == "g"){
-            return (posX > 1 && tab[posY-1][posX-1] == 0 && tab[posY][posX-2]);
+            return (posX > 1 && tab[posY-1][posX-1] == 0 && tab[posY][posX-2] == 0);
         } else if(dir == "d"){
-            return (posX < 8 && tab[posY+1][posX+1] == 0 && tab[posY][posX+2]);
+            return (posX < 8 && tab[posY+1][posX+1] == 0 && tab[posY][posX+2] == 0);
         } else if(dir == "b") {
             return (posY < 24 && tab[posY+1][posX-1] == 0 && tab[posY+1][posX] == 0 && tab[posY+1][posX+1] == 0);
         }
-    } else if(forme == "T4"){///////////////////////
+    } else if(forme == "T4"){
         if(dir == "g"){
             return (posX > 0 && tab[posY-1][posX-1] == 0 && tab[posY][posX-1] == 0 && tab[posY+1][posX-1] == 0);
         } else if(dir == "d"){
