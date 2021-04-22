@@ -80,18 +80,28 @@ footer {
     background-color: #c9c9c9;
     margin: auto;
     border-radius: 5px;
+    display: flex;
 }
 
-#test {
-    color: black;
+#touches {
+    margin: auto;
+}
+.touche {
+    margin: 5px;
 }
 
+#box-board {
+    display: block;
+}
 #board {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
     margin-left: 30px;
     width: 300px;
+    height: 750px;
+    border: solid 2px black;
+    border-radius: 2px;
 }
 
 .box {
@@ -109,4 +119,14 @@ footer {
 }
 .greenBox {
     background-color: green;
+}
+
+#box-beta {
+    margin: auto;
+    margin-top: 20px;
+    width: 400px;
+}
+.text-test {
+    color: black;
+    margin-bottom: 2px;
 }
