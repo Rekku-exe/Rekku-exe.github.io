@@ -130,3 +130,7 @@ footer {
     color: black;
     margin-bottom: 2px;
 }
+#tetromino {
+    border: solid 1px black;
+    border-radius: 4px;
+}
