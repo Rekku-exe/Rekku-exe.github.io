@@ -306,7 +306,7 @@ function collision(dir){
     }
 }
 
-function canExist(f){
+function canBe(f){
     if(f == "I1"){
         return (tab[posY-1][posX] == 0 && tab[posY][posX] == 0 && tab[posY+1][posX] == 0 && tab[posY+2][posX] == 0);
     } else if(f == "I2"){
@@ -316,8 +316,61 @@ function canExist(f){
     } else if(f == "L2"){
         return (tab[posY][posX-1] == 0 && tab[posY+1][posX-1] == 0 && tab[posY][posX] == 0 && tab[posY][posX+1] == 0);
     } else if(f == "L3"){
+        return (tab[posY-1][posX] == 0 && tab[posY-1][posX-1] == 0 && tab[posY][posX] == 0 && tab[posY+1][posX] == 0);
     } else if(f == "L4"){
+        return (tab[posY][posX-1] == 0 && tab[posY][posX] == 0 && tab[posY][posX+1] == 0 && tab[posY-1][posX+1] == 0);
+    } else if(f == "l1"){
+        return (tab[posY-1][posX] == 0 && tab[posY][posX] == 0 && tab[posY+1][posX] == 0 && tab[posY+1][posX-1] == 0);
+    } else if(f == "l2"){
+        return (tab[posY][posX-1] == 0 && tab[posY][posX] == 0 && tab[posY][posX+1] == 0 && tab[posY-1][posX-1] == 0);
+    } else if(f == "l3"){
+        return (tab[posY-1][posX] == 0 && tab[posY][posX] == 0 && tab[posY+1][posX] == 0 && tab[posY-1][posX+1] == 0);
+    } else if(f == "l4"){
+        return (tab[posY][posX-1] == 0 && tab[posY][posX+1] == 0 && tab[posY+1][posX+1] == 0 && tab[posY][posX] == 0);
+    } else if(f == "O1"){
+        return (tab[posY][posX] == 0 && tab[posY+1][posX] == 0 && tab[posY][posX+1] == 0 && tab[posY+1][posX+1] == 0);
+    } else if(f == "S1"){
+        return (tab[posY][posX+1] == 0 && tab[posY+1][posX] == 0 && tab[posY][posX] == 0 && tab[posY+1][posX-1] == 0);
+    } else if(f == "S2"){
+        return (tab[posY-1][posX] == 0 && tab[posY][posX+1] == 0 && tab[posY][posX] == 0 && tab[posY+1][posX+1] == 0);
+    } else if(f == "Z1"){
+        return (tab[posY][posX-1] == 0 && tab[posY+1][posX] == 0 && tab[posY+1][posX+1] == 0 && tab[posY][posX] == 0);
+    } else if(f == "Z2"){
+        return (tab[posY-1][posX] == 0 && tab[posY][posX-1] == 0 && tab[posY+1][posX-1] == 0 && tab[posY][posX] == 0);
+    } else if(f == "T1"){
+        return (tab[posY][posX-1] == 0 && tab[posY][posX+1] == 0 && tab[posY+1][posX] == 0 && tab[posY][posX] == 0);
+    } else if(f == "T2"){
+        return (tab[posY+1][posX] == 0 && tab[posY-1][posX] == 0 && tab[posY][posX-1] == 0 && tab[posY][posX] == 0);
+    } else if(f == "T3"){
+        return (tab[posY][posX-1] == 0 && tab[posY][posX+1] == 0 && tab[posY-1][posX] == 0 && tab[posY][posX] == 0);
+    } else if(f == "T4"){
+        return (tab[posY+1][posX] == 0 && tab[posY-1][posX] == 0 && tab[posY][posX+1] == 0 && tab[posY][posX] == 0);
     }
+    return false;
+}
+
+function rotate(dir){
+    putting(0);
+    var formeT = "";
+    if(forme.split('')[0] == "L" || forme.split('')[0] == "l" || forme.split('')[0] == "T"){
+        if(dir == "d"){
+            formeT = forme.split('')[0] + (parseInt(forme.split('')[1])+1)%4+1;
+        } else if(dir == "g"){
+            formeT = forme.split('')[0] + (parseInt(forme.split('')[1])-1)%4+1;
+        }
+    }
+    if(forme.split('')[0] == "I" || forme.split('')[0] == "S" || forme.split('')[0] == "S"){
+        if(forme.split('')[1] == "1"){
+            formeT = forme.split('')[0] + "2";
+        } else if(forme.split('')[1] == "2") {
+            formeT = forme.split('')[0] + "1";
+        }
+    }
+    if(canBe(formeT)){
+        forme = formeT;
+    }
+    putting(1);
+    actu();
 }
 
 posX = 4;
@@ -331,7 +384,8 @@ listForme = [
     ["Z1", "Z2", "Z1", "Z2"],
     ["T1", "T2", "T3", "T4"]
 ];
-forme = listForme[Math.floor(Math.random() * 7)][0];
+rollForme();
+
 
 document.addEventListener("keydown", function onEvent(e) {
     putting(0);
@@ -341,8 +395,12 @@ document.addEventListener("keydown", function onEvent(e) {
     posX++;
     } else if(e.key == "ArrowDown" && collision("b")){
         posY++;
-    } else if(e.key == "e"){
+    } else if(e.key == "p"){
         window.cancelAnimationFrame( MyGame );
+    } else if(e.key == "ArrowUp" || e.key == "a"){
+        rotate("g");
+    } else if(e.key == "z"){
+        rotate("d");
     }
     putting(1);
     actu();
