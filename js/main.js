@@ -386,6 +386,7 @@ function rotate(dir){
 
 posX = 4;
 posY = 1;
+lock = false;
 listForme = [
     ["I1", "I2", "I1", "I2"],
     ["L1", "L2", "L3", "I4"],
@@ -436,6 +437,11 @@ var tNow = window.performance.now();
                 posY = 1;
                 rollForme()
                 ligne();
+                if(!canBe(forme)){
+                    document.getElementById("touches").innerHTML = "<p class=\"touche\">LOSE</p>"
+                    lock = true;
+                    window.cancelAnimationFrame( MyGame );
+                }
             }
             putting(1);
             tmp = (new Date()).getSeconds();
