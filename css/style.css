@@ -101,14 +101,28 @@ footer {
     width: 300px;
     height: 750px;
     border: solid 2px black;
-    border-radius: 2px;
+    border-radius: 5px;
 }
-
 .box {
     width: 28px;
     height: 28px;
     border: solid 1px black;
     border-radius: 2px;
+}
+
+#suivant, #stockage {
+    border: solid 3px black;
+    border-radius: 5px;
+    width: 140px;
+    height: 200px;
+    margin: 30px;
+    color : black;
+    display: flex;
+    flex-direction: column;
+}
+#imgSuivant, #txtSuivant, #txtStockage, #imgStockage {
+    margin: auto;
+    font-weight: bolder;
 }
 
 .redBox {
@@ -124,7 +138,7 @@ footer {
 #box-beta {
     margin: auto;
     margin-top: 20px;
-    width: 400px;
+    width: 350px;
 }
 .text-test {
     color: black;
@@ -133,4 +147,5 @@ footer {
 #tetromino {
     border: solid 1px black;
     border-radius: 4px;
+    width: 340px;
 }
