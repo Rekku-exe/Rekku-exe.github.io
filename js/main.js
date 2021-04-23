@@ -51,9 +51,9 @@ function rollForme(){
     forme = nextForme;
     nextForme = listForme[Math.floor(Math.random() * 7)][0];
     if(nextForme != "l1"){
-        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"./img/tetromino/" + nextForme + ".PNG\">";
+        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"img/tetromino/" + nextForme + ".png\">";
     } else {
-        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"./img/tetromino/LL1.PNG\">";
+        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"img/tetromino/LL1.png\">";
     }
 }
 
