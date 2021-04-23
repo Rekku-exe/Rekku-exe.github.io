@@ -291,7 +291,7 @@ function collision(dir){
         if(dir == "g"){
             return (posX > 1 && tab[posY-1][posX-1] == 0 && tab[posY][posX-2] == 0);
         } else if(dir == "d"){
-            return (posX < 8 && tab[posY+1][posX+1] == 0 && tab[posY][posX+2] == 0);
+            return (posX < 8 && tab[posY-1][posX+1] == 0 && tab[posY][posX+2] == 0);
         } else if(dir == "b") {
             return (posY < 24 && tab[posY+1][posX-1] == 0 && tab[posY+1][posX] == 0 && tab[posY+1][posX+1] == 0);
         }
