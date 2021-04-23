@@ -400,22 +400,24 @@ rollForme();
 
 
 document.addEventListener("keydown", function onEvent(e) {
-    putting(0);
-    if(e.key == "ArrowLeft" && collision("g")){
-        posX--;
-    } else if(e.key == "ArrowRight" && collision("d")){
-    posX++;
-    } else if(e.key == "ArrowDown" && collision("b")){
-        posY++;
-    } else if(e.key == "p"){
-        window.cancelAnimationFrame( MyGame );
-    } else if(e.key == "ArrowUp" || e.key == "a"){
-        rotate("g");
-    } else if(e.key == "z"){
-        rotate("d");
+    if(!lock){
+        putting(0);
+        if(e.key == "ArrowLeft" && collision("g")){
+            posX--;
+        } else if(e.key == "ArrowRight" && collision("d")){
+        posX++;
+        } else if(e.key == "ArrowDown" && collision("b")){
+            posY++;
+        } else if(e.key == "p"){
+            window.cancelAnimationFrame( MyGame );
+        } else if(e.key == "ArrowUp" || e.key == "a"){
+            rotate("g");
+        } else if(e.key == "z"){
+            rotate("d");
+        }
+        putting(1);
+        actu();
     }
-    putting(1);
-    actu();
 });
 
 tmp = (new Date()).getSeconds();
