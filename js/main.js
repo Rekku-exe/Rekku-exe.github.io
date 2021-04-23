@@ -352,6 +352,7 @@ function canBe(f){
     } else if(f == "T4"){
         return (tab[posY+1][posX] == 0 && tab[posY-1][posX] == 0 && tab[posY][posX+1] == 0 && tab[posY][posX] == 0);
     }
+    print(f);
     return false;
 }
 
@@ -469,13 +470,13 @@ var tNow = window.performance.now();
                 putting(2);
                 posX = 5;
                 posY = 1;
-                rollForme()
                 ligne();
-                if(!canBe(forme)){
-                    document.getElementById("touches").innerHTML = "<p class=\"touche\">LOSE</p>"
+                if(!canBe(nextForme)){
+                    document.getElementById("touchess").innerHTML = "<p class=\"touche\">LOSE</p>"
                     lock = true;
                     window.cancelAnimationFrame( MyGame );
                 }
+                rollForme()
                 haveStock = false;
             }
             putting(1);

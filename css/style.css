@@ -83,8 +83,9 @@ footer {
     display: flex;
 }
 
-.touches {
+#touchess {
     margin: auto;
+    display: flex;
 }
 .touche {
     margin: 5px;
