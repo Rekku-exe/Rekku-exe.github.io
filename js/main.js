@@ -392,13 +392,13 @@ function rotate(dir){
 
 function stocker(){
     if(stock == ""){
-        stock = forme;
+        stock = forme.split('')[0] + "1";
         rollForme();
         posX = 5;
         posY = 1;
     } else {
         var tmp = stock;
-        stock = forme;
+        stock = forme.split('')[0] + "1";
         forme = tmp;
         posX = 5;
         posY = 1;
