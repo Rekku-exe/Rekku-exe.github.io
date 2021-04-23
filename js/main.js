@@ -15,10 +15,18 @@ function actu(){
     for(var i = 0; i<25; i++){
         for(var j = 0; j<10; j++){
             if(tab[i][j] == 0){
-                if(j != posX){
-                    document.getElementById(i + "-" + j).className = "box";
-                } else {
+                if(j == posX){
                     document.getElementById(i + "-" + j).className = "box semiRedBox";
+                } else if((forme == "I2" || forme == "L2" || forme == "L3" || forme == "L4" || forme == "l1" || forme == "l2" || forme == "l1" || forme == "l4" || forme == "S1"
+                            || forme == "T1" || forme == "T2" || forme == "T3" || forme == "Z1" || forme == "Z2") && j == posX-1) {
+                    document.getElementById(i + "-" + j).className = "box semiRedBox";
+                } else if((forme == "I2" || forme == "L1" || forme == "L2" || forme == "L4" || forme == "l2" || forme == "l3" || forme == "l4" || forme == "O1" || forme == "S1"
+                            || forme == "S2" || forme == "T1" || forme == "T3" || forme == "T4" || forme == "Z1") && j == posX+1){
+                    document.getElementById(i + "-" + j).className = "box semiRedBox";
+                } else if(forme == "I2" && j == posX+2){
+                    document.getElementById(i + "-" + j).className = "box semiRedBox";
+                } else {
+                    document.getElementById(i + "-" + j).className = "box";
                 }
             } else if(tab[i][j] == 1){
                 document.getElementById(i + "-" + j).className = "box redBox";
