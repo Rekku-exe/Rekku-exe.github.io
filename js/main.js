@@ -51,9 +51,9 @@ function rollForme(){
     forme = nextForme;
     nextForme = listForme[Math.floor(Math.random() * 7)][0];
     if(nextForme != "l1"){
-        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"./img/tetromino/" + nextForme + ".png\">";
+        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"./img/tetromino/" + nextForme + ".PNG\">";
     } else {
-        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"./img/tetromino/LL1.png\">";
+        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"./img/tetromino/LL1.PNG\">";
     }
 }
 
@@ -404,9 +404,9 @@ function stocker(){
         posY = 1;
     }
     if(stock != "l1"){
-        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"./img/tetromino/" + stock + ".png\">";
+        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"./img/tetromino/" + stock + ".PNG\">";
     } else {
-        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"./img/tetromino/LL1.png\">";
+        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"./img/tetromino/LL1.PNG\">";
     }
     haveStock = true;
 }
