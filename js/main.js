@@ -390,6 +390,27 @@ function rotate(dir){
     actu();
 }
 
+function stocker(){
+    if(stock == ""){
+        stock = forme;
+        rollForme();
+        posX = 5;
+        posY = 1;
+    } else {
+        var tmp = stock;
+        stock = forme;
+        forme = tmp;
+        posX = 5;
+        posY = 1;
+    }
+    if(stock != "l1"){
+        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"./img/tetromino/" + stock + ".png\">";
+    } else {
+        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"./img/tetromino/LL1.png\">";
+    }
+    haveStock = true;
+}
+
 posX = 4;
 posY = 1;
 lock = false;
@@ -402,6 +423,8 @@ listForme = [
     ["Z1", "Z2", "Z1", "Z2"],
     ["T1", "T2", "T3", "T4"]
 ];
+stock = "";
+haveStock = false;
 nextForme = listForme[Math.floor(Math.random() * 7)][0];
 rollForme();
 
@@ -421,6 +444,8 @@ document.addEventListener("keydown", function onEvent(e) {
             rotate("g");
         } else if(e.key == "z"){
             rotate("d");
+        } else if(e.key == " " && !haveStock){
+            stocker();
         }
         putting(1);
         actu();
@@ -451,6 +476,7 @@ var tNow = window.performance.now();
                     lock = true;
                     window.cancelAnimationFrame( MyGame );
                 }
+                haveStock = false;
             }
             putting(1);
             tmp = (new Date()).getSeconds();

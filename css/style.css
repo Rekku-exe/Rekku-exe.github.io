@@ -83,7 +83,7 @@ footer {
     display: flex;
 }
 
-#touches {
+.touches {
     margin: auto;
 }
 .touche {
