@@ -464,6 +464,7 @@ document.addEventListener("keydown", function onEvent(e) {
         if(e.key == "p"){
             pause = false;
             document.getElementById("paused").style.display = "none";
+            tmp = (new Date()).getSeconds();
         }
     }
 });
