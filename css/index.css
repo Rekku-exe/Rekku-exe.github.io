@@ -1,0 +1,12 @@
+#mainIndex {
+    width: 25%;
+    margin: auto;
+    padding-bottom: 5px;
+    border: solid 5px white;
+    border-radius: 100px;
+}
+
+#texteProvisoire{
+    width: fit-content;
+    margin: auto;
+}
