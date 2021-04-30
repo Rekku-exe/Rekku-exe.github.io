@@ -45,7 +45,7 @@
     border-radius: 2px;
 }
 
-#suivant, #stockage {
+#suivant, #stockage, #paused {
     border: solid 3px black;
     border-radius: 5px;
     width: 140px;
@@ -55,9 +55,12 @@
     display: flex;
     flex-direction: column;
 }
-#imgSuivant, #txtSuivant, #txtStockage, #imgStockage {
+#imgSuivant, #txtSuivant, #txtStockage, #imgStockage, .txtPaused {
     margin: auto;
     font-weight: bolder;
+}
+#paused {
+    display: none;
 }
 
 .redBox {

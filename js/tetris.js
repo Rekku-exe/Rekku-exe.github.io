@@ -436,10 +436,11 @@ stock = "";
 haveStock = false;
 nextForme = listForme[Math.floor(Math.random() * 7)][0];
 rollForme();
+pause = false;
 
 
 document.addEventListener("keydown", function onEvent(e) {
-    if(!lock){
+    if(!lock && !pause){
         putting(0);
         if(e.key == "ArrowLeft" && collision("g")){
             posX--;
@@ -448,7 +449,8 @@ document.addEventListener("keydown", function onEvent(e) {
         } else if(e.key == "ArrowDown" && collision("b")){
             posY++;
         } else if(e.key == "p"){
-            window.cancelAnimationFrame( MyGame );
+            pause = true;
+            document.getElementById("paused").style.display = "flex";
         } else if(e.key == "ArrowUp" || e.key == "a"){
             rotate("g");
         } else if(e.key == "z"){
@@ -458,6 +460,11 @@ document.addEventListener("keydown", function onEvent(e) {
         }
         putting(1);
         actu();
+    } else if(pause){
+        if(e.key == "p"){
+            pause = false;
+            document.getElementById("paused").style.display = "none";
+        }
     }
 });
 
@@ -470,7 +477,7 @@ var tNow = window.performance.now();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
 
-        if(tmp != (new Date()).getSeconds()){
+        if(tmp != (new Date()).getSeconds() && !pause){
             putting(0);
             if(collision("b")){
                 posY++;
@@ -490,7 +497,7 @@ var tNow = window.performance.now();
             putting(1);
             tmp = (new Date()).getSeconds();
         }
-
+        
         actu();
     }
     main();
