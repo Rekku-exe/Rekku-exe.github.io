@@ -10,7 +10,15 @@
     <body>
         <header>
             <a id="linklogo" href="index.html"><img id="logo" src="./img/D.jpg"></a>
+            <p id="fondAnime">Fond Animé</p>
+            <label id="switch" class="switch">
+                <input type="checkbox" onclick="fond()">
+                <span class="slider round"></span>
+            </label>
         </header>
+        <video autoplay muted loop id="vid-fond">
+            <source src="mp4/fond.mp4">
+        </video>
         <main id="mainIndex">
             <div id="texteProvisoire">
                 <h2>Ici sera la page d'accueil</h2>
@@ -20,5 +28,6 @@
         <footer>
             <p id="copyright">@Rekku</p>
         </footer>
+        <script src="js/index.js"></script>
     </body>
 </html>
