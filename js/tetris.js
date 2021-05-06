@@ -360,7 +360,6 @@ function canBe(f){
     } else if(f == "T4"){
         return (tab[posY+1][posX] == 0 && tab[posY-1][posX] == 0 && tab[posY][posX+1] == 0 && tab[posY][posX] == 0);
     }
-    print(f);
     return false;
 }
 
