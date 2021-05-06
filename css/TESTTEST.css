@@ -1,0 +1,36 @@
+#mainTESTTEST {
+    color: #c9c9c9;
+    display: flex;
+}
+
+#theBox {
+    width: 1000px;
+    height: 700px;
+    background-color: #c9c9c9;
+    border: solid 5px black;
+    margin: auto;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* ---------------------------- */
+/*        GAME ELEMENTS         */
+/* ---------------------------- */
+
+.sprit {
+    position: absolute;
+    image-rendering: pixelated;
+    transform: translate(-50%, -100%);
+    width: 100px;
+    height: auto;
+}
+
+#player {
+    z-index: 1;
+}
+
+#mush {
+    top: 400px;
+    left: 350px;
+    z-index: 400;
+}
