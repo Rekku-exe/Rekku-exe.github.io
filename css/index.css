@@ -1,19 +1,20 @@
 body {
-    background-image: url("../img/fond.PNG");
+    background-image: url("../img/fond2.PNG");
 }
 
 #mainIndex {
     width: 25%;
     margin: auto;
     padding-bottom: 5px;
-    border: solid 5px white;
     border-radius: 100px;
 }
 
 #texteProvisoire{
     width: fit-content;
     margin: auto;
+    margin-top: 130px;
     text-align: center;
+    font-size: 25px;
 }
 
 #fondAnime{
@@ -44,6 +45,10 @@ body {
     pointer-events: none;
 }
 
+footer {
+    margin-top: 90px;
+}
+
 /* --------------------------- */
 /*           SWITCH            */
 /* --------------------------- */
@@ -71,7 +76,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #DBC372;
+    background-color: #17BA9E;
     -webkit-transition: .4s;
     border-radius: 34px;
 }
