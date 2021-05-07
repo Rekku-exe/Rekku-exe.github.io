@@ -9,9 +9,9 @@
     background-color: #c9c9c9;
     background-image: url("../img/TESTTEST/basement.png");
     background-size: 1000px 700px;
-    border: solid 20px #18191C;
+    /*border: solid 20px #18191C;*/
     margin: auto;
-    border-radius: 40px;
+    border-radius: 25px;
     position: relative;
 }
 

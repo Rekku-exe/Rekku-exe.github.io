@@ -1,6 +1,7 @@
 
 body {
-    background-color:  #2f3136;
+    /*background-color:  #2f3136; v1*/
+    background-color: #202225;
     color:  #c9c9c9;
     font-family: sans-serif;
     margin-right: 10px;
@@ -18,7 +19,8 @@ a:hover,a:visited {
 }
 
 header {
-    background-color: #202225;
+    /*background-color: #202225; v1*/
+    background-color: #18191C;
     margin: -10px;
     margin-bottom: 10px;
     display: flex;
