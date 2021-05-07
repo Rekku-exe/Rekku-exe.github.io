@@ -1,0 +1,5 @@
+#0D1014  -  header, footer 
+#191F26  -  body, section
+#019191  -  bouton, lien quand hover
+#17BA9E  -  bouton, lien 
+#F5F6F0  -  textes

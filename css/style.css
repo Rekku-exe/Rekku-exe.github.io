@@ -1,8 +1,8 @@
 
 body {
     /*background-color:  #2f3136; v1*/
-    background-color: #202225;
-    color:  #c9c9c9;
+    background-color: #191F26;
+    color:  #F5F6F0;
     font-family: sans-serif;
     margin-right: 10px;
 }
@@ -10,17 +10,18 @@ textarea:focus, input:focus, button:focus {
     outline: none;
 }
 
-a,a:hover,a:visited {
-    color: #c9c9c9;
+a,a:visited {
+    color: #17BA9E;
     text-decoration: none;
 }
-a:hover,a:visited {
+a:hover {
+    color: #019191;
     text-decoration: underline;
 }
 
 header {
     /*background-color: #202225; v1*/
-    background-color: #18191C;
+    background-color: #0D1014;
     margin: -10px;
     margin-bottom: 10px;
     display: flex;
@@ -43,7 +44,7 @@ footer {
     display: flex;
 }
 #copyright {
-    color: #626770;
+    color: #019191;
     margin: auto;
     margin-top: 30px;
     margin-bottom: -20px;
