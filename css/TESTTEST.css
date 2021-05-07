@@ -7,9 +7,11 @@
     width: 1000px;
     height: 700px;
     background-color: #c9c9c9;
-    border: solid 5px black;
+    background-image: url("../img/TESTTEST/basement.png");
+    background-size: 1000px 700px;
+    border: solid 20px #18191C;
     margin: auto;
-    border-radius: 5px;
+    border-radius: 40px;
     position: relative;
 }
 
