@@ -1,0 +1,54 @@
+#mainSondage {
+    display: flex;
+    flex-direction: column;
+}
+
+#listeFond {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fondTmp-int {
+    width: 500px;
+    height: auto;
+    mix-blend-mode: screen;
+    
+}
+
+.fondTmp-ext {
+    margin: auto;
+}
+
+.bordure {
+    border: solid 3px black;
+    width: fit-content;
+    height: fit-content;
+}
+
+#v1 {
+    opacity: 30%;
+    filter: blur(10px);
+}
+#v2 {
+    opacity: 20%;
+    filter: blur(10px);
+}
+#v3 {
+    filter: blur(5px);
+}
+#v4 {
+    opacity: 20%;
+    filter: blur(7px);
+}
+
+.nomFond {
+    border: solid 3px black;
+    width: fit-content;
+    padding: 5px;
+    margin-bottom: -3px;
+}
+
+#blablabla {
+    margin: auto;
+    margin-top: 25px;
+}
