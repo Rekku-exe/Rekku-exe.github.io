@@ -1,12 +1,20 @@
-body {
-    background-image: url("../img/fond2.PNG");
-}
-
 #mainIndex {
-    width: 25%;
-    margin: auto;
-    padding-bottom: 5px;
-    border-radius: 100px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    min-width: 600px;
+    background-color: #191F26;
+    z-index: -1;
+    transition: 1s;
+    box-shadow: 0px 0px 50px #111111;
+}
+@media screen and (max-width: 1100px) {
+    #mainIndex {
+        left: 12.5%;
+        right: 12.5%;
+    }
 }
 
 #texteProvisoire{
@@ -32,10 +40,14 @@ body {
 #vid-fond{
     position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    z-index: -1;
+    right: 0;
+    height: 110%;
+    width: auto;
+    z-index: -2;
+    mix-blend-mode: screen;
+    opacity: 30%;
+    filter: blur(10px);
     /*---*/
     user-select: none;
     -moz-user-select: none;
@@ -46,7 +58,12 @@ body {
 }
 
 footer {
-    margin-top: 90px;
+    position: absolute;
+    width: 99%;
+    bottom: 40px;
+}
+#copyright {
+    margin: auto;
 }
 
 /* --------------------------- */
