@@ -12,6 +12,7 @@
     width: 500px;
     height: auto;
     mix-blend-mode: screen;
+    margin-bottom: -4px;
     /*-*/
     background-image: url("../img/loader.gif");
     background-size: cover;
@@ -54,4 +55,9 @@
 #blablabla {
     margin: auto;
     margin-top: 25px;
+    text-align: center;
+}
+
+a {
+    cursor: pointer;
 }

@@ -9,7 +9,7 @@ function fond(){
         document.getElementById("porteGauche").style.width = null;
         document.getElementById("porteDroite").style.width = null;
         document.getElementById("mainIndex").style.boxShadow = null;
-        document.getElementById("vid-fond").style.display = "block";
+        //document.getElementById("vid-fond").style.display = "block";
         actived = false;
     } else {
         /*document.getElementById("mainIndex").style.right = "0";
@@ -17,7 +17,7 @@ function fond(){
         document.getElementById("porteGauche").style.width = "25%";
         document.getElementById("porteDroite").style.width = "25%";
         document.getElementById("mainIndex").style.boxShadow = "none";
-        setTimeout('document.getElementById("vid-fond").style.display = "none"', 1000);
+        //setTimeout('document.getElementById("vid-fond").style.display = "none"', 1000);
         actived = true;
     }
 }
