@@ -8,7 +8,6 @@ body {
     bottom: 0;
     left: 25%;
     right: 25%;
-    min-width: 600px;
     background-color: #191F26;
     z-index: -1;
     transition: 1s;
@@ -25,6 +24,22 @@ body {
         left: 5%;
         right: 5%;
     }
+}
+
+.porte {
+    position: fixed;
+    background-color: #191F26;
+    top: 0;
+    bottom: 0;
+    transition: 1s;
+    z-index: -2;
+    width: 0px;
+}
+#porteGauche {
+    left: 0;
+}
+#porteDroite {
+    right: 0;
 }
 
 #texteProvisoire{
