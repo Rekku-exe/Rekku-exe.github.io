@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 #mainIndex {
     position: fixed;
     top: 0;
@@ -16,9 +20,15 @@
         right: 12.5%;
     }
 }
+@media screen and (max-width: 750px) {
+    #mainIndex {
+        left: 5%;
+        right: 5%;
+    }
+}
 
 #texteProvisoire{
-    width: fit-content;
+    width: 80%;
     margin: auto;
     margin-top: 130px;
     text-align: center;
