@@ -12,7 +12,9 @@
     width: 500px;
     height: auto;
     mix-blend-mode: screen;
-    
+    /*-*/
+    background-image: url("../img/loader.gif");
+    background-size: cover;
 }
 
 .fondTmp-ext {
