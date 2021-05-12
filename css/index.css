@@ -46,8 +46,8 @@
     object-fit: cover;
     z-index: -2;
     mix-blend-mode: screen;
-    opacity: 30%;
-    filter: blur(10px);
+    opacity: 50%;
+    filter: blur(5px);
     /*---*/
     user-select: none;
     -moz-user-select: none;
