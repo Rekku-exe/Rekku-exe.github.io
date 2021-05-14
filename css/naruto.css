@@ -13,12 +13,12 @@
 #player {
     top: 600px;
     left: 150px;
-    width: 150px;
+    height: 150px;
 }
 
 .sprit {
     position: absolute;
     image-rendering: pixelated;
     transform: translate(-50%, -100%);
-    height: auto;
+    width: auto;
 }
