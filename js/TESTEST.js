@@ -54,9 +54,14 @@ function move() {
         }
     }
     if(walk)walkcount++;
-    if(walkcount >= 10){
+    if(walkcount >= 15){
         walkcount = 0;
-        movement = (movement+1)%3;
+        if(movement == 1){
+            movement = 2;
+        } else {
+            movement = 1;
+        }
+        stopwalk = false;
     }
     document.getElementById("player").style.zIndex = y;
 }
@@ -83,6 +88,7 @@ status = "normal";
 direction = "down";
 movement = 0;
 walkcount = 0;
+stopwalk = true;
 
 var key = {};
 onkeydown = onkeyup = function(e){
@@ -111,6 +117,10 @@ var tNow = window.performance.now();
             } else if(status == "normal") {
                 beNormal();
             }
+            if(stopwalk){
+                movement = 0;
+            }
+            stopwalk = true;
         }
         move();
         actu();
