@@ -57,13 +57,14 @@ function move() {
         walkcount++;
         stopwalk = false;
     }
-    if(walkcount >= 15){
+    if(walkcount >= 10){
         walkcount = 0;
-        if(movement == 1){
+        /*if(movement == 1){
             movement = 2;
         } else {
             movement = 1;
-        }
+        }*/
+        movement = (movement+1)%4;
     }
     document.getElementById("player").style.zIndex = y;
 }
@@ -89,7 +90,7 @@ y = 150;
 status = "normal";
 direction = "down";
 movement = 0;
-walkcount = 0;
+walkcount = 9;
 
 var key = {};
 onkeydown = onkeyup = function(e){
@@ -124,6 +125,7 @@ var tNow = window.performance.now();
         actu();
         if(stopwalk){
             movement = 0;
+            walkcount = 9;
         }
     }
     main();
