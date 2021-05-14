@@ -12,7 +12,7 @@ function init() {
 function actu() {
     document.getElementById("player").style.top = y+"px";
     document.getElementById("player").style.left = x+"px";
-    document.getElementById("player").src = "../img/Saica/player/isaac-"+direction+"-"+movement+".png";
+    document.getElementById("player").src = "../img/saica/player/isaac-"+direction+"-"+movement+".png";
 }
 
 function move() {
