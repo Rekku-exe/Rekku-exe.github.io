@@ -1,0 +1,24 @@
+#mainNaruto {
+    display: flex;
+}
+
+#leJeu {
+    border: solid 10px whitesmoke;
+    height: 300px;
+    width: 95%;
+    margin: auto;
+    position: relative;
+}
+
+#player {
+    top: 200px;
+    left: 100px;
+    width: 150px;
+}
+
+.sprit {
+    position: absolute;
+    image-rendering: pixelated;
+    transform: translate(-50%, -100%);
+    height: auto;
+}

@@ -82,15 +82,6 @@ body {
     pointer-events: none;
 }
 
-footer {
-    position: absolute;
-    width: 99%;
-    bottom: 40px;
-}
-#copyright {
-    margin: auto;
-}
-
 /* --------------------------- */
 /*           SWITCH            */
 /* --------------------------- */
