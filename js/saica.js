@@ -12,7 +12,7 @@ function init() {
 function actu() {
     document.getElementById("player").style.top = y+"px";
     document.getElementById("player").style.left = x+"px";
-    document.getElementById("player").src = "../img/TESTTEST/isaac-"+direction+"-"+movement+".png";
+    document.getElementById("player").src = "../img/Saica/player/isaac-"+direction+"-"+movement+".png";
 }
 
 function move() {
@@ -57,13 +57,8 @@ function move() {
         walkcount++;
         stopwalk = false;
     }
-    if(walkcount >= 10){
+    if(walkcount >= framewalk){
         walkcount = 0;
-        /*if(movement == 1){
-            movement = 2;
-        } else {
-            movement = 1;
-        }*/
         movement = (movement+1)%4;
     }
     document.getElementById("player").style.zIndex = y;
@@ -90,7 +85,8 @@ y = 150;
 status = "normal";
 direction = "down";
 movement = 0;
-walkcount = 9;
+framewalk = 10;
+walkcount = framewalk-1;
 
 var key = {};
 onkeydown = onkeyup = function(e){
@@ -125,7 +121,7 @@ var tNow = window.performance.now();
         actu();
         if(stopwalk){
             movement = 0;
-            walkcount = 9;
+            walkcount = framewalk-1;
         }
     }
     main();

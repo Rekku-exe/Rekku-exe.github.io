@@ -1,11 +1,12 @@
-#mainTESTTEST {
+#mainSaica {
     display: flex;
 }
 
 #theBox {
     width: 1000px;
+    min-width: 1000px;
     height: 700px;
-    background-image: url("../img/TESTTEST/basement.png");
+    background-image: url("../img/saica/basement.png");
     background-size: 1000px 700px;
     /*border: solid 20px #18191C;*/
     margin: auto;
