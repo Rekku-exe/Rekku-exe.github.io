@@ -53,7 +53,10 @@ function move() {
             x+=speed;
         }
     }
-    if(walk)walkcount++;
+    if(walk){
+        walkcount++;
+        stopwalk = false;
+    }
     if(walkcount >= 15){
         walkcount = 0;
         if(movement == 1){
@@ -61,7 +64,6 @@ function move() {
         } else {
             movement = 1;
         }
-        stopwalk = false;
     }
     document.getElementById("player").style.zIndex = y;
 }
@@ -88,7 +90,6 @@ status = "normal";
 direction = "down";
 movement = 0;
 walkcount = 0;
-stopwalk = true;
 
 var key = {};
 onkeydown = onkeyup = function(e){
@@ -117,13 +118,13 @@ var tNow = window.performance.now();
             } else if(status == "normal") {
                 beNormal();
             }
-            if(stopwalk){
-                movement = 0;
-            }
-            stopwalk = true;
         }
+        stopwalk = true;
         move();
         actu();
+        if(stopwalk){
+            movement = 0;
+        }
     }
     main();
 })();
