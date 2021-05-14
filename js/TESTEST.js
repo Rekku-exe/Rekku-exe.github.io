@@ -12,11 +12,14 @@ function init() {
 function actu() {
     document.getElementById("player").style.top = y+"px";
     document.getElementById("player").style.left = x+"px";
+    document.getElementById("player").src = "../img/TESTTEST/isaac-"+direction+"-"+movement+".png";
 }
 
 function move() {
+    walk = false;
     if(key["ArrowUp"] && !key["ArrowDown"]) {
-        document.getElementById("player").src = "../img/TESTTEST/isaac-up.png";
+        direction = "up";
+        walk = true;
         if(y <= 50+speed){
             y=50;
         } else if (map[y-speed-50][x-25] == 0 && map[y-speed-50][x+25] == 0) {
@@ -24,7 +27,8 @@ function move() {
         }
     }
     if(key["ArrowDown"] && !key["ArrowUp"]) {
-        document.getElementById("player").src = "../img/TESTTEST/isaac-down.png";
+        direction = "down";
+        walk = true;
         if(y >= 700-speed){
             y=700;
         } else if (map[y+speed][x-25] == 0 && map[y+speed][x+25] == 0) {
@@ -32,7 +36,8 @@ function move() {
         }
     }
     if(key["ArrowLeft"] && !key["ArrowRight"]){
-        document.getElementById("player").src = "../img/TESTTEST/isaac-left.png";
+        direction = "left";
+        walk = true;
         if(x <= 25+speed){
             x=25;
         } else if (map[y][x-speed-25] == 0 && map[y-50][x-speed-25] == 0) {
@@ -40,12 +45,18 @@ function move() {
         }
     }
     if(key["ArrowRight"] && !key["ArrowLeft"]) {
-        document.getElementById("player").src = "../img/TESTTEST/isaac-right.png";
+        direction = "right";
+        walk = true;
         if(x >= 975-speed){
             x=975;
         } else if (map[y][x+speed+25] == 0 && map[y-50][x+speed+25] == 0) {
             x+=speed;
         }
+    }
+    if(walk)walkcount++;
+    if(walkcount >= 10){
+        walkcount = 0;
+        movement = (movement+1)%3;
     }
     document.getElementById("player").style.zIndex = y;
 }
@@ -69,6 +80,9 @@ speed = 3;
 x = 150;
 y = 150;
 status = "normal";
+direction = "down";
+movement = 0;
+walkcount = 0;
 
 var key = {};
 onkeydown = onkeyup = function(e){
