@@ -4,15 +4,15 @@
 
 #leJeu {
     border: solid 10px whitesmoke;
-    height: 300px;
+    height: 700px;
     width: 95%;
     margin: auto;
     position: relative;
 }
 
 #player {
-    top: 200px;
-    left: 100px;
+    top: 600px;
+    left: 150px;
     width: 150px;
 }
 
