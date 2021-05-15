@@ -8,6 +8,7 @@
     width: 95%;
     margin: auto;
     position: relative;
+    overflow: hidden;
 }
 
 #player {
@@ -16,7 +17,11 @@
     height: 150px;
 }
 
-.sprit {
+.mob {
+    height: 75px;
+}
+
+.sprite {
     position: absolute;
     image-rendering: pixelated;
     transform: translate(-50%, -100%);
