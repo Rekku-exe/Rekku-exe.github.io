@@ -34,7 +34,7 @@ a:hover {
     background-color: #191F26;
     top: 0;
     bottom: 0;
-    transition: 1s;
+    transition: 1.75s;
     z-index: -2;
     width: 0px;
 }

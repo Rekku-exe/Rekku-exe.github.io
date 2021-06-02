@@ -14,8 +14,8 @@ function fond(){
     } else {
         /*document.getElementById("mainIndex").style.right = "0";
         document.getElementById("mainIndex").style.left = "0";*/
-        document.getElementById("porteGauche").style.width = "25%";
-        document.getElementById("porteDroite").style.width = "25%";
+        document.getElementById("porteGauche").style.width = "50%";
+        document.getElementById("porteDroite").style.width = "50%";
         document.getElementById("mainIndex").style.boxShadow = "none";
         //setTimeout('document.getElementById("vid-fond").style.display = "none"', 1000);
         actived = true;
