@@ -1,6 +1,6 @@
 body {
     overflow-x: hidden;
-    background-image: url("../img/fond.png");
+    background-image: url("../img/fond.PNG");
     background-image: cover;
 }
 a:hover {
