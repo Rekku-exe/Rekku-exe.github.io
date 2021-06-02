@@ -110,4 +110,7 @@
     .phoneZone {
         display: flex;
     }
+    #touchess {
+        display: none;
+    }
 }

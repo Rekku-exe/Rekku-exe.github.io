@@ -1,9 +1,11 @@
 body {
+    overflow-x: hidden;
     /*background-color:  #2f3136; v1*/
     background-color: #191F26;
     color:  #F5F6F0;
     font-family: sans-serif;
     margin-right: 10px;
+
 }
 textarea:focus, input:focus, button:focus {
     outline: none;
