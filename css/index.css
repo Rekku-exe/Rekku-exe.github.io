@@ -1,7 +1,7 @@
 body {
     overflow-x: hidden;
     background-image: url("../img/fond.PNG");
-    background-image: cover;
+    background-size: cover;
 }
 a:hover {
     text-decoration: none;
