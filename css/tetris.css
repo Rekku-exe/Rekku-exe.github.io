@@ -6,6 +6,7 @@
 #mainTetris {
     color: #c9c9c9;
     display: flex;
+    flex-direction: column;
 }
 
 #leJeu {
@@ -87,4 +88,26 @@
     border: solid 1px black;
     border-radius: 4px;
     width: 340px;
+}
+
+.phoneZone {
+    display: none;
+    margin: auto;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: -60px;
+}
+.phoneKey {
+    height: 150px;
+    width: 300px;
+    border: none;
+    border-radius: 40px;
+    font-size: 100px;
+    margin: 5px;
+}
+
+@media only screen and (max-device-width: 768px) {
+    .phoneZone {
+        display: flex;
+    }
 }

@@ -419,6 +419,38 @@ function stocker(){
     haveStock = true;
 }
 
+function phoneKey(phoneKey) {
+    if(!lock && !pause){
+        putting(0);
+        if(phoneKey == "ArrowLeft" && collision("g")){
+            posX--;
+        } else if(phoneKey == "ArrowRight" && collision("d")){
+            posX++;
+        } else if(phoneKey == "ArrowDown" && collision("b")){
+            posY++;
+        } else if(phoneKey == "p"){
+            pause = true;
+            document.getElementById("paused").style.display = "flex";
+            document.getElementById("buttonPause").value = ">";
+        } else if(phoneKey == "ArrowUp" || phoneKey == "a"){
+            rotate("g");
+        } else if(phoneKey == "z"){
+            rotate("d");
+        } else if(phoneKey == " " && !haveStock){
+            stocker();
+        }
+        putting(1);
+        actu();
+    } else if(pause){
+        if(phoneKey == "p"){
+            pause = false;
+            document.getElementById("paused").style.display = "none";
+            tmp = (new Date()).getSeconds();
+            document.getElementById("buttonPause").value = "❚❚";
+        }
+    }
+}
+
 posX = 4;
 posY = 1;
 lock = false;
@@ -444,7 +476,7 @@ document.addEventListener("keydown", function onEvent(e) {
         if(e.key == "ArrowLeft" && collision("g")){
             posX--;
         } else if(e.key == "ArrowRight" && collision("d")){
-        posX++;
+            posX++;
         } else if(e.key == "ArrowDown" && collision("b")){
             posY++;
         } else if(e.key == "p"){
