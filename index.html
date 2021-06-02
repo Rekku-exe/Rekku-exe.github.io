@@ -10,23 +10,59 @@
     <body>
         <header>
             <a id="linklogo" href="index.html"><img id="logo" src="./img/D.jpg"></a>
-            <p id="fondAnime">Fond Animé</p>
+            <p id="fondAnime">Fond Coloré</p>
             <label id="switch" class="switch">
                 <input type="checkbox" onclick="fond()">
                 <span class="slider round"></span>
             </label>
         </header>
-        <video autoplay muted loop disablePictureInPicture id="vid-fond">
-            <source src="video/fondTmp/3.mp4">
-        </video>
+        
         <div id="porteGauche" class="porte"></div>
         <main id="mainIndex">
-            <div id="texteProvisoire">
-                <h2>Ici sera la page d'accueil</h2>
-                <br>
-                <p>si tu viens pour jouer à Tetris clique <a href="html/tetris.html"><b>ici</b></a></p>
-                <br>
-                <p>je sais pas trop quoi mettre comme fond donc clique <a href="html/sondage.html"><b>ici</b></a></p>
+            <div id="contenu">
+                <h1 id="bienvenue">Bienvenue !</h1>
+                <h3>Liste des jeux disponibles :</h3>
+                <div class="boxJeux">
+                    <a href="./html/tetris.html">
+                        <div class="nomBox">
+                            <p class="texteBox">TETRIS</p>
+                        </div>
+                        <div class="fondBox" id="boxTetris"></div>
+                    </a>
+                </div>
+                <!--div class="boxJeux">
+                    <a href="./html/naruto.html">
+                        <div class="nomBox">
+                            <p class="texteBox">NARUTO RUN</p>
+                        </div>
+                        <div class="fondBox" id="boxNaruto"></div>
+                    </a>
+                </div-->
+                <h3>Autres :</h3>
+                <div class="boxJeux">
+                    <a href="./index.html">
+                        <div class="nomBox">
+                            <p class="texteBox">rien pour le moment</p>
+                        </div>
+                        <div class="fondBox" id="boxLoader"></div>
+                    </a>
+                </div>
+                <div class="boxJeux">
+                    <a href="./index.html">
+                        <div class="nomBox">
+                            <p class="texteBox">rien pour le moment</p>
+                        </div>
+                        <div class="fondBox" id="boxLoader"></div>
+                    </a>
+                </div>
+                <div class="boxJeux">
+                    <a href="./index.html">
+                        <div class="nomBox">
+                            <p class="texteBox">rien pour le moment</p>
+                        </div>
+                        <div class="fondBox" id="boxLoader"></div>
+                    </a>
+                </div>
             </div>
         </main>
         <div id="porteDroite" class="porte"></div>

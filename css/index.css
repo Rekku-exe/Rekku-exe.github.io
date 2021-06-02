@@ -1,16 +1,19 @@
 body {
     overflow-x: hidden;
+    background-image: url("../img/fond.png");
+    background-image: cover;
+}
+a:hover {
+    text-decoration: none;
 }
 
 #mainIndex {
-    position: fixed;
+    position: absolute;
     top: 0;
-    bottom: 0;
     left: 25%;
     right: 25%;
     background-color: #191F26;
     z-index: -1;
-    transition: 1s;
     box-shadow: 0px 0px 50px #111111;
 }
 @media screen and (max-width: 1100px) {
@@ -42,6 +45,69 @@ body {
     right: 0;
 }
 
+#contenu {
+    margin: auto;
+    margin-top: 130px;
+    padding-bottom: 30px;
+    font-size: 25px;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 0px;
+}
+
+.boxJeux {
+    position: relative;
+    height: 150px;
+    width: 90%;
+    margin: auto;
+    transition: 0.5s;
+    margin-bottom: 50px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: solid 10px #111111;
+}
+.boxJeux:hover {
+    height: 175px;
+    margin-bottom: 25px;
+}
+.fondBox {
+    position: absolute;
+    filter: blur(10px);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+}
+
+.nomBox {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.texteBox {
+    margin: auto;
+    color: #111111;
+    font-weight: 600;
+    font-size: 35px;
+    padding: 10px;
+    background-color: #17ba9f91;
+}
+
+#boxTetris {
+    background-image: url("../img/index/tetris.webp");
+}
+#boxNaruto {
+    background-image: url("../img/index/nature.jpg");
+}
+#boxLoader {
+    background-image: url("../img/loader.gif");
+}
+
+
 #texteProvisoire{
     width: 80%;
     margin: auto;
@@ -60,26 +126,6 @@ body {
     margin: auto;
     margin-right: 20px;
     margin-left: 0px;
-}
-
-#vid-fond{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -2;
-    mix-blend-mode: screen;
-    opacity: 50%;
-    filter: blur(5px);
-    /*---*/
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    pointer-events: none;
 }
 
 /* --------------------------- */

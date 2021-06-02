@@ -41,7 +41,7 @@ header {
 
 footer {
     display: flex;
-    position: absolute;
+    position: fixed;
     width: 99%;
     bottom: 40px;
 }
