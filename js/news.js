@@ -1,5 +1,5 @@
 page = 1;
-maxPage = 5;
+maxPage = 2;
 
 function changePage(dir){
     document.getElementById("page-"+page).style.display = "none";

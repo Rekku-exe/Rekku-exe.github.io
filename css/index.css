@@ -97,14 +97,17 @@ h3 {
     background-color: #17ba9f91;
 }
 
+#boxLoader {
+    background-image: url("../img/loader.gif");
+}
 #boxTetris {
     background-image: url("../img/index/tetris.webp");
 }
 #boxNaruto {
     background-image: url("../img/index/nature.jpg");
 }
-#boxLoader {
-    background-image: url("../img/loader.gif");
+#boxNews {
+    background-image: url("../img/index/journal.jpg");
 }
 
 
