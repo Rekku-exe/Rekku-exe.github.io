@@ -43,6 +43,11 @@ function newMob(hauteur){
     document.getElementById("leJeu").appendChild(mob);
 }
 
+function jump(){
+    acceleration = -20;
+    state = "jump";
+}
+
 var key = {};
 onkeydown = onkeyup = function(e){
     key[e.key] = e.type == 'keydown';
@@ -95,6 +100,7 @@ var tNow = window.performance.now();
         }
         for(i = 0; i < listeMob.length; i++){
             if(listeMob[i][1] <= 175 && listeMob[i][1] >= 125 && y >= 550){
+                document.getElementById("touche").innerHTML = "LOSE"
                 window.cancelAnimationFrame( MyGame );
             } else {
                 listeMob[i][1]-=speedMob;

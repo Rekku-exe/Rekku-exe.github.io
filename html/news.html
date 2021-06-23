@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rekku.exe - News</title>
+        <link rel="icon" href="../img/icon/home_x1.png"/>
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/news.css"/>
+    </head>
+    <body>
+        <header>
+            <a id="linklogo" href="../index.html"><img id="logo" src="../img/D.jpg"></a>
+            <p id="titre">Actualité du Site</p>
+            <p id="date" title="date de la dernière mise à jour">
+                08/06/2021
+            </p>
+        </header>
+        <main id="mainNews">
+            <div id="page-1" class="pages">
+                <div class="uneNews">Blabla1</div>
+                <div class="uneNews">BlaBal2</div>
+                <div class="uneNews">Blalbl3</div>
+            </div>
+            <div id="page-2" class="pages hidden">
+                <div class="uneNews">ghterdfqehrrf</div>
+                <div class="uneNews">hgfhgf</div>
+                <div class="uneNews">fhgfs</div>
+            </div>
+            <div id="page-3" class="pages hidden">
+                <div class="uneNews">1</div>
+                <div class="uneNews">2</div>
+                <div class="uneNews">3</div>
+            </div>
+            <div id="page-4" class="pages hidden">
+                <div class="uneNews">115</div>
+                <div class="uneNews">256</div>
+                <div class="uneNews">378</div>
+            </div>
+            <div id="page-5" class="pages hidden">
+                <div class="uneNews">111</div>
+                <div class="uneNews">222</div>
+                <div class="uneNews">333</div>
+            </div>
+            <div id="basMain">
+                <div id="navigateur">
+                    <input type="button" onclick="changePage('--')" class="buttonNavigateur invisible" value="◄❚" id="buttonLeft2">
+                    <input type="button" onclick="changePage('-')" class="buttonNavigateur invisible" value="◄" id="buttonLeft1">
+                    <p id="numeroPage">1</p>
+                    <input type="button" onclick="changePage('+')" class="buttonNavigateur" value="►" id="buttonRight1">
+                    <input type="button" onclick="changePage('++')" class="buttonNavigateur" value="❚►" id="buttonRight2">
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p id="copyright">© Rekku</p>
+        </footer>
+        <script src="../js/news.js"></script>
+    </body>
+</html>

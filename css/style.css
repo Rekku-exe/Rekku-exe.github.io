@@ -45,13 +45,12 @@ footer {
     display: flex;
     position: fixed;
     width: 99%;
-    bottom: 40px;
+    bottom: 10px;
+
 }
 #copyright {
     opacity: 0.5;
     margin: auto;
-    margin-top: 30px;
-    margin-bottom: -20px;
     font-weight: bolder;
 }
 

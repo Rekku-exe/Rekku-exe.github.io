@@ -1,5 +1,16 @@
+#touche {
+    margin: auto;
+    display: flex;
+}
+
+#version {
+    margin: auto;
+    margin-right: 40px;
+}
+
 #mainNaruto {
     display: flex;
+    flex-direction: column;
 }
 
 #leJeu {
@@ -26,4 +37,31 @@
     image-rendering: pixelated;
     transform: translate(-50%, -100%);
     width: auto;
+    user-select: none;
+}
+
+.phoneZone {
+    display: none;
+    margin: 15px;
+    margin-left: 10px;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: -60px;
+}
+.phoneKey {
+    height: 150px;
+    width: 100%;
+    border: none;
+    border-radius: 40px;
+    font-size: 100px;
+    margin: 5px;
+}
+
+@media only screen and (max-device-width: 768px) {
+    .phoneZone {
+        display: flex;
+    }
+    #touche {
+        display: none;
+    }
 }
