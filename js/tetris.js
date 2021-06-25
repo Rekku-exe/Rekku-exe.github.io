@@ -51,8 +51,20 @@ function ligne(){
                     tab[j][k] = tab[j-1][k];
                 }
             }
+            combo += 1;
         }
     }
+    if(combo == 1){
+        score += 40 * niveau;
+    } else if(combo == 2){
+        score += 100 * niveau;
+    } else if(combo == 3){
+        score += 300 * niveau;
+    } else if(combo == 4){
+        score += 1200 * niveau;
+    }
+    document.getElementById("score").innerHTML = score;
+    combo = 0;
 }
 
 function rollForme(){
@@ -468,6 +480,11 @@ haveStock = false;
 nextForme = listForme[Math.floor(Math.random() * 7)][0];
 rollForme();
 pause = false;
+score = 0;
+combo = 0;
+niveau = 1;
+prochainNiv = 1000;
+instant = 0;
 
 
 document.addEventListener("keydown", function onEvent(e) {
@@ -500,7 +517,7 @@ document.addEventListener("keydown", function onEvent(e) {
     }
 });
 
-tmp = (new Date()).getSeconds();
+tmp = (new Date()).getMilliseconds();
 
 var MyGame;
 var tNow = window.performance.now();
@@ -509,25 +526,37 @@ var tNow = window.performance.now();
     function main( tFrame ) {
         MyGame = window.requestAnimationFrame( main );
 
-        if(tmp != (new Date()).getSeconds() && !pause){
-            putting(0);
-            if(collision("b")){
-                posY++;
-            } else {
-                putting(2);
-                posX = 5;
-                posY = 1;
-                ligne();
-                if(!canBe(nextForme)){
-                    document.getElementById("touchess").innerHTML = "<p class=\"touche\">LOSE</p>"
-                    lock = true;
-                    window.cancelAnimationFrame( MyGame );
+        if(tmp != (new Date()).getMilliseconds() && !pause){
+            if(instant >= 15/niveau){
+                putting(0);
+                if(collision("b")){
+                    posY++;
+                } else {
+                    putting(2);
+                    posX = 5;
+                    posY = 1;
+                    ligne();
+                    if(!canBe(nextForme)){
+                        document.getElementById("touchess").innerHTML = "<p class=\"touche\">LOSE</p>"
+                        lock = true;
+                        window.cancelAnimationFrame( MyGame );
+                    }
+                    rollForme()
+                    haveStock = false;
                 }
-                rollForme()
-                haveStock = false;
+                putting(1);
+                tmp = (new Date()).getMilliseconds();
+                instant=0;
+            } else {
+                instant+=1;
             }
-            putting(1);
-            tmp = (new Date()).getSeconds();
+            if(prochainNiv == 0 && niveau < 10){
+                niveau+=1;
+                document.getElementById("niveau").innerHTML = niveau;
+                prochainNiv=1000;
+            } else {
+                prochainNiv-=1;
+            }
         }
         
         actu();

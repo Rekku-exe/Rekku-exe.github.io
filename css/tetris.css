@@ -106,6 +106,16 @@
     margin: 5px;
 }
 
+.colo3{
+    font-size: 100px;
+    font-weight: bolder;
+    color: #be1515;
+    text-shadow: 2px 0 0 #111111, 2px 2px 0 #111111, 0 2px 0 #111111, -2px 2px 0 #111111, -2px 0 0 #111111, -2px -2px 0 #111111, 0 -2px 0 #111111, 2px -2px 0 #111111;
+}
+#score {
+    margin-top: 75px;
+}
+
 @media only screen and (max-device-width: 768px) {
     .phoneZone {
         display: flex;
