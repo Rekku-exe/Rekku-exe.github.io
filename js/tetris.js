@@ -483,7 +483,7 @@ pause = false;
 score = 0;
 combo = 0;
 niveau = 1;
-prochainNiv = 1000;
+prochainNiv = 1500;
 instant = 0;
 
 
@@ -553,7 +553,7 @@ var tNow = window.performance.now();
             if(prochainNiv == 0 && niveau < 10){
                 niveau+=1;
                 document.getElementById("niveau").innerHTML = niveau;
-                prochainNiv=1000;
+                prochainNiv=1500;
             } else {
                 prochainNiv-=1;
             }
