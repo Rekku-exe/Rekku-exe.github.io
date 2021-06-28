@@ -45,6 +45,7 @@
     height: 28px;
     border: solid 1px black;
     border-radius: 2px;
+    background-color: #DDDDDD;
 }
 
 #suivant, #stockage, #paused {
@@ -65,14 +66,33 @@
     display: none;
 }
 
-.redBox {
-    background-color: red;
+.semiBox {
+    background-color: #AAAAAA;
 }
-.semiRedBox {
-    background-color: lightcoral;
+.cyanBox {
+    background-image: url("../img/tetris/bloc_cyan.png");
+}
+.blueBox {
+    background-image: url("../img/tetris/bloc_bleu.png");
+}
+.orangeBox {
+    background-image: url("../img/tetris/bloc_orange.png");
+}
+.yellowBox {
+    background-image: url("../img/tetris/bloc_jaune.png");
 }
 .greenBox {
-    background-color: green;
+    background-image: url("../img/tetris/bloc_vert.png");
+}
+.purpleBox {
+    background-image: url("../img/tetris/bloc_violet.png");
+}
+.redBox {
+    background-image: url("../img/tetris/bloc_rouge.png");
+}
+.greyBox {
+    background-image: url("../img/tetris/bloc_gris.png");
+    filter: brightness(50%);
 }
 
 #box-beta {

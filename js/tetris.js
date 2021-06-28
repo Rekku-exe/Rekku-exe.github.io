@@ -16,22 +16,37 @@ function actu(){
         for(var j = 0; j<10; j++){
             if(tab[i][j] == 0){
                 if(j == posX){
-                    document.getElementById(i + "-" + j).className = "box semiRedBox";
+                    document.getElementById(i + "-" + j).className = "box semiBox";
                 } else if((forme == "I2" || forme == "L2" || forme == "L3" || forme == "L4" || forme == "l1" || forme == "l2" || forme == "l1" || forme == "l4" || forme == "S1"
                             || forme == "T1" || forme == "T2" || forme == "T3" || forme == "Z1" || forme == "Z2") && j == posX-1) {
-                    document.getElementById(i + "-" + j).className = "box semiRedBox";
+                    document.getElementById(i + "-" + j).className = "box semiBox";
                 } else if((forme == "I2" || forme == "L1" || forme == "L2" || forme == "L4" || forme == "l2" || forme == "l3" || forme == "l4" || forme == "O1" || forme == "S1"
                             || forme == "S2" || forme == "T1" || forme == "T3" || forme == "T4" || forme == "Z1") && j == posX+1){
-                    document.getElementById(i + "-" + j).className = "box semiRedBox";
+                    document.getElementById(i + "-" + j).className = "box semiBox";
                 } else if(forme == "I2" && j == posX+2){
-                    document.getElementById(i + "-" + j).className = "box semiRedBox";
+                    document.getElementById(i + "-" + j).className = "box semiBox";
                 } else {
                     document.getElementById(i + "-" + j).className = "box";
                 }
             } else if(tab[i][j] == 1){
-                document.getElementById(i + "-" + j).className = "box redBox";
+                tmp = forme.split('')[0];
+                if(tmp == "I"){
+                    document.getElementById(i + "-" + j).className = "box cyanBox";
+                } else if(tmp == "l"){
+                    document.getElementById(i + "-" + j).className = "box blueBox";
+                } else if(tmp == "L"){
+                    document.getElementById(i + "-" + j).className = "box orangeBox";
+                } else if(tmp == "O"){
+                    document.getElementById(i + "-" + j).className = "box yellowBox";
+                } else if(tmp == "S"){
+                    document.getElementById(i + "-" + j).className = "box greenBox";
+                } else if(tmp == "T"){
+                    document.getElementById(i + "-" + j).className = "box purpleBox";
+                } else if(tmp == "Z"){
+                    document.getElementById(i + "-" + j).className = "box redBox";
+                }
             } else if(tab[i][j] == 2){
-                document.getElementById(i + "-" + j).className = "box greenBox";
+                document.getElementById(i + "-" + j).className = "box greyBox";
             }
         }
     }
@@ -71,9 +86,9 @@ function rollForme(){
     forme = nextForme;
     nextForme = listForme[Math.floor(Math.random() * 7)][0];
     if(nextForme != "l1"){
-        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"../img/tetromino/" + nextForme + ".PNG\">";
+        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"../img/tetris/" + nextForme + ".PNG\">";
     } else {
-        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"../img/tetromino/LL1.PNG\">";
+        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"../img/tetris/LL1.PNG\">";
     }
 }
 
@@ -424,9 +439,9 @@ function stocker(){
         posY = 1;
     }
     if(stock != "l1"){
-        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"../img/tetromino/" + stock + ".PNG\">";
+        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"../img/tetris/" + stock + ".PNG\">";
     } else {
-        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"../img/tetromino/LL1.PNG\">";
+        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"../img/tetris/LL1.PNG\">";
     }
     haveStock = true;
 }
@@ -527,7 +542,8 @@ var tNow = window.performance.now();
         MyGame = window.requestAnimationFrame( main );
 
         if(tmp != (new Date()).getMilliseconds() && !pause){
-            if(instant >= 15/niveau){
+            tmp = (new Date()).getMilliseconds();
+            if(instant >= 20-niveau){
                 putting(0);
                 if(collision("b")){
                     posY++;
@@ -545,12 +561,11 @@ var tNow = window.performance.now();
                     haveStock = false;
                 }
                 putting(1);
-                tmp = (new Date()).getMilliseconds();
                 instant=0;
             } else {
                 instant+=1;
             }
-            if(prochainNiv == 0 && niveau < 10){
+            if(prochainNiv == 0 && niveau < 15){
                 niveau+=1;
                 document.getElementById("niveau").innerHTML = niveau;
                 prochainNiv=1500;
