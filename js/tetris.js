@@ -46,7 +46,19 @@ function actu(){
                     document.getElementById(i + "-" + j).className = "box redBox";
                 }
             } else if(tab[i][j] == 2){
-                document.getElementById(i + "-" + j).className = "box greyBox";
+                document.getElementById(i + "-" + j).className = "box cyanBox putBox";
+            } else if(tab[i][j] == 3){
+                document.getElementById(i + "-" + j).className = "box blueBox putBox";
+            } else if(tab[i][j] == 4){
+                document.getElementById(i + "-" + j).className = "box orangeBox putBox";
+            } else if(tab[i][j] == 5){
+                document.getElementById(i + "-" + j).className = "box yellowBox putBox";
+            } else if(tab[i][j] == 6){
+                document.getElementById(i + "-" + j).className = "box greenBox putBox";
+            } else if(tab[i][j] == 7){
+                document.getElementById(i + "-" + j).className = "box purpleBox putBox";
+            } else if(tab[i][j] == 8){
+                document.getElementById(i + "-" + j).className = "box redBox putBox";
             }
         }
     }
@@ -56,7 +68,7 @@ function ligne(){
     for(var i = 0; i<25; i++){
         var val = true;
         for(var l = 0; l<10; l++){
-            if(tab[i][l] != 2){
+            if(tab[i][l] == 0){
                 val = false;
             }
         }
@@ -498,7 +510,7 @@ pause = false;
 score = 0;
 combo = 0;
 niveau = 1;
-prochainNiv = 1500;
+prochainNiv = 2000;
 instant = 0;
 
 
@@ -548,7 +560,22 @@ var tNow = window.performance.now();
                 if(collision("b")){
                     posY++;
                 } else {
-                    putting(2);
+                    tmp = forme.split('')[0];
+                    if(tmp == "I"){
+                        putting(2);
+                    } else if(tmp == "l"){
+                        putting(3);
+                    } else if(tmp == "L"){
+                        putting(4);
+                    } else if(tmp == "O"){
+                        putting(5);
+                    } else if(tmp == "S"){
+                        putting(6);
+                    } else if(tmp == "T"){
+                        putting(7);
+                    } else if(tmp == "Z"){
+                        putting(8);
+                    }
                     posX = 5;
                     posY = 1;
                     ligne();
@@ -568,7 +595,7 @@ var tNow = window.performance.now();
             if(prochainNiv == 0 && niveau < 15){
                 niveau+=1;
                 document.getElementById("niveau").innerHTML = niveau;
-                prochainNiv=1500;
+                prochainNiv=2000;
             } else {
                 prochainNiv-=1;
             }

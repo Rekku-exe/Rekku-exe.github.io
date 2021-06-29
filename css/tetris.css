@@ -90,9 +90,8 @@
 .redBox {
     background-image: url("../img/tetris/bloc_rouge.png");
 }
-.greyBox {
-    background-image: url("../img/tetris/bloc_gris.png");
-    filter: brightness(50%);
+.putBox {
+    filter: brightness(75%);
 }
 
 #box-beta {
