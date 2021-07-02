@@ -91,6 +91,7 @@ function ligne(){
         score += 1200 * niveau;
     }
     document.getElementById("score").innerHTML = score;
+    document.getElementById("scorePaused").innerHTML = "SCORE: "+score;
     combo = 0;
 }
 
@@ -542,6 +543,7 @@ document.addEventListener("keydown", function onEvent(e) {
             tmp = (new Date()).getSeconds();
         }
     }
+    console.log(pause);
 });
 
 tmp = (new Date()).getMilliseconds();
@@ -595,6 +597,7 @@ var tNow = window.performance.now();
             if(prochainNiv == 0 && niveau < 15){
                 niveau+=1;
                 document.getElementById("niveau").innerHTML = niveau;
+                document.getElementById("niveauPaused").innerHTML = "NIVEAU: "+niveau;
                 prochainNiv=2000;
             } else {
                 prochainNiv-=1;

@@ -48,7 +48,7 @@
     background-color: #DDDDDD;
 }
 
-#suivant, #stockage, #paused {
+#suivant, #stockage {
     border: solid 3px black;
     border-radius: 5px;
     width: 140px;
@@ -58,12 +58,27 @@
     display: flex;
     flex-direction: column;
 }
-#imgSuivant, #txtSuivant, #txtStockage, #imgStockage, .txtPaused {
+#imgSuivant, #txtSuivant, #txtStockage, #imgStockage{
     margin: auto;
     font-weight: bolder;
 }
 #paused {
+    border: solid 3px black;
+    display: flex;
+    flex-direction: column;
+    background-color: #C9C9C9;
+    position: absolute;
+    border-radius: 20px;
+    width: 800px;
+    height: 600px;
+    left:50%;
+    top:50%;
+    margin-top:-300px;
+    margin-left:-400px;
     display: none;
+}
+.txtPaused {
+    margin: auto;
 }
 
 .semiBox {
