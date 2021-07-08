@@ -28,6 +28,7 @@
     background-color: lightgrey;
     height: 70px;
     width: 125px;
+    min-width: 125px;
     border-radius: 200px;
     display: flex;
 }
