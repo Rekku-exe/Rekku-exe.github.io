@@ -28,6 +28,13 @@
     height: 150px;
 }
 
+#ground {
+    height: 950px;
+    margin-top: 915px;
+    margin-left: 625px;
+    z-index: -1;
+}
+
 .mob {
     height: 75px;
 }

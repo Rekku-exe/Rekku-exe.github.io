@@ -44,8 +44,10 @@ function newMob(hauteur){
 }
 
 function jump(){
-    acceleration = -20;
-    state = "jump";
+    if(y == sol){
+        acceleration = -20;
+        state = "jump";
+    }
 }
 
 var key = {};
@@ -79,8 +81,7 @@ var tNow = window.performance.now();
             movement = (movement+1)%5;
         }
         if((key[" "] || key["ArrowUp"]) && y == sol){
-            acceleration = -20;
-            state = "jump";
+            jump();
         }
         y+=acceleration;
         if(y < sol){
@@ -100,6 +101,7 @@ var tNow = window.performance.now();
         }
         for(i = 0; i < listeMob.length; i++){
             if(listeMob[i][1] <= 175 && listeMob[i][1] >= 125 && y >= 550){
+                document.getElementById("touche").style.display = "flex";
                 document.getElementById("touche").innerHTML = "LOSE"
                 window.cancelAnimationFrame( MyGame );
             } else {

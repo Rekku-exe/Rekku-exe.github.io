@@ -582,6 +582,7 @@ var tNow = window.performance.now();
                     posY = 1;
                     ligne();
                     if(!canBe(nextForme)){
+                        document.getElementById("touchess").style.display = "flex";
                         document.getElementById("touchess").innerHTML = "<p class=\"touche\">LOSE</p>"
                         lock = true;
                         window.cancelAnimationFrame( MyGame );
