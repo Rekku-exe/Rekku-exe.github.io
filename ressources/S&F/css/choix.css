@@ -1,0 +1,58 @@
+body{
+    font-size: 20px;
+}
+
+input{
+    font-size: 20px;
+    color:#BBBBBB
+}
+
+.stat{
+    display: flex;
+    flex-grow: 1;
+}
+
+.statName{
+    margin-right: 25px;
+}
+
+.ligne{
+    display: flex;
+    flex-direction: row;
+    max-width: 400px;
+}
+
+.element{
+    margin: auto;
+    cursor: pointer;
+    background-color: #471915;
+    padding: 10px;
+    border-radius: 100px;
+    border: solid 1px #BBBBBB;
+}
+
+.buttonImp{
+    margin: 0;
+    background-color: #474715;
+    display: flex;
+    max-width: 400px;
+}
+.impText{
+    margin: auto;
+}
+#resultat{
+    background-color: #154247;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    width: 99%;
+    bottom: 10px;
+
+}
+#copyright {
+    opacity: 0.5;
+    margin: auto;
+    font-weight: bolder;
+}

@@ -1,0 +1,39 @@
+body{
+    background-color: #191F26;
+    color:  #F5F6F0;
+    font-family: sans-serif;
+    margin-right: 10px;
+}
+
+a{
+    color: #F5F6F0;
+}
+
+.bulle{
+    background-color: #DDDDDD;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.liste{
+    margin-left: 5%;
+}
+
+.listeTexte{
+    font-size: 30px;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    width: 99%;
+    bottom: 10px;
+
+}
+#copyright {
+    opacity: 0.5;
+    margin: auto;
+    font-weight: bolder;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Choix équipement</title>
+        <link rel="stylesheet" type="text/css" href="../css/choix.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+    </head>
+    <body>
+        <a id="linkindex" href="../index.html">
+            <div class="bulle">
+                <img id="arrow_back" src="../icon/arrow_back.png">
+            </div>
+        </a>
+        <main id="main">
+            <p>Ta stat principale (celle de tes dégats) :</p>
+            <div class="ligne">
+                <div id="buttonForce" class="element" onclick="button('force')">Force</div>
+                <div id="buttonHabilite" class="element" onclick="button('habilite')">Habilité</div>
+                <div id="buttonIntelligence" class="element" onclick="button('intelligence')">Intelligence</div>
+            </div>
+            <br>
+            <p>Selectionne les modifications de stats :</p>
+            <div class="ligne">
+                <p class="statName">Dégat</p>
+                <input id="stat-0" type="number" class="element stat" value="" placeholder="0" onchange="valeur(0)">
+            </div>
+            <div class="ligne">
+                <p class="statName">Force</p>
+                <input id="stat-1" type="number" class="element stat" value="" placeholder="0" onchange="valeur(1)">
+            </div>
+            <div class="ligne">
+                <p class="statName">Habilité</p>
+                <input id="stat-2" type="number" class="element stat" value="" placeholder="0" onchange="valeur(2)">
+            </div>
+            <div class="ligne">
+                <p class="statName">Intelligence</p>
+                <input id="stat-3" type="number" class="element stat" value="" placeholder="0" onchange="valeur(3)">
+            </div>
+            <div class="ligne">
+                <p class="statName">Endurance</p>
+                <input id="stat-4" type="number" class="element stat" value="" placeholder="0" onchange="valeur(4)">
+            </div>
+            <div class="ligne">
+                <p class="statName">Chance</p>
+                <input id="stat-5" type="number" class="element stat" value="" placeholder="0" onchange="valeur(5)">
+            </div>
+            <div class="ligne">
+                <p class="statName">Armure</p>
+                <input id="stat-6" type="number" class="element stat" value="" placeholder="0" onchange="valeur(6)">
+            </div>
+            <br>
+            <div id="resultat" class="element buttonImp">
+                <p id="result" class="impText">resultat</p>
+            </div>
+            <br>
+            <div class="element buttonImp" onclick="calcul()">
+                <p class="impText">CALCUL</p>
+            </div>
+            <br>
+            <div class="element buttonImp" onclick="reset()">
+                <p class="impText">CLEAR</p>
+            </div>
+        </main>
+        <footer>
+            <div id="copyright">© Rekku</div>
+        </footer>
+        <script src="../js/choix.js"></script>
+    </body>
+</html>
