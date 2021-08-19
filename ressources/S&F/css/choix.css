@@ -7,13 +7,22 @@ input{
     color:#BBBBBB
 }
 
+.signe{
+    background-color: #1a4715;
+}
+
 .stat{
     display: flex;
     flex-grow: 1;
+    background-color: #471915;
 }
 
 .statName{
     margin-right: 25px;
+}
+
+.choice{
+    background-color: #471915;
 }
 
 .ligne{
@@ -25,7 +34,6 @@ input{
 .element{
     margin: auto;
     cursor: pointer;
-    background-color: #471915;
     padding: 10px;
     border-radius: 100px;
     border: solid 1px #BBBBBB;

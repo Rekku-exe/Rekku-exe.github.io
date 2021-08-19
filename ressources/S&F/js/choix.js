@@ -1,4 +1,5 @@
 classe = "none";
+tabsigne = [1,1,1,1,1,1,1];
 
 function button(name){
     classe = name;
@@ -14,6 +15,18 @@ function button(name){
         document.getElementById("buttonForce").style.backgroundColor = "#471915";
         document.getElementById("buttonHabilite").style.backgroundColor = "#471915";
         document.getElementById("buttonIntelligence").style.backgroundColor = "#1a4715";
+    }
+}
+
+function signe(val){
+    if(tabsigne[val] == 1){
+        document.getElementById("signe-"+val).style.backgroundColor = "#471915";
+        document.getElementById("signe-"+val).innerHTML = "-";
+        tabsigne[val] = -1;
+    } else {
+        document.getElementById("signe-"+val).style.backgroundColor = "#1a4715";
+        document.getElementById("signe-"+val).innerHTML = "+";
+        tabsigne[val] = 1;
     }
 }
 
@@ -35,25 +48,25 @@ function calcul(){
         alert("Choisi une stat principale");
         return;
     }
-    stat[0] = document.getElementById("stat-0").value * 6;
+    stat[0] = document.getElementById("stat-0").value * 6 * tabsigne[0];
     if(classe == "force"){
-        stat[1] = document.getElementById("stat-1").value * 6;
+        stat[1] = document.getElementById("stat-1").value * 6 * tabsigne[1];
     } else {
-        stat[1] = document.getElementById("stat-1").value * 2;
+        stat[1] = document.getElementById("stat-1").value * 2 * tabsigne[1];
     }
     if(classe == "habilite"){
-        stat[2] = document.getElementById("stat-2").value * 6;
+        stat[2] = document.getElementById("stat-2").value * 6 * tabsigne[2];
     } else {
-        stat[2] = document.getElementById("stat-2").value * 2;
+        stat[2] = document.getElementById("stat-2").value * 2 * tabsigne[2];
     }
     if(classe == "intelligence"){
-        stat[3] = document.getElementById("stat-3").value * 6;
+        stat[3] = document.getElementById("stat-3").value * 6 * tabsigne[3];
     } else {
-        stat[3] = document.getElementById("stat-3").value * 2;
+        stat[3] = document.getElementById("stat-3").value * 2 * tabsigne[3];
     }
-    stat[4] = document.getElementById("stat-4").value * 6;
-    stat[5] = document.getElementById("stat-5").value * 3;
-    stat[6] = document.getElementById("stat-6").value * 3;
+    stat[4] = document.getElementById("stat-4").value * 6 * tabsigne[4];
+    stat[5] = document.getElementById("stat-5").value * 3 * tabsigne[5];
+    stat[6] = document.getElementById("stat-6").value * 3 * tabsigne[6];
 
     result = stat.reduce((a,b) => a+b, 0);
     if(result > 0){
