@@ -21,11 +21,11 @@ function button(name){
 function signe(val){
     if(tabsigne[val] == 1){
         document.getElementById("signe-"+val).style.backgroundColor = "#471915";
-        document.getElementById("signe-"+val).innerHTML = "-";
+        document.getElementById("textSigne-"+val).innerHTML = "-";
         tabsigne[val] = -1;
     } else {
         document.getElementById("signe-"+val).style.backgroundColor = "#1a4715";
-        document.getElementById("signe-"+val).innerHTML = "+";
+        document.getElementById("textSigne-"+val).innerHTML = "+";
         tabsigne[val] = 1;
     }
 }

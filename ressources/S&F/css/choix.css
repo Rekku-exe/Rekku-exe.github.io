@@ -9,12 +9,20 @@ input{
 
 .signe{
     background-color: #1a4715;
+    width: 10px;
+    margin: auto 0;
+}
+.textSigne{
+    text-align: center;
+    margin: auto;
 }
 
 .stat{
     display: flex;
-    flex-grow: 1;
     background-color: #471915;
+    width: 100px;
+    flex-grow: 1;
+    margin: auto 0;
 }
 
 .statName{
@@ -23,16 +31,16 @@ input{
 
 .choice{
     background-color: #471915;
+    margin: auto;
 }
 
 .ligne{
     display: flex;
     flex-direction: row;
-    max-width: 400px;
+    width: 400px;
 }
 
 .element{
-    margin: auto;
     cursor: pointer;
     padding: 10px;
     border-radius: 100px;
