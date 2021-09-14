@@ -90,10 +90,10 @@
     background-color: lightcoral;
 }
 .boxFlag{
-    background-image: url("../img/demineur/flag_icon.PNG");
+    background-image: url("../img/demineur/flag_icon.png");
     background-size: cover;
 }
 .boxBomb{
-    background-image: url("../img/demineur/bomb-1.PNG");
+    background-image: url("../img/demineur/bomb-1.png");
     background-size: cover;
 }
