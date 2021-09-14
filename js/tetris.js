@@ -5,7 +5,8 @@ function init(){
         tab.push([]);
         for(var j = 0; j<10; j++){
             tab[i].push(0);
-            $('#board').append('<div id=\"' + i + '-' + j + '\" class=\"box\"></div>');
+            //$('#board').append('<div id=\"' + i + '-' + j + '\" class=\"box\"></div>');
+            document.getElementById('board').innerHTML += '<div id=\"' + i + '-' + j + '\" class=\"box\"></div>';
         }
     }
     console.log("init done");

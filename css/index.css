@@ -115,6 +115,10 @@ h3 {
 #boxSF {
     background-image: url("../img/index/sf.png");
 }
+#boxDemineur {
+    background-image: url("../img/index/demineur.png");
+    filter: brightness(80%) blur(10px);
+}
 
 
 #texteProvisoire{

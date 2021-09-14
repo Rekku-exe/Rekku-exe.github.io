@@ -41,7 +41,7 @@ body {
 #navigateur {
     display: flex;
     flex-direction: row;
-    width: fit-content;
+    width: max-content;
     margin: auto;
 }
 .buttonNavigateur {

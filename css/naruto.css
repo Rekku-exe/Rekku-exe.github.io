@@ -41,6 +41,7 @@
 
 .sprite {
     position: absolute;
+    image-rendering: crisp-edges;
     image-rendering: pixelated;
     transform: translate(-50%, -100%);
     width: auto;

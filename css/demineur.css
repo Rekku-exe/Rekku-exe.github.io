@@ -1,0 +1,99 @@
+#touche {
+    margin: auto;
+    display: flex;
+}
+
+#version {
+    margin: auto;
+    margin-right: 40px;
+}
+
+#board{
+    height: 810px;
+    width: 80%;
+    min-width: 700px;
+    background-color: #111111;
+    display: flex;
+    margin: auto;
+}
+
+#game{
+    /*height: 400px;
+    width: 400px;
+    background-color: grey;*/
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px black;
+}
+.gameRow{
+    display: flex;
+    flex-direction: row;
+}
+
+#flagButton{
+    background-color: lightgray;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+#innerFlagButton{
+    margin: auto;
+    height: 40px;
+    width: 40px;
+}
+
+#countMine{
+    margin-top: 25px;
+}
+#innerCountMine{
+    font-weight: bold;
+    margin: auto;
+}
+
+.box{
+    border: solid 2px black;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    /*---*/
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.boxLightGray{
+    background-color: lightgray;
+}
+.boxGray{
+    background-color: grey;
+}
+.boxRed{
+    background-color: red;
+}
+.boxOrange{
+    background-color: orange;
+}
+.boxGreen{
+    background-color: green;
+}
+.boxLightRed{
+    background-color: lightcoral;
+}
+.boxFlag{
+    background-image: url("../img/demineur/flag_icon.PNG");
+    background-size: cover;
+}
+.boxBomb{
+    background-image: url("../img/demineur/bomb-1.PNG");
+    background-size: cover;
+}
