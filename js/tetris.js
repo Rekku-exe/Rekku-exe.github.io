@@ -472,7 +472,7 @@ function phoneKey(phoneKey) {
         } else if(phoneKey == "p"){
             pause = true;
             document.getElementById("paused").style.display = "flex";
-            document.getElementById("buttonPause").value = ">";
+            document.getElementById("buttonPause").style.backgroundImage = "url('../img/button/play.png')";
         } else if(phoneKey == "ArrowUp" || phoneKey == "a"){
             rotate("g");
         } else if(phoneKey == "z"){
@@ -487,7 +487,7 @@ function phoneKey(phoneKey) {
             pause = false;
             document.getElementById("paused").style.display = "none";
             tmp = (new Date()).getSeconds();
-            document.getElementById("buttonPause").value = "❚❚";
+            document.getElementById("buttonPause").style.backgroundImage = "url('../img/button/pause.png')";
         }
     }
 }

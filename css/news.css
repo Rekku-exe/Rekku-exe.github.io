@@ -49,6 +49,9 @@ body {
     height: 25px;
     margin: auto 2px;
     border: none;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: #17BA9E;
     cursor: pointer;
     border-radius: 50px;
@@ -74,4 +77,17 @@ body {
 }
 .hidden {
     display: none;
+}
+
+#buttonLeft2 {
+    background-image: url('../img/button/fast-arrow-left.png');
+}
+#buttonLeft1 {
+    background-image: url('../img/button/arrow-left.png');
+}
+#buttonRight1 {
+    background-image: url('../img/button/arrow-right.png');
+}
+#buttonRight2 {
+    background-image: url('../img/button/fast-arrow-right.png');
 }

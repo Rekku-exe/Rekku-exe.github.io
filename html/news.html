@@ -12,11 +12,20 @@
             <a id="linklogo" href="../index.html"><img id="logo" src="../img/D.jpg"></a>
             <p id="titre">Actualité du Site</p>
             <p id="date" title="date de la dernière mise à jour">
-                14/09/2021
+                05/12/2021
             </p>
         </header>
         <main id="mainNews">
             <div id="page-1" class="pages">
+                <div class="uneNews">
+                    <b>05/12/2021</b><br><br>
+                    <u>Tetris  v0.4.9</u><br>
+                    ▫Update du visuel de preview de la prochaine et du stock de pièce<br>
+                    ▫Refonte des visuels des boutons sur mobile<br>
+                    <br>
+                    <u>News</u><br>
+                    ▫Refonte des visuels des boutons de selection de page<br>
+                </div>
                 <div class="uneNews">
                     <b>14/09/2021</b><br>
                     <br>
@@ -33,6 +42,8 @@
                     <u>Outils de calcul Shakes & Fidget</u><br>
                     ▫Correction des bugs de taille des inputs<br>
                 </div>
+            </div>
+            <div id="page-2" class="pages hidden">
                 <div class="uneNews">
                     <b>19/08/2021</b><br><br>
                     Création de la catégorie "Outils" à l'accueil<br>
@@ -40,8 +51,6 @@
                     ▫Aide au choix d'équipement<br>
                     ▫Calcul de la répartition des stats de base<br>
                 </div>
-            </div>
-            <div id="page-2" class="pages hidden">
                 <div class="uneNews">
                     <b>08/07/2021</b><br><br>
                     Sortie dans la partie "Jeux en cours de développement" de <u>La Tour Finale</u><br>
@@ -58,14 +67,14 @@
                     <u>Tetris v0.4.6</u><br>
                     ▫Refonte primaire de l'affichage de la pause<br>
                 </div>
+            </div>
+            <div id="page-3" class="pages hidden">
                 <div class="uneNews">
                     <b>29/06/2021</b><br><br>
                     <u>Tetris v0.4.5</u><br>
                     ▫Les blocs conservent leur couleurs après avoir été posée<br>
                     ▫Changement de temps entre les montés de niveau : <s>1500</s> > 2000
                 </div>
-            </div>
-            <div id="page-3" class="pages hidden">
                 <div class="uneNews">
                     <b>28/06/2021</b><br><br>
                     <u>Tetris v0.4.4</u><br>
@@ -78,24 +87,26 @@
                     ▫Ajout du score<br>
                     ▫Ajout des niveaux de difficultés
                 </div>
+            </div>
+            <div id="page-4" class="pages hidden">
                 <div class="uneNews">
                     <b>23/06/2021</b><br><br>
                     Mise en Place de la page de Patch Notes(ici)<br>
                     Disposition de la catégorie "Autres" et du lien vers la page de Patch Notes
                 </div>
             </div>
-            <div id="page-3" class="pages hidden">
+            <div id="page-5" class="pages hidden">
                 <div class="uneNews">placeholder2</div>
                 <div class="uneNews">placeholder3</div>
                 <div class="uneNews">placeholder4</div>
             </div>
             <div id="basMain">
                 <div id="navigateur">
-                    <input type="button" onclick="changePage('--')" class="buttonNavigateur invisible" value="◄❚" id="buttonLeft2">
-                    <input type="button" onclick="changePage('-')" class="buttonNavigateur invisible" value="◄" id="buttonLeft1">
+                    <input type="button" onclick="changePage('--')" class="buttonNavigateur invisible" id="buttonLeft2">
+                    <input type="button" onclick="changePage('-')" class="buttonNavigateur invisible" id="buttonLeft1">
                     <p id="numeroPage">1</p>
-                    <input type="button" onclick="changePage('+')" class="buttonNavigateur" value="►" id="buttonRight1">
-                    <input type="button" onclick="changePage('++')" class="buttonNavigateur" value="❚►" id="buttonRight2">
+                    <input type="button" onclick="changePage('+')" class="buttonNavigateur" id="buttonRight1">
+                    <input type="button" onclick="changePage('++')" class="buttonNavigateur" id="buttonRight2">
                 </div>
             </div>
         </main>

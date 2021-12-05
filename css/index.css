@@ -117,7 +117,7 @@ h3 {
 }
 #boxDemineur {
     background-image: url("../img/index/demineur.png");
-    filter: brightness(80%) blur(10px);
+    filter: brightness(85%) blur(8px);
 }
 
 
