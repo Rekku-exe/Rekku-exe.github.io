@@ -1,8 +1,3 @@
-#version {
-    margin: auto;
-    margin-right: 40px;
-}
-
 #mainTetris {
     color: #c9c9c9;
     display: flex;
@@ -17,14 +12,6 @@
     border-radius: 5px;
     display: flex;
     box-shadow: 0px 0px 20px #111111;
-}
-
-#touchess {
-    margin: auto;
-    display: flex;
-}
-.touche {
-    margin: 5px;
 }
 
 #box-board {

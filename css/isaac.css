@@ -1,0 +1,56 @@
+main {
+    display: flex;
+}
+
+#theBox {
+    width: 1000px;
+    height: 700px;
+    background-image: url("../img/isaac/basement.png");
+    background-size: 1000px 700px;
+    /*border: solid 20px #18191C;*/
+    margin: auto;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu {
+    margin: auto;
+    margin-top: 20px;
+    font-weight: bold;
+    background-image: url("../img/placeholder.png");
+    background-size: contain;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ---------------------------- */
+/*        GAME ELEMENTS         */
+/* ---------------------------- */
+
+.sprit {
+    position: absolute;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    transform: translate(-50%, -100%);
+    height: auto;
+}
+
+#player {
+    width: 60px;
+}
+
+.tears {
+    width: 50px;
+}
+
+@keyframes hit {
+    0%, 15%, 20%, 30%, 60%, 100% {
+        filter: invert(0);
+    }
+    10%, 25%, 45% {
+        filter: invert(1);
+    }
+}

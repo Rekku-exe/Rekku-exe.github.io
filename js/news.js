@@ -1,18 +1,23 @@
-page = 1;
-maxPage = 4;
+page = 4;
+maxPage = page;
 
 function changePage(dir){
     document.getElementById("page-"+page).style.display = "none";
-    if(dir == "-" && page > 1){
-        page-=1;
-    } else if(dir == "+" && page < maxPage){
-        page+=1;
-    } else if(dir == "++"){
-        page = maxPage;
-    } else if(dir == "--"){
-        page = 1;
+    switch (dir) {
+        case "--":
+            page = maxPage;
+            break;
+        case "-":
+            if(page < maxPage) page++;
+            break;
+        case "+":
+            if(page > 1) page--;
+            break;
+        case "++":
+            page = 1;
+            break;
     }
-    if(page == 1){
+    if(page == maxPage){
         document.getElementById("buttonLeft1").style.opacity = "0%";
         document.getElementById("buttonLeft1").style.cursor = "default";
         document.getElementById("buttonLeft2").style.opacity = "0%";
@@ -23,7 +28,7 @@ function changePage(dir){
         document.getElementById("buttonLeft2").style.opacity = "100%";
         document.getElementById("buttonLeft2").style.cursor = "pointer";
     }
-    if(page == maxPage){
+    if(page == 1){
         document.getElementById("buttonRight1").style.opacity = "0%";
         document.getElementById("buttonRight1").style.cursor = "default";
         document.getElementById("buttonRight2").style.opacity = "0%";
@@ -35,5 +40,5 @@ function changePage(dir){
         document.getElementById("buttonRight2").style.cursor = "pointer";
     }
     document.getElementById("page-"+page).style.display = "flex";
-    document.getElementById("numeroPage").innerHTML = page;
+    document.getElementById("numeroPage").innerHTML = maxPage-page+1;
 }

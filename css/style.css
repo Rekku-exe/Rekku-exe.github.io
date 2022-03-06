@@ -29,6 +29,22 @@ header {
     height: 80px;
 }
 
+#touchess {
+    margin: auto;
+    display: flex;
+}
+#touche {
+    margin: auto;
+    display: flex;
+}
+.touche {
+    margin: 5px;
+}
+#version {
+    margin: auto;
+    margin-right: 40px;
+}
+
 #linklogo {
     margin: auto;
     margin-left: 10px;
