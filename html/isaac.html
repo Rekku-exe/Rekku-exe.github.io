@@ -17,24 +17,33 @@
                 </div>
             </div>
             <p id="version">
-                v0.0.2
+                v0.0.3
             </p>
         </header>
         <main>
             <div class="menu">
                 <h3 class="center">player</h3>
-                <p id="stat-1" class="center">speed</p>
+                <div class="center"><p id="stat-1">speed</p><button onclick="player['speed']++">+</button><button onclick="player['speed']--">-</button></div>
+                <div class="center"><p id="stat-2">tears</p><button onclick="player['tears']++">+</button><button onclick="player['tears']--">-</button></div>
+                <div class="center"><p id="stat-3">damage</p><button onclick="player['damage']++">+</button><button onclick="player['damage']--">-</button></div>
+                <div class="center"><p id="stat-4">range</p><button onclick="player['range']++">+</button><button onclick="player['range']--">-</button></div>
+                <div class="center"><p id="stat-5">shoot speed</p><button onclick="player['shootSpeed']++">+</button><button onclick="player['shootSpeed']--">-</button></div>
+                <!--p id="stat-1" class="center">speed</p>
                 <p id="stat-2" class="center">tears</p>
                 <p id="stat-3" class="center">damage</p>
                 <p id="stat-4" class="center">range</p>
-                <p id="stat-5" class="center">shoot speed</p>
+                <p id="stat-5" class="center">shoot speed</p-->
             </div>
             <div id="theBox">
                 <img id="player" class="sprit" src="../img/isaac/player/isaac-down-0.png">
             </div>
             <div class="menu">
-                <h3 class="center">Menu 2</h3>
-                <p class="center">Statistique 6</p>
+                <h3 class="center">test menu</h3>
+                <p class="center">
+                    <button onclick="sumGlobin(500, 350)">
+                        SUMMON
+                    </button>
+                </p>
                 <p class="center">Statistique 7</p>
                 <p class="center">Statistique 8</p>
                 <p class="center">Statistique 9</p>

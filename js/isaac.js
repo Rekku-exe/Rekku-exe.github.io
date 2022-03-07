@@ -18,6 +18,12 @@ function actuFront() {
         document.getElementById("tear-"+tear["id"]).style.left = tear["x"]+"px";
         document.getElementById("tear-"+tear["id"]).style.zIndex = tear["y"];
     });
+
+    globins.forEach(globin => {
+        document.getElementById("globin-"+globin["id"]).style.top = globin["y"]+"px";
+        document.getElementById("globin-"+globin["id"]).style.left = globin["x"]+"px";
+        document.getElementById("globin-"+globin["id"]).style.zIndex = globin["y"];
+    });
 }
 
 function createTears(direction) {
@@ -27,14 +33,57 @@ function createTears(direction) {
         x: player["x"],
         y: player["y"]-15,
         ttl: player["range"],
+        rayon: 25,
     });
     tear = document.createElement("img");
     tear.src = "../img/isaac/tears/tears-5.png";
     tear.classList = "sprit tears";
-    tear.style.top = player["y"]+"px";
+    tear.style.top = (player["y"]-15)+"px";
     tear.style.left = player["x"]+"px";
     tear.id = "tear-"+nbTears++;
     document.getElementById("theBox").appendChild(tear);
+}
+
+function sumGlobin(xx, yy) {
+    globins.push({
+        id: nbGlobins,
+        x: xx,
+        y: yy,
+        hp: 10,
+        speed: 1,
+        dir: 0,
+        cd: 20,
+        rayon: 30,
+    });
+    globin = document.createElement("img");
+    globin.src = "../img/isaac/globin.png";
+    globin.classList = "sprit globins";
+    globin.style.top = yy+"px";
+    globin.style.left = xx+"px";
+    globin.id = "globin-"+nbGlobins++;
+    document.getElementById("theBox").appendChild(globin);
+}
+
+function killGlobin(globin) {
+    document.getElementById("theBox").removeChild(document.getElementById("globin-"+globin["id"]));
+    globins = globins.filter(g => g["hp"] > 0);
+}
+
+function moveEntity(entity, dirx, diry){
+    entity["x"]+=dirx;
+    entity["y"]+=diry;
+    if(entity["x"]+entity["rayon"] > 1000){
+        entity["x"]=1000-entity["rayon"];
+    }
+    if(entity["x"]-entity["rayon"] < 0){
+        entity["x"]=entity["rayon"];
+    }
+    if(entity["y"] > 700){
+        entity["y"]=700;
+    }
+    if(entity["y"]-entity["rayon"]*2 < 0){
+        entity["y"]=entity["rayon"]*2;
+    }
 }
 
 function actuBack() {
@@ -43,41 +92,25 @@ function actuBack() {
     if(key["ArrowUp"] && !key["ArrowDown"]) {
         player["direction"] = "up";
         player["walk"] = true;
-        if(player["y"] <= 50+player["speed"]){
-            player["y"]=50;
-        } else {
-            player["y"]-=player["speed"];
-        }
+        moveEntity(player, 0, -player["speed"]);
     }
     if(key["ArrowDown"] && !key["ArrowUp"]) {
         player["direction"] = "down";
         player["walk"] = true;
-        if(player["y"] >= 700-player["speed"]){
-            player["y"]=700;
-        } else {
-            player["y"]+=player["speed"];
-        }
+        moveEntity(player, 0, player["speed"]);
     }
     if(key["ArrowLeft"] && !key["ArrowRight"]){
         player["direction"] = "left";
         player["walk"] = true;
-        if(player["x"] <= 25+player["speed"]){
-            player["x"]=25;
-        } else {
-            player["x"]-=player["speed"];
-        }
+        moveEntity(player, -player["speed"], 0);
     }
     if(key["ArrowRight"] && !key["ArrowLeft"]) {
         player["direction"] = "right";
         player["walk"] = true;
-        if(player["x"] >= 975-player["speed"]){
-            player["x"]=975;
-        } else {
-            player["x"]+=player["speed"];
-        }
+        moveEntity(player, player["speed"], 0);
     }
     if(player["walk"]){
-        if(player["frameSpeed"] == 6) {
+        if(player["frameSpeed"] >= 12-player["speed"]*2 || player["speed"] > 7) {
             player["frame"] = (player["frame"]+1)%4;
             player["frameSpeed"] = 0;
         } else {
@@ -109,9 +142,8 @@ function actuBack() {
 
     tears.forEach(tear => {
         tear["ttl"]--;
-        if(tear["ttl"] == 0){
-            document.getElementById("theBox").removeChild(document.getElementById("tear-"+tear["id"]));
-            return;
+        if(tear["x"] < 0 || tear["x"] > 975 || tear["y"] < 25 || tear["y"] > 700){
+            tear["ttl"] = 0;
         }
         switch (tear["dir"]) {
             case "right":
@@ -127,8 +159,61 @@ function actuBack() {
                 tear["y"]-=player["shootSpeed"];
                 break;
         }
+        globins.forEach(globin => {
+            if(tear["x"] > globin["x"]-globin["rayon"]
+                && tear["x"] < globin["x"]+globin["rayon"]
+                && tear["y"] > globin["y"]-globin["rayon"]
+                && tear["y"] < globin["y"]+globin["rayon"]
+            ) {
+                globin["hp"]-=player["damage"];
+                if(globin["hp"] <= 0){
+                    killGlobin(globin);
+                }
+                tear["ttl"]=0;
+            }
+        });
+        if(tear["ttl"] <= 0){
+            document.getElementById("theBox").removeChild(document.getElementById("tear-"+tear["id"]));
+            return;
+        }
     });
-    tears = tears.filter(t => t["ttl"] != 0);
+    tears = tears.filter(t => t["ttl"] > 0);
+
+    //ennemi
+    globins.forEach(globin => {
+        if(globin["dir"] == 2 || globin["dir"] == 3 || globin["dir"] == 4){
+            moveEntity(globin, globin["speed"], 0);
+        }
+        if(globin["dir"] == 4 || globin["dir"] == 5 || globin["dir"] == 6){
+            moveEntity(globin, 0, globin["speed"]);
+        }
+        if(globin["dir"] == 6 || globin["dir"] == 7 || globin["dir"] == 8){
+            moveEntity(globin, -globin["speed"], 0);
+        }
+        if(globin["dir"] == 8 || globin["dir"] == 9 || globin["dir"] == 2){
+            moveEntity(globin, 0, -globin["speed"]);
+        }
+        if(globin["dir"] >= 10){
+            if(globin["x"] > player["x"]){
+                globin["x"]-=globin["speed"];
+            }
+            if(globin["x"] < player["x"]){
+                globin["x"]+=globin["speed"];
+            }
+            if(globin["y"] > player["y"]){
+                globin["y"]-=globin["speed"];
+            }
+            if(globin["y"] < player["y"]){
+                globin["y"]+=globin["speed"];
+            }
+        }
+        if(globin["cd"] == 0){
+            globin["dir"] = Math.floor(Math.random() * 18);
+            globin["cd"] = 20;
+        } else {
+            globin["cd"]--;
+        }
+    });
 }
 
 var key = {};
@@ -141,7 +226,7 @@ player = {
     shootSpeed: 5,
     range: 50,
     tears: 30,
-    damage: 0,
+    damage: 4,
     x: 100,
     y: 100,
     cd: 0,
@@ -149,9 +234,12 @@ player = {
     frame: 0,
     frameSpeed: 0,
     walk: false,
+    rayon: 30,
 }
 tears = [];
 nbTears = 0;
+globins = [];
+nbGlobins = 0;
 
 var MyGame;
 var tNow = window.performance.now();
