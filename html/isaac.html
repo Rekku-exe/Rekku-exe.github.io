@@ -17,17 +17,17 @@
                 </div>
             </div>
             <p id="version">
-                v0.0.3
+                v0.0.4
             </p>
         </header>
         <main>
             <div class="menu">
-                <h3 class="center">player</h3>
-                <div class="center"><p id="stat-1">speed</p><button onclick="player['speed']++">+</button><button onclick="player['speed']--">-</button></div>
-                <div class="center"><p id="stat-2">tears</p><button onclick="player['tears']++">+</button><button onclick="player['tears']--">-</button></div>
-                <div class="center"><p id="stat-3">damage</p><button onclick="player['damage']++">+</button><button onclick="player['damage']--">-</button></div>
-                <div class="center"><p id="stat-4">range</p><button onclick="player['range']++">+</button><button onclick="player['range']--">-</button></div>
-                <div class="center"><p id="stat-5">shoot speed</p><button onclick="player['shootSpeed']++">+</button><button onclick="player['shootSpeed']--">-</button></div>
+                <h3 class="stat">player</h3>
+                <div class="stat">speed:<p id="stat-1"></p><button onclick="player['speed']++">+</button><button onclick="player['speed']--">-</button></div>
+                <div class="stat">tears:<p id="stat-2"></p><button onclick="player['tears']++">+</button><button onclick="player['tears']--">-</button></div>
+                <div class="stat">damage:<p id="stat-3"></p><button onclick="player['damage']++">+</button><button onclick="player['damage']--">-</button></div>
+                <div class="stat">range:<p id="stat-4"></p><button onclick="player['range']++">+</button><button onclick="player['range']--">-</button></div>
+                <div class="stat">shoot speed:<p id="stat-5"></p><button onclick="player['shootSpeed']++">+</button><button onclick="player['shootSpeed']--">-</button></div>
                 <!--p id="stat-1" class="center">speed</p>
                 <p id="stat-2" class="center">tears</p>
                 <p id="stat-3" class="center">damage</p>
@@ -38,16 +38,16 @@
                 <img id="player" class="sprit" src="../img/isaac/player/isaac-down-0.png">
             </div>
             <div class="menu">
-                <h3 class="center">test menu</h3>
-                <p class="center">
-                    <button onclick="sumGlobin(500, 350)">
+                <h3 class="stat">monster</h3>
+                <div class="stat">
+                    <button onclick="sumGlobin(500, 350, document.getElementById('stat-7').innerText, document.getElementById('stat-8').innerText, document.getElementById('stat-9').innerText, document.getElementById('stat-10').innerText)">
                         SUMMON
                     </button>
-                </p>
-                <p class="center">Statistique 7</p>
-                <p class="center">Statistique 8</p>
-                <p class="center">Statistique 9</p>
-                <p class="center">Statistique 10</p>
+                </div>
+                <div class="stat">HP:<p id="stat-7">10</p><button onclick="document.getElementById('stat-7').innerText++">+</button><button onclick="document.getElementById('stat-7').innerText--">-</button></div>
+                <div class="stat">speed:<p id="stat-8">1</p><button onclick="document.getElementById('stat-8').innerText++">+</button><button onclick="document.getElementById('stat-8').innerText--">-</button></div>
+                <div class="stat">stabilité:<p id="stat-9">20</p><button onclick="document.getElementById('stat-9').innerText++">+</button><button onclick="document.getElementById('stat-9').innerText--">-</button></div>
+                <div class="stat">taille:<p id="stat-10">30</p><button onclick="document.getElementById('stat-10').innerText++">+</button><button onclick="document.getElementById('stat-10').innerText--">-</button></div>  
             </div>
         </main>
         <footer>

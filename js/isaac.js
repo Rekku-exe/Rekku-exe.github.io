@@ -7,11 +7,11 @@ function actuFront() {
     document.getElementById("player").style.left = player["x"]+"px";
     document.getElementById("player").src = "../img/isaac/player/isaac-"+player["direction"]+"-"+player["frame"]+".png";
     document.getElementById("player").style.zIndex = player["y"];
-    document.getElementById("stat-1").innerText = "speed:"+player["speed"];
-    document.getElementById("stat-2").innerText = "tears:"+player["tears"];
-    document.getElementById("stat-3").innerText = "damage:"+player["damage"];
-    document.getElementById("stat-4").innerText = "range:"+player["range"];
-    document.getElementById("stat-5").innerText = "shoot speed:"+player["shootSpeed"];
+    document.getElementById("stat-1").innerText = player["speed"];
+    document.getElementById("stat-2").innerText = player["tears"];
+    document.getElementById("stat-3").innerText = player["damage"];
+    document.getElementById("stat-4").innerText = player["range"];
+    document.getElementById("stat-5").innerText = player["shootSpeed"];
 
     tears.forEach(tear => {
         document.getElementById("tear-"+tear["id"]).style.top = tear["y"]+"px";
@@ -44,22 +44,24 @@ function createTears(direction) {
     document.getElementById("theBox").appendChild(tear);
 }
 
-function sumGlobin(xx, yy) {
+function sumGlobin(ax, ay, ahp, aspeed, acd, arayon) {
     globins.push({
         id: nbGlobins,
-        x: xx,
-        y: yy,
-        hp: 10,
-        speed: 1,
+        x: ax,
+        y: ay,
+        hp: parseInt(ahp),// 10
+        speed: parseInt(aspeed),// 1
         dir: 0,
-        cd: 20,
-        rayon: 30,
+        cd: parseInt(acd),// 20
+        maxcd: parseInt(acd),// 20
+        rayon: parseInt(arayon),// 30
     });
     globin = document.createElement("img");
     globin.src = "../img/isaac/enemy/globin.png";
     globin.classList = "sprit globins";
-    globin.style.top = yy+"px";
-    globin.style.left = xx+"px";
+    globin.style.top = ay+"px";
+    globin.style.left = ax+"px";
+    globin.style.width = parseInt(arayon)*2+"px";
     globin.id = "globin-"+nbGlobins++;
     document.getElementById("theBox").appendChild(globin);
 }
@@ -160,11 +162,13 @@ function actuBack() {
                 break;
         }
         globins.forEach(globin => {
+            document.getElementById("globin-"+globin["id"]).style.animation = "none";
             if(tear["x"] > globin["x"]-globin["rayon"]
                 && tear["x"] < globin["x"]+globin["rayon"]
                 && tear["y"] > globin["y"]-globin["rayon"]
                 && tear["y"] < globin["y"]+globin["rayon"]
             ) {
+                document.getElementById("globin-"+globin["id"]).style.animation = "hit 1.2s ease 1";
                 globin["hp"]-=player["damage"];
                 if(globin["hp"] <= 0){
                     killGlobin(globin);
@@ -195,21 +199,21 @@ function actuBack() {
         }
         if(globin["dir"] >= 10){
             if(globin["x"] > player["x"]){
-                globin["x"]-=globin["speed"];
+                moveEntity(globin, -globin["speed"], 0);
             }
             if(globin["x"] < player["x"]){
-                globin["x"]+=globin["speed"];
+                moveEntity(globin, globin["speed"], 0);
             }
             if(globin["y"] > player["y"]){
-                globin["y"]-=globin["speed"];
+                moveEntity(globin, 0, -globin["speed"]);
             }
             if(globin["y"] < player["y"]){
-                globin["y"]+=globin["speed"];
+                moveEntity(globin, 0, globin["speed"]);
             }
         }
         if(globin["cd"] == 0){
             globin["dir"] = Math.floor(Math.random() * 18);
-            globin["cd"] = 20;
+            globin["cd"] = globin["maxcd"];
         } else {
             globin["cd"]--;
         }
