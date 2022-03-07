@@ -56,7 +56,7 @@ function sumGlobin(xx, yy) {
         rayon: 30,
     });
     globin = document.createElement("img");
-    globin.src = "../img/isaac/globin.png";
+    globin.src = "../img/isaac/enemy/globin.png";
     globin.classList = "sprit globins";
     globin.style.top = yy+"px";
     globin.style.left = xx+"px";
