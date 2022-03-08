@@ -9,7 +9,7 @@ function init(){
 function actuFront() {
     document.getElementById("player").style.top = player["y"]+"px";
     document.getElementById("player").style.left = player["x"]+"px";
-    document.getElementById("player").src = "../img/isaac/player/isaac-"+player["direction"]+"-"+player["frame"]+".png";
+    document.getElementById("player").src = "../img/isaac/player/isaac-"+player["dir"]+"-"+player["frame"]+".png";
     document.getElementById("player").style.zIndex = player["y"];
 
     tears.forEach(tear => {
@@ -30,15 +30,18 @@ function createTears(direction) {
         id: nbTears,
         dir: direction,
         x: player["x"],
-        y: player["y"]-15,
+        y: player["y"]-25,
         ttl: player["range"],
-        rayon: 25,
+        rayon: 12,
+        speed: player["shootSpeed"],
+        damage: player["damage"],
     });
     tear = document.createElement("img");
     tear.src = "../img/isaac/tears/tears-5.png";
     tear.classList = "sprit tears";
     tear.style.top = (player["y"]-15)+"px";
     tear.style.left = player["x"]+"px";
+    tear.style.width = parseInt(12)*2+"px";
     tear.id = "tear-"+nbTears++;
     document.getElementById("theBox").appendChild(tear);
 }
@@ -50,7 +53,8 @@ function sumGlobin(ax, ay, ahp, aspeed, acd, arayon) {
         y: ay,
         hp: parseInt(ahp),// 10
         speed: parseInt(aspeed),// 1
-        dir: 0,
+        dir: "down",
+        direc: 0,
         cd: parseInt(acd),// 20
         maxcd: parseInt(acd),// 20
         rayon: parseInt(arayon),// 30
@@ -70,47 +74,51 @@ function killGlobin(globin) {
     globins = globins.filter(g => g["hp"] > 0);
 }
 
-function moveEntity(entity, dirx, diry){
-    entity["x"]+=dirx;
-    entity["y"]+=diry;
+function moveEntity(entity){
+    switch (entity["dir"]) {
+        case "up":
+            entity["y"]-=entity["speed"];
+            break;
+        case "down":
+            entity["y"]+=entity["speed"];
+            break;
+        case "left":
+            entity["x"]-=entity["speed"];
+            break;
+        case "right":
+            entity["x"]+=entity["speed"];
+            break;
+    }
+    if(entity["ttl"])return;
     if(entity["x"]+entity["rayon"] > 1000){
         entity["x"]=1000-entity["rayon"];
-    }
-    if(entity["x"]-entity["rayon"] < 0){
+    } else if(entity["x"]-entity["rayon"] < 0){
         entity["x"]=entity["rayon"];
     }
     if(entity["y"] > 700){
         entity["y"]=700;
-    }
-    if(entity["y"]-entity["rayon"]*2 < 0){
+    } else if(entity["y"]-entity["rayon"]*2 < 0){
         entity["y"]=entity["rayon"]*2;
     }
 }
 
 function actuBack() {
     //déplacement
-    player["walk"] = false;
-    if(key["ArrowUp"] && !key["ArrowDown"]) {
-        player["direction"] = "up";
-        player["walk"] = true;
-        moveEntity(player, 0, -player["speed"]);
+    if(key["ArrowDown"]) {
+        player["dir"] = "down";
+        moveEntity(player);
+    } else if(key["ArrowUp"]) {
+        player["dir"] = "up";
+        moveEntity(player);
     }
-    if(key["ArrowDown"] && !key["ArrowUp"]) {
-        player["direction"] = "down";
-        player["walk"] = true;
-        moveEntity(player, 0, player["speed"]);
+    if(key["ArrowRight"]) {
+        player["dir"] = "right";
+        moveEntity(player);
+    } else if(key["ArrowLeft"]){
+        player["dir"] = "left";
+        moveEntity(player);
     }
-    if(key["ArrowLeft"] && !key["ArrowRight"]){
-        player["direction"] = "left";
-        player["walk"] = true;
-        moveEntity(player, -player["speed"], 0);
-    }
-    if(key["ArrowRight"] && !key["ArrowLeft"]) {
-        player["direction"] = "right";
-        player["walk"] = true;
-        moveEntity(player, player["speed"], 0);
-    }
-    if(player["walk"]){
+    if(key["ArrowDown"] || key["ArrowUp"] || key["ArrowRight"] || key["ArrowLeft"]){
         if(player["frameSpeed"] >= 12-player["speed"]*2 || player["speed"] > 7) {
             player["frame"] = (player["frame"]+1)%4;
             player["frameSpeed"] = 0;
@@ -133,8 +141,8 @@ function actuBack() {
         shoot = "up";
     }
     if(shoot){
-        player["direction"] = shoot;
-        if(player["cd"] == 0){
+        player["dir"] = shoot;
+        if(player["cd"] <= 0){
             createTears(shoot);
             player["cd"] = player["tears"];
         }
@@ -143,32 +151,19 @@ function actuBack() {
 
     tears.forEach(tear => {
         tear["ttl"]--;
-        if(tear["x"] < 0 || tear["x"] > 975 || tear["y"] < 25 || tear["y"] > 700){
+        moveEntity(tear);
+        if(tear["x"]+tear["rayon"] < 0 || tear["x"]-tear["rayon"] > 1000 || tear["y"] < 0 || tear["y"]-tear["rayon"]*2 > 700){
             tear["ttl"] = 0;
-        }
-        switch (tear["dir"]) {
-            case "right":
-                tear["x"]+=player["shootSpeed"];
-                break;
-            case "down":
-                tear["y"]+=player["shootSpeed"];
-                break;
-            case "left":
-                tear["x"]-=player["shootSpeed"];
-                break;
-            case "up":
-                tear["y"]-=player["shootSpeed"];
-                break;
         }
         globins.forEach(globin => {
             document.getElementById("globin-"+globin["id"]).style.animation = "none";
-            if(tear["x"] > globin["x"]-globin["rayon"]
-                && tear["x"] < globin["x"]+globin["rayon"]
-                && tear["y"] > globin["y"]-globin["rayon"]
-                && tear["y"] < globin["y"]+globin["rayon"]
+            if(tear["x"]+tear["rayon"] > globin["x"]-globin["rayon"]
+                && tear["x"]-tear["rayon"] < globin["x"]+globin["rayon"]
+                && tear["y"] > globin["y"]-globin["rayon"]*2
+                && tear["y"]-tear["rayon"]*2 < globin["y"]
             ) {
                 document.getElementById("globin-"+globin["id"]).style.animation = "hit 1.2s ease 1";
-                globin["hp"]-=player["damage"];
+                globin["hp"]-=tear["damage"];
                 if(globin["hp"] <= 0){
                     killGlobin(globin);
                 }
@@ -184,34 +179,38 @@ function actuBack() {
 
     //ennemi
     globins.forEach(globin => {
-        if(globin["dir"] == 2 || globin["dir"] == 3 || globin["dir"] == 4){
-            moveEntity(globin, globin["speed"], 0);
+        if(globin["direc"] == 2 || globin["direc"] == 3 || globin["direc"] == 4){
+            globin["dir"] = "up";
+            moveEntity(globin);
         }
-        if(globin["dir"] == 4 || globin["dir"] == 5 || globin["dir"] == 6){
-            moveEntity(globin, 0, globin["speed"]);
+        if(globin["direc"] == 4 || globin["direc"] == 5 || globin["direc"] == 6){
+            globin["dir"] = "right";
+            moveEntity(globin);
         }
-        if(globin["dir"] == 6 || globin["dir"] == 7 || globin["dir"] == 8){
-            moveEntity(globin, -globin["speed"], 0);
+        if(globin["direc"] == 6 || globin["direc"] == 7 || globin["direc"] == 8){
+            globin["dir"] = "down";
+            moveEntity(globin);
         }
-        if(globin["dir"] == 8 || globin["dir"] == 9 || globin["dir"] == 2){
-            moveEntity(globin, 0, -globin["speed"]);
-        }
-        if(globin["dir"] >= 10){
+        if(globin["direc"] == 8 || globin["direc"] == 9 || globin["direc"] == 2){
+            globin["dir"] = "left";
+            moveEntity(globin);
+        } else if(globin["direc"] >= 10){
             if(globin["x"] > player["x"]){
-                moveEntity(globin, -globin["speed"], 0);
+                globin["dir"] = "left";
+            } else if(globin["x"] < player["x"]){
+                globin["dir"] = "right";
             }
-            if(globin["x"] < player["x"]){
-                moveEntity(globin, globin["speed"], 0);
-            }
+            moveEntity(globin);
             if(globin["y"] > player["y"]){
-                moveEntity(globin, 0, -globin["speed"]);
+                globin["dir"] = "up";
+            } else if(globin["y"] < player["y"]){
+                globin["dir"] = "down";
             }
-            if(globin["y"] < player["y"]){
-                moveEntity(globin, 0, globin["speed"]);
-            }
+            moveEntity(globin);
         }
         if(globin["cd"] == 0){
-            globin["dir"] = Math.floor(Math.random() * 18);
+            globin["direc"] = Math.floor(Math.random() * 18);
+            globin["direc"] = 1;
             globin["cd"] = globin["maxcd"];
         } else {
             globin["cd"]--;
@@ -233,7 +232,7 @@ player = {
     x: 100,
     y: 100,
     cd: 0,
-    direction: "down",
+    dir: "down",
     frame: 0,
     frameSpeed: 0,
     walk: false,
