@@ -210,7 +210,6 @@ function actuBack() {
         }
         if(globin["cd"] == 0){
             globin["direc"] = Math.floor(Math.random() * 18);
-            globin["direc"] = 1;
             globin["cd"] = globin["maxcd"];
         } else {
             globin["cd"]--;
