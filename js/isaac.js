@@ -1,5 +1,9 @@
 function init(){
-
+    document.getElementById("stat-1").value = player["speed"];
+    document.getElementById("stat-2").value = player["tears"];
+    document.getElementById("stat-3").value = player["damage"];
+    document.getElementById("stat-4").value = player["range"];
+    document.getElementById("stat-5").value = player["shootSpeed"];
 }
 
 function actuFront() {
@@ -7,11 +11,6 @@ function actuFront() {
     document.getElementById("player").style.left = player["x"]+"px";
     document.getElementById("player").src = "../img/isaac/player/isaac-"+player["direction"]+"-"+player["frame"]+".png";
     document.getElementById("player").style.zIndex = player["y"];
-    document.getElementById("stat-1").innerText = player["speed"];
-    document.getElementById("stat-2").innerText = player["tears"];
-    document.getElementById("stat-3").innerText = player["damage"];
-    document.getElementById("stat-4").innerText = player["range"];
-    document.getElementById("stat-5").innerText = player["shootSpeed"];
 
     tears.forEach(tear => {
         document.getElementById("tear-"+tear["id"]).style.top = tear["y"]+"px";

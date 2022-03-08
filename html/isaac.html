@@ -23,16 +23,11 @@
         <main>
             <div class="menu">
                 <h3 class="stat">player</h3>
-                <div class="stat">speed:<p id="stat-1"></p><button onclick="player['speed']++">+</button><button onclick="player['speed']--">-</button></div>
-                <div class="stat">tears:<p id="stat-2"></p><button onclick="player['tears']++">+</button><button onclick="player['tears']--">-</button></div>
-                <div class="stat">damage:<p id="stat-3"></p><button onclick="player['damage']++">+</button><button onclick="player['damage']--">-</button></div>
-                <div class="stat">range:<p id="stat-4"></p><button onclick="player['range']++">+</button><button onclick="player['range']--">-</button></div>
-                <div class="stat">shoot speed:<p id="stat-5"></p><button onclick="player['shootSpeed']++">+</button><button onclick="player['shootSpeed']--">-</button></div>
-                <!--p id="stat-1" class="center">speed</p>
-                <p id="stat-2" class="center">tears</p>
-                <p id="stat-3" class="center">damage</p>
-                <p id="stat-4" class="center">range</p>
-                <p id="stat-5" class="center">shoot speed</p-->
+                <div class="stat">speed:<input type="number" id="stat-1" onchange="player['speed']=parseInt(this.value)"></input></div>
+                <div class="stat">tears:<input type="number" id="stat-2" onchange="player['tears']=parseInt(this.value)"></input></div>
+                <div class="stat">damage:<input type="number" id="stat-3" onchange="player['damage']=parseInt(this.value)"></input></div>
+                <div class="stat">range:<input type="number" id="stat-4" onchange="player['range']=parseInt(this.value)"></input></div>
+                <div class="stat">shoot speed:<input type="number" id="stat-5" onchange="player['shootSpeed']=parseInt(this.value)"></input></div>
             </div>
             <div id="theBox">
                 <img id="player" class="sprit" src="../img/isaac/player/isaac-down-0.png">
@@ -40,14 +35,14 @@
             <div class="menu">
                 <h3 class="stat">monster</h3>
                 <div class="stat">
-                    <button onclick="sumGlobin(500, 350, document.getElementById('stat-7').innerText, document.getElementById('stat-8').innerText, document.getElementById('stat-9').innerText, document.getElementById('stat-10').innerText)">
+                    <button onclick="sumGlobin(500, 350, document.getElementById('stat-7').value, document.getElementById('stat-8').value, document.getElementById('stat-9').value, document.getElementById('stat-10').value)">
                         SUMMON
                     </button>
                 </div>
-                <div class="stat">HP:<p id="stat-7">10</p><button onclick="document.getElementById('stat-7').innerText++">+</button><button onclick="document.getElementById('stat-7').innerText--">-</button></div>
-                <div class="stat">speed:<p id="stat-8">1</p><button onclick="document.getElementById('stat-8').innerText++">+</button><button onclick="document.getElementById('stat-8').innerText--">-</button></div>
-                <div class="stat">stabilité:<p id="stat-9">20</p><button onclick="document.getElementById('stat-9').innerText++">+</button><button onclick="document.getElementById('stat-9').innerText--">-</button></div>
-                <div class="stat">taille:<p id="stat-10">30</p><button onclick="document.getElementById('stat-10').innerText++">+</button><button onclick="document.getElementById('stat-10').innerText--">-</button></div>  
+                <div class="stat">HP:<input type="number" id="stat-7" value=10></input></div>
+                <div class="stat">speed:<input type="number" id="stat-8" value=1></input></div>
+                <div class="stat">stabilité:<input type="number" id="stat-9" value=20></input></div>
+                <div class="stat">taille:<input type="number" id="stat-10" value=30></input></div>  
             </div>
         </main>
         <footer>
