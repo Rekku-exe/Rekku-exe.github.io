@@ -11,9 +11,9 @@
 #board {
     display: flex;
     flex-wrap: wrap;
-    width: 360px;
-    min-width: 360px;
-    height: 360px;
+    width: 432px;
+    min-width: 432px;
+    height: 432px;
     margin: auto;
 }
 
