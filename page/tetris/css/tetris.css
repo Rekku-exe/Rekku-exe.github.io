@@ -1,0 +1,165 @@
+#mainTetris {
+    color: #c9c9c9;
+    display: flex;
+    flex-direction: column;
+}
+
+#leJeu {
+    height: 800px;
+    width: 900px;
+    background-color: #c9c9c9;
+    margin: auto;
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 0px 0px 20px #111111;
+}
+
+#box-board {
+    display: block;
+}
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 300px;
+    height: 750px;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+.box {
+    width: 28px;
+    height: 28px;
+    border: solid 1px black;
+    border-radius: 2px;
+    background-color: #DDDDDD;
+}
+
+#suivant, #stockage {
+    border: solid 3px black;
+    border-radius: 5px;
+    width: 140px;
+    height: 200px;
+    margin: 30px;
+    color : black;
+    display: flex;
+    flex-direction: column;
+}
+#imgSuivant, #txtSuivant, #txtStockage, #imgStockage{
+    margin: auto;
+    font-weight: bolder;
+}
+#paused {
+    border: solid 3px black;
+    display: flex;
+    flex-direction: column;
+    background-color: #C9C9C9;
+    position: fixed;
+    border-radius: 20px;
+    width: 800px;
+    height: 600px;
+    left:50%;
+    top:500px;
+    margin-top:-300px;
+    margin-left:-400px;
+    display: none;
+}
+.txtPaused {
+    margin: auto;
+}
+
+.semiBox {
+    background-color: #AAAAAA;
+}
+.cyanBox {
+    background-image: url("../img/bloc_cyan.png");
+}
+.blueBox {
+    background-image: url("../img/bloc_bleu.png");
+}
+.orangeBox {
+    background-image: url("../img/bloc_orange.png");
+}
+.yellowBox {
+    background-image: url("../img/bloc_jaune.png");
+}
+.greenBox {
+    background-image: url("../img/bloc_vert.png");
+}
+.purpleBox {
+    background-image: url("../img/bloc_violet.png");
+}
+.redBox {
+    background-image: url("../img/bloc_rouge.png");
+}
+.putBox {
+    filter: brightness(75%);
+}
+
+#box-beta {
+    margin: auto;
+    margin-top: 20px;
+    width: 350px;
+}
+.text-test {
+    color: black;
+    margin-bottom: 2px;
+}
+#tetromino {
+    border: solid 1px black;
+    border-radius: 4px;
+    width: 340px;
+}
+
+.phoneZone {
+    display: none;
+    margin: auto;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: -60px;
+}
+.phoneKey {
+    height: 150px;
+    width: 300px;
+    border: none;
+    border-radius: 40px;
+    font-size: 100px;
+    margin: 5px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#arrowLeft {
+    background-image: url('../../../common/img/button/arrow-left.png');
+}
+#arrowUp {
+    background-image: url('../../../common/img/button/arrow-up.png');
+}
+#arrowDown {
+    background-image: url('../../../common/img/button/arrow-down.png');
+}
+#arrowRight {
+    background-image: url('../../../common/img/button/arrow-right.png');
+}
+#buttonPause {
+    background-image: url('../../../common/img/button/pause.png');
+}
+
+.colo3{
+    font-size: 100px;
+    font-weight: bolder;
+    color: #be1515;
+    text-shadow: 2px 0 0 #111111, 2px 2px 0 #111111, 0 2px 0 #111111, -2px 2px 0 #111111, -2px 0 0 #111111, -2px -2px 0 #111111, 0 -2px 0 #111111, 2px -2px 0 #111111;
+}
+#score {
+    margin-top: 75px;
+}
+
+@media only screen and (max-device-width: 768px) {
+    .phoneZone {
+        display: flex;
+    }
+    #touchess {
+        display: none;
+    }
+}

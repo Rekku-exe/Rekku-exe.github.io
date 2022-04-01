@@ -1,0 +1,96 @@
+#version {
+    margin: auto;
+    margin-right: 40px;
+}
+
+#mainTF {
+    background-color: black;
+    display: flex;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 432px;
+    min-width: 432px;
+    height: 432px;
+    margin: auto;
+}
+
+#joueur {
+    text-align: center;
+    margin: auto;
+    font-size: 70px;
+}
+
+#buttonRules {
+    cursor: pointer;
+    background-color: lightgrey;
+    height: 70px;
+    width: 125px;
+    min-width: 125px;
+    border-radius: 200px;
+    display: flex;
+}
+#innerButtonRules{
+    margin: auto;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+}
+
+#rules {
+    border: solid 3px black;
+    display: flex;
+    flex-direction: column;
+    background-color: #a0a0a0;
+    position: fixed;
+    border-radius: 20px;
+    width: 800px;
+    height: 300px;
+    left:50%;
+    top:500px;
+    margin-top:-300px;
+    margin-left:-400px;
+    display: none;
+}
+#innerRules{
+    margin: auto;
+    text-align: left;
+    color: black;
+    font-size: 20px;
+}
+
+
+.box {
+    width: 70px;
+    height: 70px;
+    border: solid 1px white;
+    filter: brightness(70%);
+    display: flex;
+}
+.innerBox{
+    margin: auto;
+    color : black;
+    text-align: center;
+    user-select: none;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.boxB {
+    filter: brightness(100%);
+    cursor: pointer;
+}
+
+.boxJ0{
+    background-color: green;
+}
+
+.boxJ1{
+    background-color: red;
+}
+
+.boxJ2{
+    background-color: blue;
+}

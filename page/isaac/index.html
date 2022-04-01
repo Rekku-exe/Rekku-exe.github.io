@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rekku.exe - Isaac</title>
+        <link rel="icon" href="../../common/img/icon/build_x1.png"/>
+        <link rel="stylesheet" type="text/css" href="../../common/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/isaac.css"/>
+        <audio id="music" loop autoplay>
+            <source src="./music/diptera sonata(basement).ogg">
+        </audio>
+    </head>
+    <body>
+        <header>
+            <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
+            <div id="touchess">
+                <div class="touches">
+                    <p class="touche">Z Q S D = tirer</p>
+                    <p class="touche">UP LEFT DOWN RIGHT = déplacement</p>
+                </div>
+            </div>
+            <p id="version">
+                v0.0.5
+            </p>
+        </header>
+        <main>
+            <div class="menu">
+                <h3 class="stat">player</h3>
+                <div class="stat">speed:<input type="number" id="stat-1" onchange="player['speed']=parseInt(this.value)"></input></div>
+                <div class="stat">tears:<input type="number" id="stat-2" onchange="player['tears']=parseInt(this.value)"></input></div>
+                <div class="stat">damage:<input type="number" id="stat-3" onchange="player['damage']=parseInt(this.value)"></input></div>
+                <div class="stat">range:<input type="number" id="stat-4" onchange="player['range']=parseInt(this.value)"></input></div>
+                <div class="stat">shoot speed:<input type="number" id="stat-5" onchange="player['shootSpeed']=parseInt(this.value)"></input></div>
+                <br/>
+                <h3 class="stat">music</h3>
+                <img id="imgMusic" src="../../common/img/icon/play_x2.png" onclick="playpause()" style="margin: auto;"/>
+                <input type="range" onchange="document.getElementById('music').volume=this.value/100" value="10"></input>
+            </div>
+            <div id="theBox">
+                <img id="player" class="sprit" src="../img/isaac/player/isaac-down-0.png">
+            </div>
+            <div class="menu">
+                <h3 class="stat">monster</h3>
+                <div class="stat">
+                    <button onclick="sumGlobin(500, 350, document.getElementById('stat-7').value, document.getElementById('stat-8').value, document.getElementById('stat-9').value, document.getElementById('stat-10').value)">
+                        SUMMON
+                    </button>
+                </div>
+                <div class="stat">HP:<input type="number" id="stat-7" value=10></input></div>
+                <div class="stat">speed:<input type="number" id="stat-8" value=1></input></div>
+                <div class="stat">stabilité:<input type="number" id="stat-9" value=20></input></div>
+                <div class="stat">taille:<input type="number" id="stat-10" value=30></input></div>  
+            </div>
+        </main>
+        <footer>
+            <p id="copyright">© Rekku</p>
+        </footer>
+        <script src="./js/isaac.js"></script>
+        <script>
+            pp=true;
+            document.getElementById("music").volume=0.1;
+            function playpause(){
+                if(pp){
+                    pp=false;
+                    document.getElementById("music").play();
+                    document.getElementById("imgMusic").src = "../../common/img/icon/pause_x2.png"
+                } else {
+                    pp=true;
+                    document.getElementById("music").pause();
+                    document.getElementById("imgMusic").src = "../../common/img/icon/play_x2.png"
+                }
+            }
+        </script>
+    </body>
+</html>

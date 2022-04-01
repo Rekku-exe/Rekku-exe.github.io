@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rekku.exe - Naruto Run</title>
+        <link rel="icon" href="../../common/img/icon/run_x1.png"/>
+        <link rel="stylesheet" type="text/css" href="../../common/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/naruto.css"/>
+    </head>
+    <body>
+        <header>
+            <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
+            <div id="touche">
+                SPACE/UP pour sauter
+            </div>
+            <p id="version">
+                v0.1.1
+            </p>
+        </header>
+        <main id="mainNaruto">
+            <div id="leJeu">
+                <img id="player" class="sprite" src="./img/naruto-run-0.png">
+                <img id="ground" class="sprite" src="./img/ground.png">
+            </div>
+            <div class="phoneZone">
+                <input type="button" onclick='jump()' class="phoneKey" value="▲">
+            </div>
+        </main>
+        <footer>
+            <p id="copyright">© Rekku</p>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="./js/naruto.js"></script>
+    </body>
+</html>

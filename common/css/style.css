@@ -1,0 +1,86 @@
+body {
+    overflow-x: hidden;
+    /*background-color:  #2f3136; v1*/
+    background-color: #191F26;
+    color:  #F5F6F0;
+    font-family: sans-serif;
+    margin-right: 10px;
+
+}
+textarea:focus, input:focus, button:focus {
+    outline: none;
+}
+
+a,a:visited {
+    color: #17BA9E;
+    text-decoration: none;
+}
+a:hover {
+    color: #019191;
+    text-decoration: underline;
+}
+
+header {
+    /*background-color: #202225; v1*/
+    background-color: #0D1014;
+    margin: -10px;
+    margin-bottom: 10px;
+    display: flex;
+    height: 80px;
+}
+
+#touchess {
+    margin: auto;
+    display: flex;
+}
+#touche {
+    margin: auto;
+    display: flex;
+}
+.touche {
+    margin: 5px;
+}
+#version {
+    margin: auto;
+    margin-right: 40px;
+}
+
+#linklogo {
+    margin: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#logo {
+    height: 60px;
+    width: auto;
+    border: solid 1px black;
+    border-radius: 20px;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    width: 99%;
+    bottom: 10px;
+
+}
+#copyright {
+    opacity: 0.5;
+    margin: auto;
+    font-weight: bolder;
+}
+
+/* ---------------------------------------------- */
+/*                  SCROLLBAR                     */ 
+/* ---------------------------------------------- */ 
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track { background: var(--dark); }
+
+/* Handle */
+::-webkit-scrollbar-thumb { background: #888; border-radius: 1rem;}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover { background: #555; }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rekku.exe - La Tour Final</title>
+        <link rel="icon" href="../../common/img/icon/home_x1.png"/>
+        <link rel="stylesheet" type="text/css" href="../../common/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/tour_finale.css"/>
+    </head>
+    <body>
+        <header>
+            <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
+            <p id="version">
+                v0.1.1
+            </p>
+        </header>
+        <main id="mainTF">
+            <div id="board"></div>
+            <p id="joueur">Joueur:<br>1</p>
+            <div id="buttonRules" onclick="printRules()"><div id="innerButtonRules">Voir les Règles</div></div>
+            <div id="rules">
+                <div id="innerRules">
+                    Les pièces peuvent se déplacer dans des directions en fonction de leur niveau :<br>
+                    - niveau 1 : devant<br>
+                    - niveau 2 : précédent + diagonales devant<br>
+                    - niveau 3 : précédent + à droite et à gauche<br>
+                    - niveau 4 et + : dans toute les directions<br>
+                    <br>
+                    Quand une pièce en mange une autre, elle gagne les niveaux de la pièce mangé.
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p id="copyright">© Rekku</p>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="./js/tour_finale.js"></script>
+    </body>
+</html>
