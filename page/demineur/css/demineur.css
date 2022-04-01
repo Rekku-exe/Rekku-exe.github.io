@@ -61,6 +61,19 @@
     user-select: none;
 }
 
+.value1{
+    color: darkblue;
+}
+.value2{
+    color: darkgreen;
+}
+.value3{
+    color: darkred;
+}
+.value4{
+    color: purple;
+}
+
 .boxLightGray{
     background-color: lightgray;
 }

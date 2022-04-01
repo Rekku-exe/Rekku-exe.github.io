@@ -108,6 +108,7 @@ function clique(x, y){
             document.getElementById(x+"-"+y).classList = "box boxGray";
             if(count != 0){
                 document.getElementById(x+"-"+y).innerHTML = count;
+                document.getElementById(x+"-"+y).classList.add("value"+count);
             } else {
                 setTimeout(() => {
                     if(y != 0 && x != 0 && !vu[y-1][x-1])clique(x-1,y-1);
