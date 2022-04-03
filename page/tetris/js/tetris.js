@@ -100,9 +100,9 @@ function rollForme(){
     forme = nextForme;
     nextForme = listForme[Math.floor(Math.random() * 7)][0];
     if(nextForme != "l1"){
-        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"./img/" + nextForme + ".png\">";
+        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"./img/" + nextForme + ".PNG\">";
     } else {
-        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"./img/LL1.png\">";
+        document.getElementById("imgSuivant").innerHTML = "<img id=\"imageSuivant\" src=\"./img/LL1.PNG\">";
     }
 }
 
@@ -453,9 +453,9 @@ function stocker(){
         posY = 1;
     }
     if(stock != "l1"){
-        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"./img/" + stock + ".png\">";
+        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"./img/" + stock + ".PNG\">";
     } else {
-        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"./img/LL1.png\">";
+        document.getElementById("imgStockage").innerHTML = "<img id=\"imageStockage\" src=\"./img/LL1.PNG\">";
     }
     haveStock = true;
 }
