@@ -33,8 +33,8 @@
                 <div class="stat">shoot speed:<input type="number" id="stat-5" onchange="player['shootSpeed']=parseInt(this.value)"></input></div>
                 <br/>
                 <h3 class="stat">music</h3>
-                <img id="imgMusic" src="../../common/img/icon/play_x2.png" onclick="playpause()" style="margin: auto;"/>
-                <input type="range" onchange="document.getElementById('music').volume=this.value/100" value="10"></input>
+                <img id="imgMusic" src="../../common/img/icon/play_x2.png" onclick="mute()" style="margin: auto;"/>
+                <input id="inputMusic" type="range" onchange="changeVolume(this.value)" value="10"></input>
             </div>
             <div id="theBox">
                 <img id="player" class="sprit" src="../img/isaac/player/isaac-down-0.png">
@@ -57,17 +57,25 @@
         </footer>
         <script src="./js/isaac.js"></script>
         <script>
-            pp=true;
             document.getElementById("music").volume=0.1;
-            function playpause(){
-                if(pp){
-                    pp=false;
+            function changeVolume(value){
+                document.getElementById("music").play();
+                document.getElementById("music").volume = value/100;
+                document.getElementById("imgMusic").src = "../../common/img/icon/pause_x2.png";
+                muted = false;
+            }
+            muted = true;
+            function mute(){
+                if(muted){
+                    muted = false;
+                    document.getElementById("imgMusic").src = "../../common/img/icon/pause_x2.png";
+                    document.getElementById("inputMusic").value = document.getElementById("music").volume*100;
                     document.getElementById("music").play();
-                    document.getElementById("imgMusic").src = "../../common/img/icon/pause_x2.png"
                 } else {
-                    pp=true;
+                    muted = true;
+                    document.getElementById("imgMusic").src = "../../common/img/icon/play_x2.png";
+                    document.getElementById("inputMusic").value = 0;
                     document.getElementById("music").pause();
-                    document.getElementById("imgMusic").src = "../../common/img/icon/play_x2.png"
                 }
             }
         </script>
