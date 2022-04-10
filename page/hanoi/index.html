@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rekku.exe</title>
+        <link rel="icon" href="../../common/img/icon/home_x1.png"/>
+        <link rel="stylesheet" type="text/css" href="../../common/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/hanoi.css"/>
+    </head>
+    <body>
+        <header>
+            <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
+            <p id="version">
+                v0.1.0
+            </p>
+        </header>
+        <main id="main">
+            <div id="stand" class="blackborder"></div>
+            <div id="terrain" class="blackborder">
+                <div id="tour-0" class="tour blackborder" onclick="clique(0)">
+                    <div class="pilier blackborder"></div>
+                    <div id="piece-1" class="piece blackborder">1</div>
+                    <div id="piece-2" class="piece blackborder">2</div>
+                    <div id="piece-3" class="piece blackborder">3</div>
+                    <div id="piece-4" class="piece blackborder">4</div>
+                    <div id="piece-5" class="piece blackborder">5</div>
+                    <div id="piece-6" class="piece blackborder">6</div>
+                    <div id="piece-7" class="piece blackborder">7</div>
+                    <div id="piece-8" class="piece blackborder">8</div>
+                </div>
+                <div id="tour-1" class="tour blackborder" onclick="clique(1)">
+                    <div class="pilier blackborder"></div>
+                </div>
+                <div id="tour-2" class="tour blackborder" onclick="clique(2)">
+                    <div class="pilier blackborder"></div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p id="copyright">© Rekku</p>
+        </footer>
+        <script src="./js/hanoi.js"></script>
+    </body>
+</html>

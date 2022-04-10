@@ -1,4 +1,4 @@
-page = 5;
+page = 6;
 maxPage = page;
 
 function changePage(dir){

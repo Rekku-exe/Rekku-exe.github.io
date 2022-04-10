@@ -1,0 +1,67 @@
+#main{
+    width: 95vw;
+    height: 500px;
+    background-color: #a7a7a7;
+    margin: 0 auto;
+}
+
+#stand{
+    display: flex;
+    height: 80px;
+}
+
+.piece{
+    height: 30px;
+    z-index: 10;
+    position: absolute;
+    color: white;
+    background-color: darkblue;
+}
+#piece-1{
+    width: 35px;
+}
+#piece-2{
+    width: 50px;
+}
+#piece-3{
+    width: 65px;
+}
+#piece-4{
+    width: 80px;
+}
+#piece-5{
+    width: 95px;
+}
+#piece-6{
+    width: 110px;
+}
+#piece-7{
+    width: 125px;
+}
+#piece-8{
+    width: 140px;
+}
+
+.blackborder{
+    border: 1px solid black;
+}
+
+#terrain{
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+}
+.tour{
+    display: flex;
+    flex-direction: column;
+    width: 34%;
+    align-items: center;
+    position: relative;
+}
+.pilier{
+    position: absolute;
+    top: 85px;
+    height: 250px;
+    width: 25px;
+    background-color: brown;
+}

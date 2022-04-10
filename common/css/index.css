@@ -119,6 +119,9 @@ h3 {
     background-image: url("../img/index/demineur.png");
     filter: brightness(85%) blur(8px);
 }
+#boxHanoi {
+    background-image: url("../img/index/tour.jpg");
+}
 
 
 #texteProvisoire{
