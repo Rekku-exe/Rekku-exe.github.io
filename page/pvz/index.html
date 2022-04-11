@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rekku.exe - Plants VS Zombies</title>
+        <link rel="icon" href="../../common/img/icon/home_x1.png"/>
+        <link rel="stylesheet" type="text/css" href="../../common/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/pvz.css"/>
+    </head>
+    <body>
+        <header>
+            <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
+            <p id="version">
+                v0.0.1
+            </p>
+        </header>
+        <main id="main">
+            <div id="shop">
+                <h1 id="money">1000</h1>
+                <div id="shop-tournesol" class="aplant" onclick="choose('tournesol')">
+                    <img class="shopplantimg" src="./img/tournesol.png"/>
+                    <h3 class="shopplantprice">50</h3>
+                </div>
+                <div id="shop-pisto-pois" class="aplant" onclick="choose('pisto-pois')">
+                    <img class="shopplantimg" src="./img/pisto-pois.png"/>
+                    <h3 class="shopplantprice">100</h3>
+                </div>
+            </div>
+            <div id="terrain"></div>
+        </main>
+        <footer>
+            <p id="copyright">© Rekku</p>
+        </footer>
+        <script src="./js/pvz.js"></script>
+    </body>
+</html>

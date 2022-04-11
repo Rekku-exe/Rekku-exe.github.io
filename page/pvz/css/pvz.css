@@ -1,0 +1,52 @@
+#terrain{
+    width: 900px;
+    height: 500px;
+    background-color: #a7a7a7;
+    margin: 0 auto;
+    margin-left: 0;
+}
+
+#main{
+    display: flex;
+    flex-direction: row;
+}
+
+#money{
+    margin: 0 auto;
+    text-align: center;
+}
+#shop{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+.aplant{
+    display: flex;
+    flex-direction: row;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.shopplantimg{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+.shopplantprice{
+    margin: auto;
+    text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.grass{
+    cursor: pointer;
+    width: 98px;
+    height: 98px;
+    border: 1px solid #000000;
+    background-color: #44bb44;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

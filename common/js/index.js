@@ -1,6 +1,3 @@
-document.getElementsByClassName(".slider").style.transition = 0.4;
-
-
 var actived = true;
 
 function fond(){
