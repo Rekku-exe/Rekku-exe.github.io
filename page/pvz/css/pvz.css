@@ -1,9 +1,13 @@
 #terrain{
-    width: 900px;
-    height: 500px;
+    width: 792px;
+    min-width: 792px;
+    height: 515px;
     background-color: #a7a7a7;
     margin: 0 auto;
     margin-left: 0;
+    background-image: url('../img/garden.png');
+    background-size: cover;
+    z-index: 1;
 }
 
 #main{
@@ -43,10 +47,27 @@
 }
 .grass{
     cursor: pointer;
-    width: 98px;
-    height: 98px;
-    border: 1px solid #000000;
-    background-color: #44bb44;
+    width: 88px;
+    height: 103px;
+    /*border: 1px solid #000000;*/
     background-size: contain;
     background-repeat: no-repeat;
+}
+.sun{
+    width: 40px;
+    height: 40px;
+}
+
+#horde{
+    position: fixed;
+    width: 1005px;
+    min-width: 792px;
+    height: 515px;
+    z-index: -1;
+}
+.zombie{
+    position: absolute;
+    height: 120px;
+    width: auto;
+    z-index: 2;
 }
