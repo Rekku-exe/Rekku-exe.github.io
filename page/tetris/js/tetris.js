@@ -9,6 +9,11 @@ function init(){
             document.getElementById('board').innerHTML += '<div id=\"' + i + '-' + j + '\" class=\"box\"></div>';
         }
     }
+    let hs = localStorage.getItem('highscore-tetris');
+    if(hs != null){
+        document.getElementById('highscore').innerHTML = hs;
+        document.getElementById('highscorePaused').innerHTML = "HIGHSCORE: "+hs;
+    }
     console.log("init done");
 }
 
@@ -585,6 +590,10 @@ var tNow = window.performance.now();
                     if(!canBe(nextForme)){
                         document.getElementById("touchess").style.display = "flex";
                         document.getElementById("touchess").innerHTML = "<p class=\"touche\">LOSE</p>"
+                        if(score > localStorage.getItem("highscore-tetris")){
+                            localStorage.setItem("highscore-tetris", score);
+                            document.getElementById('highscore').innerHTML = score;
+                        }
                         lock = true;
                         window.cancelAnimationFrame( MyGame );
                     }

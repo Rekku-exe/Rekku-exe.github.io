@@ -125,7 +125,9 @@ h3 {
 #boxPvz {
     background-image: url("../img/index/plants_vs_zombies.png");
 }
-
+#boxIsaac {
+    background-image: url("../img/index/the-binding-of-isaac.png");
+}
 
 #texteProvisoire{
     width: 80%;

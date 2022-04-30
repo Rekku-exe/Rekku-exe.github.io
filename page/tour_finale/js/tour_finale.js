@@ -180,7 +180,7 @@ function button(y, x){
 
                 if(y == 0){
                     tabDir[y][x] = 2;
-                } else if(y == 4) {
+                } else if(y == 5) {
                     tabDir[y][x] = 1;
                 }
 
@@ -195,8 +195,8 @@ function button(y, x){
 
                 found1 = false;
                 found2 = false;
-                for(var i = 0; i<5; i++){
-                    for(var j = 0; j<5; j++){
+                for(var i = 0; i<6; i++){
+                    for(var j = 0; j<6; j++){
                         if(tabJoueur[j][i] == 1)found1 = true;
                         if(tabJoueur[j][i] == 2)found2 = true;
                     }
