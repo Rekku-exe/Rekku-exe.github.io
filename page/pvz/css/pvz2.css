@@ -1,0 +1,73 @@
+#terrain {
+    display: grid;
+    width: 1000px;
+    height: 500px;
+    grid-template-columns: 900px 1000px; /* en premier la colonne pour les plantes et en second celle des zombies */
+    /*grid-template-rows: 100px; là c'est la hauteur de chaque ligne */
+    /*background-image: url('../img/garden.png');*/
+}
+
+#main{
+    display: flex;
+    flex-direction: row;
+}
+
+#money{
+    margin: 0 auto;
+    text-align: center;
+}
+#shop{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+.shopplant{
+    display: flex;
+    flex-direction: row;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.shopplantimg{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+.shopplantprice{
+    margin: auto;
+    text-align: center;
+}
+
+
+.column-zombie{
+    transform: translateX(-900px); /* la taille de la 1ere col en négatif */
+    pointer-events: none;
+    background-color: #5ccc5463;
+}
+.column-plant{
+    z-index: 10;
+    display: flex;
+}
+
+.slotplant{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100px;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.entity{
+    width: auto;
+    position: absolute;
+    transform: translate(-30px, -100%);
+}
+.zombie{
+    height: 140px;
+    top: 100px;
+    z-index: 1;
+}
+.pois{
+    height: 25px;
+    top: 40px;
+}

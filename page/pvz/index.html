@@ -5,34 +5,47 @@
         <title>Rekku.exe - Plants VS Zombies</title>
         <link rel="icon" href="../../common/img/icon/home_x1.png"/>
         <link rel="stylesheet" type="text/css" href="../../common/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="./css/pvz.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/pvz2.css"/>
     </head>
     <body>
         <header>
             <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
             <p id="version">
-                v0.0.1
+                v0.0.2
             </p>
         </header>
         <main id="main">
             <div id="shop">
                 <h1 id="money">1000</h1>
-                <div id="shop-tournesol" class="aplant" onclick="choose('tournesol')">
+                <div id="shop-tournesol" class="shopplant" onclick="choose('tournesol')">
                     <img class="shopplantimg" src="./img/tournesol.png"/>
                     <h3 class="shopplantprice">50</h3>
                 </div>
-                <div id="shop-pisto-pois" class="aplant" onclick="choose('pisto-pois')">
+                <div id="shop-pisto-pois" class="shopplant" onclick="choose('pisto-pois')">
                     <img class="shopplantimg" src="./img/pisto-pois.png"/>
                     <h3 class="shopplantprice">100</h3>
                 </div>
-                <!--div style="background:#000;width:100px;height:100px;" onclick="spawnZombie(0)"></div-->
+                <div>
+                    <input id="sz" type="number" value="0"/>
+                    <button onclick="if(document.getElementById('sz').value >= 0 && document.getElementById('sz').value < 5)spawnZombie('zombie', document.getElementById('sz').value)">ZOMBIE</button>
+                </div>
             </div>
-            <div id="terrain"></div>
-            <div id="horde"></div>
+            <div id="terrain">
+                <div id="column-plant-0" class="column-plant"></div>
+                <div id="column-zombie-0" class="column-zombie"></div>
+                <div id="column-plant-1" class="column-plant"></div>
+                <div id="column-zombie-1" class="column-zombie"></div>
+                <div id="column-plant-2" class="column-plant"></div>
+                <div id="column-zombie-2" class="column-zombie"></div>
+                <div id="column-plant-3" class="column-plant"></div>
+                <div id="column-zombie-3" class="column-zombie"></div>
+                <div id="column-plant-4" class="column-plant"></div>
+                <div id="column-zombie-4" class="column-zombie"></div>
+            </div>
         </main>
         <footer>
             <p id="copyright">© Rekku</p>
         </footer>
-        <script src="./js/pvz.js"></script>
+        <script src="./js/pvz2.js"></script>
     </body>
 </html>
