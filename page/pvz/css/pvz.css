@@ -1,13 +1,11 @@
-#terrain{
-    width: 792px;
-    min-width: 792px;
-    height: 515px;
-    background-color: #a7a7a7;
-    margin: 0 auto;
-    margin-left: 0;
-    background-image: url('../img/garden.png');
-    background-size: cover;
-    z-index: 1;
+#terrain {
+    display: grid;
+    width: 1000px;
+    height: 500px;
+    background-color: #5ccc5463;
+    grid-template-columns: 900px 1000px; /* en premier la colonne pour les plantes et en second celle des zombies */
+    /*grid-template-rows: 100px; là c'est la hauteur de chaque ligne */
+    /*background-image: url('../img/garden.png');*/
 }
 
 #main{
@@ -24,7 +22,7 @@
     flex-direction: column;
     margin: 40px;
 }
-.aplant{
+.shopplant{
     display: flex;
     flex-direction: row;
     margin: 2px;
@@ -41,33 +39,49 @@
     text-align: center;
 }
 
-.row{
-    display: flex;
-    flex-direction: row;
+
+.column-zombie{
+    transform: translateX(-900px); /* la taille de la 1ere col en négatif */
+    pointer-events: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 100;
 }
-.grass{
+.column-plant{
+    z-index: 10;
+    display: flex;
+}
+
+.slotplant{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100px;
     cursor: pointer;
-    width: 88px;
-    height: 103px;
-    /*border: 1px solid #000000;*/
     background-size: contain;
     background-repeat: no-repeat;
 }
-.sun{
-    width: 40px;
-    height: 40px;
-}
 
-#horde{
-    position: fixed;
-    width: 1005px;
-    min-width: 792px;
-    height: 515px;
-    z-index: -1;
+.entity{
+    width: auto;
+    position: absolute;
+    transform: translate(-30px, -100%);
+    pointer-events: none;
 }
 .zombie{
+    height: 140px;
+    top: 100px;
+}
+.pois{
+    height: 25px;
+    top: 40px;
+}
+.sun{
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+#theSun{
     position: absolute;
-    height: 120px;
+    height: 50px;
     width: auto;
-    z-index: 2;
+    z-index: 1000;
+    cursor: pointer;
 }

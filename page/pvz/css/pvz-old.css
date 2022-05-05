@@ -1,0 +1,73 @@
+#terrain{
+    width: 792px;
+    min-width: 792px;
+    height: 515px;
+    background-color: #a7a7a7;
+    margin: 0 auto;
+    margin-left: 0;
+    background-image: url('../img/garden.png');
+    background-size: cover;
+    z-index: 1;
+}
+
+#main{
+    display: flex;
+    flex-direction: row;
+}
+
+#money{
+    margin: 0 auto;
+    text-align: center;
+}
+#shop{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+.aplant{
+    display: flex;
+    flex-direction: row;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.shopplantimg{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+.shopplantprice{
+    margin: auto;
+    text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.grass{
+    cursor: pointer;
+    width: 88px;
+    height: 103px;
+    /*border: 1px solid #000000;*/
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.sun{
+    width: 40px;
+    height: 40px;
+}
+
+#horde{
+    position: fixed;
+    width: 1005px;
+    min-width: 792px;
+    height: 515px;
+    z-index: -1;
+}
+.zombie{
+    position: absolute;
+    height: 120px;
+    width: auto;
+    z-index: 2;
+}
