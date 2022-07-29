@@ -63,7 +63,7 @@ typer.addEventListener("keypress", function(event) {
           cursor = 'paint';
         consoleLog('cursor on "'+cursor+'"');
         }
-        if(string[1] in validPainter){
+        if(validPainter.includes(string[1])){
           painter = string[1];
           consoleLog('painter on "'+painter+'"');
         }
