@@ -128,6 +128,12 @@ h3 {
 #boxIsaac {
     background-image: url("../img/index/the-binding-of-isaac.png");
 }
+#boxTama {
+    background-image: url("../img/index/tamagotchi-1920.jpg");
+}
+#boxJDR {
+    background-image: url("../img/index/bannière-jdr.png");
+}
 
 #texteProvisoire{
     width: 80%;

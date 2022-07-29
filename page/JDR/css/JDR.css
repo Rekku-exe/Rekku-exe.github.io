@@ -1,0 +1,55 @@
+body {
+    background-color: black;
+    color: white;
+  }
+  
+  #land {
+    height: 60vh;
+    border: solid 1px white;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+  }
+  .ligne {
+    display: flex;
+  }
+  .outterPos {
+    height: 30px;
+    width: 30px;
+    min-width: 30px;
+    border: solid 1px white;
+  }
+  .pos {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+  .cara {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    margin: auto;
+    border: solid 5px black;
+    display: flex;
+  }
+  .innerCara {
+    color: black;
+    font-weight: bold;
+    margin: auto;
+  }
+  .air {
+    background-color: #333333;
+  }
+  .wall {
+    background-color: grey;
+  }
+  
+  #console {
+    height: 20vh;
+    border: solid 1px white;
+    overflow-y: scroll;
+  }
+  
+  #typer {
+    width: 95%;
+  }

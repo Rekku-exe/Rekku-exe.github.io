@@ -1,0 +1,61 @@
+#main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#chara {
+    width: 60px;
+    height: 60px;
+}
+
+.sprite {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    position: absolute;
+}
+
+#land {
+    width: 1000px;
+    height: 600px;
+    background-color: black;
+}
+
+#menu {
+    margin-right: 20px;
+    width: 250px;
+    height: 600px;
+    background-color: black;
+    position: relative;
+}
+
+#hungry {
+    color: brown;
+}
+#hungry::-moz-progress-bar { background-color: brown; }
+#hungry::-webkit-progress-value { background-color: brown; }
+
+#drink {
+    color: blue;
+}
+#drink::-moz-progress-bar { background-color: blue; }
+#drink::-webkit-progress-value { background-color: blue; }
+
+#tamaConsole {
+    position: absolute;
+    bottom: 0;
+    height: 300px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: grey;
+    overflow-y: scroll;
+}
+#tamaConsole::-webkit-scrollbar-track { 
+    background-color: black;
+}
+.log {
+    margin: 10px;
+    background-color: black;
+    border-radius: 20px;
+    padding: 10px;
+}

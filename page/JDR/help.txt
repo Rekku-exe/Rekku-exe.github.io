@@ -1,0 +1,41 @@
+HELP :
+télécharge cette liste
+
+nbrollDtypedice :
+fait "nbroll" lancé de dé à "typedice" faces
+
+CLEAR :
+vide la console
+
+GENLAND x=10 y=10 :
+créer une map avec pour largeur x et longueur y
+
+CURSOR mode :
+choisi ce que font les cliques sur la map
+- paint : place un bloc choisi par le pinceau
+- move : déplace une entité
+
+PAINT bloc :
+choisi le type de bloc que l'on veut posé
+
+CHANGEAFF nom affichage :
+choisi d'affiché "affichage" sur l'entité "nom"
+
+CHANGERANGE nom range :
+met la porté de vision du pion "nom" à "range"
+
+SUMMON nom type=monster color=white x=0 y=0 :
+met un pion selon un type, nommé "nom" à la position x,y , les types sont
+- pers : allié
+- monster : ennemi
+
+KILL nom :
+supprime l'entité "nom"
+
+CHANGEVIEW type :
+change de mode de vu
+- mj : vois tous
+- player : uniquement la vision des pions allié
+
+SAVE nom=mySave :
+télécharge une sauvegarde

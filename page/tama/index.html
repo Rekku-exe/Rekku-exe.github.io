@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rekku.exe - Tamagotchi</title>
+        <link rel="icon" href="../../common/img/icon/home_x1.png"/>
+        <link rel="stylesheet" type="text/css" href="../../common/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/tama.css"/>
+    </head>
+    <body>
+        <header>
+            <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
+            <p id="version">
+                v0.0.1
+            </p>
+        </header>
+        <main id="main">
+            <div id="menu">
+                <label>Nom:</label><br/>
+                <input type="text" id="name" autocomplete="off" onchange="updateName()"/>
+                <progress id="hungry" value="10000" max="10000"></progress>
+                <progress id="drink" value="10000" max="10000"></progress>
+                <input type="button" id="saveButton" value="Sauvegarder" onclick="save()"/>
+                <input type="button" value="Reset" onclick="localStorage.clear()"/>
+                <input type="button" value="TEST" onclick="stat.hungry -= 1000; stat.drink -= 1000"/>
+                <div id="tamaConsole">
+                    <div class="log">log1</div>
+                    <div class="log">log2</div>
+                    <div class="log">log3</div>
+                    <div class="log">log4</div>
+                    <div class="log">log5</div>
+                    <div class="log">log6</div>
+                    <div class="log">log7</div>
+                    <div class="log">log8</div>
+                    <div class="log">log9</div>
+                    <div class="log">log10</div>
+                    <div class="log">log11</div>
+                    <div class="log">log12</div>
+                    <div class="log">log13</div>
+                    <div class="log">log14</div>
+                    <div class="log">log15</div>
+                    <div class="log">log16</div>
+                    <div class="log">log17</div>
+                    <div class="log">log18</div>
+                    <div class="log">log19</div>
+                    <div class="log">log20</div>
+                    <div class="log">log21</div>
+                </div>
+            </div>
+            <div id="land">
+                <img id="chara" class="sprite" src="./img/chara/chara-down-stay-0.png" onclick="tamaLog(stat.name+' vous dit bonjour')"/>
+            </div>
+        </main>
+        <footer>
+            <p id="copyright">© Rekku</p>
+        </footer>
+        <script src="./js/tama.js"></script>
+    </body>
+</html>
