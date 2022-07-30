@@ -1,0 +1,24 @@
+#main {
+}
+
+#board {
+    margin: auto;
+    width: 616px;
+    height: 616px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.pos {
+    width: 73px;
+    height: 73px;
+    border: solid 2px black;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.posWhite {
+    background-color: #CCC;
+}
+.posBlack {
+    background-color: #222;
+}
