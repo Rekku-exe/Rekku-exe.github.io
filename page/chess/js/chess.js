@@ -57,14 +57,18 @@ function clique(x, y){
             document.getElementById(j+'-'+i).setAttribute('clickable', 'false');;
         }
     }
-    if(moved) return;
+    if(moved) {
+        document.getElementById(piece.x+'-'+piece.y).style.backgroundColor = 'orange';
+        document.getElementById(x+'-'+y).style.backgroundColor = 'orange';
+        return;
+    }
     switch (board[y][x].type) {
-        case 'p':
+        case 'p':// pion
             let opTeam = (board[y][x].team == 1 ? 2 : 1);
             let dir = (board[y][x].team == 1 ? -1 : 1);
             if(board[y+dir][x].team == 0){
                 document.getElementById(x+'-'+(y+dir)).setAttribute('clickable', 'true');
-                if((board[y][x].team == 1 && y == 6) || (board[y][x].team == 2 && y == 1)){
+                if((board[y][x].team == 1 && y == 6) || (board[y][x].team == 2 && y == 1) && board[y+dir*2][x].team == 0){
                     document.getElementById(x+'-'+(y+dir*2)).setAttribute('clickable', 'true');
                 }
             }
@@ -75,19 +79,19 @@ function clique(x, y){
                 document.getElementById((x-1)+'-'+(y+dir)).setAttribute('clickable', 'true');
             }
             break;
-        case 'T':
+        case 'T':// Tour
             cliqueTour(x, y-1, 'top', board[y][x].team);
             cliqueTour(x, y+1, 'bot', board[y][x].team);
             cliqueTour(x-1, y, 'left', board[y][x].team);
             cliqueTour(x+1, y, 'right', board[y][x].team);
             break;
-        case 'F':
+        case 'F':// Fou
             cliqueFou(x-1, y-1, 'top-left', board[y][x].team);
             cliqueFou(x+1, y-1, 'top-right', board[y][x].team);
             cliqueFou(x-1, y+1, 'bot-left', board[y][x].team);
             cliqueFou(x+1, y+1, 'bot-right', board[y][x].team);
             break;
-        case 'Q':
+        case 'Q':// Queen
             cliqueTour(x, y-1, 'top', board[y][x].team);
             cliqueTour(x, y+1, 'bot', board[y][x].team);
             cliqueTour(x-1, y, 'left', board[y][x].team);
@@ -96,7 +100,7 @@ function clique(x, y){
             cliqueFou(x+1, y-1, 'top-right', board[y][x].team);
             cliqueFou(x-1, y+1, 'bot-left', board[y][x].team);
             cliqueFou(x+1, y+1, 'bot-right', board[y][x].team);
-        case 'R':
+        case 'R':// Roi
             if(x>0){
                 if(board[y][x-1].team != board[y][x].team)document.getElementById((x-1)+'-'+y).setAttribute('clickable', 'true');
                 if(y>0){
@@ -118,7 +122,28 @@ function clique(x, y){
             if(y>0 && board[y-1][x].team != board[y][x].team)document.getElementById(x+'-'+(y-1)).setAttribute('clickable', 'true');
             if(y<7 && board[y+1][x].team != board[y][x].team)document.getElementById(x+'-'+(y+1)).setAttribute('clickable', 'true');
             break;
+        case 'C':// Cavalier
+            if(x>1){
+                if(y>0 && board[y-1][x-2].team != board[y][x].team)document.getElementById((x-2)+'-'+(y-1)).setAttribute('clickable', 'true');
+                if(y<7 && board[y+1][x-2].team != board[y][x].team)document.getElementById((x-2)+'-'+(y+1)).setAttribute('clickable', 'true');
+            }
+            if(x>0){
+                if(y>1 && board[y-2][x-1].team != board[y][x].team)document.getElementById((x-1)+'-'+(y-2)).setAttribute('clickable', 'true');
+                if(y<6 && board[y+2][x-1].team != board[y][x].team)document.getElementById((x-1)+'-'+(y+2)).setAttribute('clickable', 'true');
+            }
+            if(x<7){
+                if(y>1 && board[y-2][x+1].team != board[y][x].team)document.getElementById((x+1)+'-'+(y-2)).setAttribute('clickable', 'true');
+                if(y<6 && board[y+2][x+1].team != board[y][x].team)document.getElementById((x+1)+'-'+(y+2)).setAttribute('clickable', 'true');
+            }
+            if(x<6){
+                if(y>0 && board[y-1][x+2].team != board[y][x].team)document.getElementById((x+2)+'-'+(y-1)).setAttribute('clickable', 'true');
+                if(y<7 && board[y+1][x+2].team != board[y][x].team)document.getElementById((x+2)+'-'+(y+1)).setAttribute('clickable', 'true');
+            }
+            break;
+        case 0:
+            break;
         default:
+            alert('Les pièces de type '+board[y][x].type+' ne sont pas fonctionnelles');
             break;
     }
     for(let i=0; i<8; i++){
