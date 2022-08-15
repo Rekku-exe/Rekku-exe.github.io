@@ -10,12 +10,31 @@
     <body>
         <header>
             <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
+            <p><b id="playerTurn">TOUR DE JEUX : BLANC</b></p>
             <p id="version">
-                v0.0.2
+                v0.1.0
             </p>
         </header>
         <main id="main">
             <div id="board">
+            </div>
+            <div id="evo">
+                <div class="choice-evo" onclick="choiceEvo('T')">
+                    <img class="choice-evo-img" src='./img/piece/T1.png'/>
+                    <p>Tour</p>
+                </div>
+                <div class="choice-evo" onclick="choiceEvo('C')">
+                    <img class="choice-evo-img" src='./img/piece/C1.png'/>
+                    <p>Cavalier</p>
+                </div>
+                <div class="choice-evo" onclick="choiceEvo('F')">
+                    <img class="choice-evo-img" src='./img/piece/F1.png'/>
+                    <p>Fou</p>
+                </div>
+                <div class="choice-evo" onclick="choiceEvo('Q')">
+                    <img class="choice-evo-img" src='./img/piece/Q1.png'/>
+                    <p>Reine</p>
+                </div>
             </div>
         </main>
         <footer>

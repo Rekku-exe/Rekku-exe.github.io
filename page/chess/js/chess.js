@@ -18,6 +18,7 @@ for(let i=0; i<8; i++){
     (pair ? pair=false : pair=true);
 }
 
+let actualTeam = 1;
 let board = [
     [{team:2,type:'T'},{team:2,type:'C'},{team:2,type:'F'},{team:2,type:'Q'},{team:2,type:'R'},{team:2,type:'F'},{team:2,type:'C'},{team:2,type:'T'}],
     [{team:2,type:'p'},{team:2,type:'p'},{team:2,type:'p'},{team:2,type:'p'},{team:2,type:'p'},{team:2,type:'p'},{team:2,type:'p'},{team:2,type:'p'}],
@@ -32,6 +33,7 @@ let board = [
 function actu(){
     for(let i=0; i<8; i++){
         for(let j=0; j<8; j++){
+            document.getElementById(i+'-'+j).style.cursor = (board[j][i].team == actualTeam ? 'pointer' : '');
             if(!board[j][i].team){
                 document.getElementById(i+'-'+j).style.backgroundImage = null;
                 continue;
@@ -50,6 +52,13 @@ function clique(x, y){
         board[piece.y][piece.x] = {team:0,type:0};
         actu();
         moved = true;
+        piece = {'ref':board[y][x], 'x':x, 'y':y, 'xOld':piece.x, 'yOld':piece.y};
+        if(piece.ref.type=='p' && (y==0 || y==7)){
+            document.getElementById('evo').style.display = 'flex';
+            for(let i of document.getElementsByClassName('choice-evo-img')){
+                i.src= i.src.replace((actualTeam == 1 ? '2' : '1'), actualTeam);
+            }
+        }
     }
     for(let i=0; i<8; i++){
         for(let j=0; j<8; j++){
@@ -59,9 +68,16 @@ function clique(x, y){
     }
     if(moved) {
         document.getElementById(piece.x+'-'+piece.y).style.backgroundColor = 'orange';
-        document.getElementById(x+'-'+y).style.backgroundColor = 'orange';
+        document.getElementById(piece.xOld+'-'+piece.yOld).style.backgroundColor = 'orange';
+        actualTeam = (actualTeam == 1 ? 2 : 1);
+        console.log(document.getElementById('evo').style.display);
+        if(document.getElementById('evo').style.display == ''){
+            document.getElementById('playerTurn').innerHTML = 'TOUR DE JEU : '+ (actualTeam == 1 ? 'BLANC' : 'NOIR');
+            actu();
+        }
         return;
     }
+    if(board[y][x].team == (actualTeam == 1 ? 2 : 1)) return;
     switch (board[y][x].type) {
         case 'p':// pion
             let opTeam = (board[y][x].team == 1 ? 2 : 1);
@@ -150,6 +166,7 @@ function clique(x, y){
         for(let j=0; j<8; j++){
             if(document.getElementById(j+'-'+i).getAttribute('clickable') == 'true'){
                 document.getElementById(j+'-'+i).style.backgroundColor = 'lightcoral';
+                document.getElementById(j+'-'+i).style.cursor = 'pointer';
             }
         }
     }
@@ -202,4 +219,11 @@ function cliqueFou(x, y, dir, team){
             break;  
     }
     cliqueFou(x, y, dir, team);
+}
+
+function choiceEvo(type){
+    board[piece.y][piece.x].type = type;
+    actu();
+    document.getElementById('evo').style.display = 'none';
+    document.getElementById('playerTurn').innerHTML = 'TOUR DE JEU : '+ (actualTeam == 1 ? 'BLANC' : 'NOIR');
 }

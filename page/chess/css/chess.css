@@ -7,6 +7,7 @@
     height: 616px;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    z-index: 5;
 }
 
 .pos {
@@ -15,10 +16,31 @@
     border: solid 2px black;
     background-repeat: no-repeat;
     background-size: 100%;
+    z-index: 5;
 }
 .posWhite {
     background-color: #CCC;
 }
 .posBlack {
     background-color: #222;
+}
+
+#evo {
+    background-color: #333;
+    height: 200px;
+    width: 50vh;
+    margin: auto;
+    margin-top: -550px;
+    z-index: 10;
+    position: relative;
+    display: none;
+}
+.choice-evo {
+    margin: auto;
+    border: solid 5px black;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.choice-evo p {
+    text-align: center;
 }
