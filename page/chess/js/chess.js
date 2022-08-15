@@ -162,6 +162,7 @@ function clique(x, y){
             alert('Les pièces de type '+board[y][x].type+' ne sont pas fonctionnelles');
             break;
     }
+    actu();
     for(let i=0; i<8; i++){
         for(let j=0; j<8; j++){
             if(document.getElementById(j+'-'+i).getAttribute('clickable') == 'true'){
