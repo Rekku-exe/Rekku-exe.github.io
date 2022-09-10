@@ -125,11 +125,21 @@ function clique(x, y){
     }
 }
 
-maxY = 20;
-maxX = 30;
-init();
-plant(80);
-console.log("start");
+url = new URL(document.location.href)
+if(url.searchParams.get('x') == undefined || url.searchParams.get('y') == undefined || url.searchParams.get('b') == undefined) {
+    backLink = document.createElement('a');
+    backLink.href = '../index.html'
+    backLink.click();
+} else {
+    /*maxY = 20;
+    maxX = 30;*/
+    maxY = parseInt(url.searchParams.get('y'));
+    maxX = parseInt(url.searchParams.get('x'));
+    init();
+    plant(parseInt(url.searchParams.get('b')));
+    //plant(80);
+    console.log("start");
+}
 
 /*while(!fini){
     console.log(1);

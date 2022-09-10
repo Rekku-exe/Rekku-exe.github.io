@@ -5,36 +5,25 @@
         <title>Rekku.exe - Démineur</title>
         <link rel="icon" href="./img/bomb.png"/>
         <link rel="stylesheet" type="text/css" href="../../common/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="./css/demineur.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/indexDemineur.css"/>
     </head>
     <body>
         <header>
             <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
-            <div id="touche">
-                F = flag mode<br>
-                F5 = nouvelle partie
-            </div>
             <p id="version">
-                v0.1.1
+                v1.0.0
             </p>
         </header>
-        <main id="mainDemineur">
-            <div id="board">
-                <div id="game">
-
-                </div>
-                <div id="flagButton" onclick="flagClique()">
-                    <img id="innerFlagButton" src="./img/flag_icon.png">
-                </div>
-                <div id="countMine">
-                    <p id="innerCountMine"></p>
-                </div>
+        <main id="mainIndexDemineur">
+            <div id="mainIndexDemineurInner">
+                <h2>Choix de Difficulté :</h2>
+                <h2><a class="difficultyLink" href="./game/index.html?x=20&y=10&b=25">Facile</a> (20x10)</h2>
+                <h2><a class="difficultyLink" href="./game/index.html?x=30&y=20&b=80">Moyen</a> (30x20)</h2>
+                <h2><a class="difficultyLink" href="./game/index.html?x=40&y=30&b=200">Difficile</a> (40x30)</h2>
             </div>
         </main>
         <footer>
             <p id="copyright">© Rekku</p>
         </footer>
-        <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script-->
-        <script src="./js/demineur.js"></script>
     </body>
 </html>
