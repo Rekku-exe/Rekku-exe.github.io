@@ -134,6 +134,9 @@ h3 {
 #boxJDR {
     background-image: url("../img/index/bannière-jdr.png");
 }
+#boxEchec {
+    background-image: url("../img/index/echec.png");
+}
 
 #texteProvisoire{
     width: 80%;
