@@ -1,4 +1,5 @@
 function init(){
+    document.addEventListener('contextmenu', event => event.preventDefault());
     document.getElementById("game").innerHTML = "";
     board = [];
     possible = [];
@@ -19,7 +20,7 @@ function init(){
             isFlag[i].push(false);
             possible.push([i,j]);
             //$('#row-'+i).append('<div id="'+j+'-'+i+'" class="box boxLightGray" onclick="clique('+j+','+i+')"></div>');
-            document.getElementById('row-'+i).innerHTML += '<div id="'+j+'-'+i+'" class="box boxLightGray" onclick="clique('+j+','+i+')"></div>';
+            document.getElementById('row-'+i).innerHTML += '<div id="'+j+'-'+i+'" class="box boxLightGray" onclick="clique('+j+','+i+')" oncontextmenu="setAFlag('+j+','+i+')"></div>';
         }
     }
     console.log("init done");
@@ -70,23 +71,27 @@ function reveal(){
     }
 }
 
+function setAFlag(x, y){
+    if(!vu[y][x]){
+        if(isFlag[y][x]){
+            document.getElementById(x+"-"+y).classList = "box boxLightGray";
+            isFlag[y][x] = false;
+            countMine++;
+        } else {
+            document.getElementById(x+"-"+y).classList = "box boxLightGray boxFlag";
+            isFlag[y][x] = true;
+            countMine--;
+        }
+        document.getElementById("innerCountMine").innerHTML = countMine;
+    }
+}
+
 function clique(x, y){
     if(fini){
         return;
     }
     if(setFlag){
-        if(!vu[y][x]){
-            if(isFlag[y][x]){
-                document.getElementById(x+"-"+y).classList = "box boxLightGray";
-                isFlag[y][x] = false;
-                countMine++;
-            } else {
-                document.getElementById(x+"-"+y).classList = "box boxLightGray boxFlag";
-                isFlag[y][x] = true;
-                countMine--;
-            }
-            document.getElementById("innerCountMine").innerHTML = countMine;
-        }
+        setAFlag(x, y)
     } else if(!isFlag[y][x]){
         vu[y][x] = true;
         if(board[y][x] == "X"){
