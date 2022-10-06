@@ -100,3 +100,23 @@
     background-image: url("../img/bomb-1.png");
     background-size: cover;
 }
+
+#popUp{
+    position: absolute;
+    top: 78px;
+    left: 25%;
+    right: 25%;
+    background-color: #161b20;
+    z-index: 1;
+    transition: 1s;
+    box-shadow: 0px 0px 50px #111111;
+    height: 40%;
+    min-height: 300px;
+    border: solid 15px #CCCCCC;
+    display: none;
+}
+#popUpInner{
+    font-size: 40px;
+    margin: auto 20px;
+    text-align: center;
+}

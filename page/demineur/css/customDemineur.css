@@ -1,0 +1,22 @@
+.lineForm {
+    display: flex;
+}
+
+.lineForm input {
+    width: 100%;
+    margin: 5px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.lineForm label {
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+}
+
+#validateButton {
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}

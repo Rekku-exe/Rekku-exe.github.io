@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rekku.exe - Démineur</title>
+        <link rel="icon" href="../img/bomb.png"/>
+        <link rel="stylesheet" type="text/css" href="../../../common/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/indexDemineur.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/customDemineur.css"/>
+    </head>
+    <body>
+        <header>
+            <a id="linklogo" href="../../../index.html"><img id="logo" src="../../../common/img/D.png"></a>
+            <p id="version">
+                v1.1.0
+            </p>
+        </header>
+        <main id="mainIndexDemineur">
+            <div id="mainIndexDemineurInner">
+                <h1>Personnalisé</h1>
+                <h2>Dimention</h2>
+                <div class="lineForm">
+                    <label>X</label>
+                    <input id="dimX" type="number" placeholder="20"/>
+                </div>
+                <div class="lineForm">
+                    <label>Y</label>
+                    <input id="dimY" type="number" placeholder="10"/>
+                </div>
+                <h2>Nombre de Bombe</h2>
+                <div class="lineForm">
+                    <input id="nbBomb" type="number" placeholder="25"/>
+                </div>
+                <button id="validateButton" onClick="launchGame()">VALIDER</button>
+            </div>
+        </main>
+        <footer>
+            <p id="copyright">© Rekku</p>
+        </footer>
+        <script>
+            function gid(id) { return document.getElementById(id) }
+
+            function launchGame(){
+                x = gid("dimX").value
+                y = gid("dimY").value
+                b = gid("nbBomb").value
+                if(x == "") x = "20";
+                if(y == "") y = "10";
+                if(b == "") b = "25";
+                if(x < 1 || y < 1 || b < 1 || b > x*y-1){
+                    alert("Un paramètre est invalide");
+                    return;
+                }
+                link = document.createElement("a")
+                link.href = "../game/index.html?x="+x+"&y="+y+"&b="+b;
+                link.click()
+            }
+        </script>
+    </body>
+</html>

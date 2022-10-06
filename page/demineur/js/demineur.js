@@ -7,6 +7,7 @@ function init(){
     isFlag = [];
     setFlag = false;
     fini = false;
+    nbToReveal = maxX*maxY-nbBomb;
     //--
     for(i=0; i<maxY; i++){
         board.push([]);
@@ -57,7 +58,12 @@ function flagClique(){
     }
 }
 
-function reveal(){
+function displayPopUp(text){
+    document.getElementById("popUp").style.display = "flex";
+    document.getElementById("popUpInner").innerHTML = text;
+}
+
+function loser(){
     for(i=0; i<maxX; i++){
         for(j=0; j<maxY; j++){
             if(board[j][i] == "X"){
@@ -69,6 +75,20 @@ function reveal(){
             }
         }
     }
+    fini = true;
+    displayPopUp("LOSE !<br/>You can retry by refresh (F5)");
+}
+
+function winner(){
+    for(i=0; i<maxX; i++){
+        for(j=0; j<maxY; j++){
+            if(board[j][i] == "X"){
+                document.getElementById(i+"-"+j).classList = "box boxBomb boxGreen";
+            }
+        }
+    }
+    fini = true;
+    displayPopUp("WIN !<br/>You found "+nbBomb+" bombs on a "+maxX+"x"+maxY+" grid<br/>GG !");
 }
 
 function setAFlag(x, y){
@@ -96,10 +116,8 @@ function clique(x, y){
         vu[y][x] = true;
         if(board[y][x] == "X"){
             //document.getElementById(x+"-"+y).innerHTML = "X";
-            document.getElementById("touche").innerHTML = "LOSE";
-            reveal();
             document.getElementById(x+"-"+y).classList = "box boxBomb boxRed";
-            fini = true;
+            loser();
         } else {
             count = 0;
             if(y != 0 && x != 0 && board[y-1][x-1] == "X")count++;
@@ -126,6 +144,8 @@ function clique(x, y){
                     if(y != maxY-1 && x != maxX-1 && !vu[y+1][x+1])clique(x+1,y+1);
                 }, 1);
             }
+            nbToReveal--;
+            if(nbToReveal == 0) winner();
         }
     }
 }
@@ -136,13 +156,11 @@ if(url.searchParams.get('x') == undefined || url.searchParams.get('y') == undefi
     backLink.href = '../index.html'
     backLink.click();
 } else {
-    /*maxY = 20;
-    maxX = 30;*/
     maxY = parseInt(url.searchParams.get('y'));
     maxX = parseInt(url.searchParams.get('x'));
+    nbBomb = parseInt(url.searchParams.get('b'));
     init();
-    plant(parseInt(url.searchParams.get('b')));
-    //plant(80);
+    plant(nbBomb);
     console.log("start");
 }
 
