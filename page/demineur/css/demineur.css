@@ -117,6 +117,7 @@
 }
 #popUpInner{
     font-size: 40px;
-    margin: auto 20px;
+    padding: 20px;
+    margin: auto;
     text-align: center;
 }
