@@ -115,9 +115,8 @@ function clique(x, y){
     } else if(!isFlag[y][x]){
         vu[y][x] = true;
         if(board[y][x] == "X"){
-            //document.getElementById(x+"-"+y).innerHTML = "X";
-            document.getElementById(x+"-"+y).classList = "box boxBomb boxRed";
             loser();
+            document.getElementById(x+"-"+y).classList = "box boxBomb boxRed";
         } else {
             count = 0;
             if(y != 0 && x != 0 && board[y-1][x-1] == "X")count++;

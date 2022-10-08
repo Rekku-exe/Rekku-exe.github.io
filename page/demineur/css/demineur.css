@@ -111,13 +111,22 @@
     transition: 1s;
     box-shadow: 0px 0px 50px #111111;
     height: 40%;
-    min-height: 300px;
+    min-height: 320px;
     border: solid 15px #CCCCCC;
     display: none;
+    flex-direction: column;
 }
 #popUpInner{
     font-size: 40px;
     padding: 20px;
     margin: auto;
     text-align: center;
+}
+#popUpClose{
+    font-weight: bold;
+    font-size: 25px;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: -40px;
+    cursor: pointer;
 }
