@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rekku.exe</title>
+        <link rel="icon" href="../../common/img/icon/home_x1.png"/>
+        <link rel="stylesheet" type="text/css" href="../../common/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="./style/style.css"/>
+    </head>
+    <body>
+        <header>
+            <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
+            <p id="version">
+                v1.0.0
+            </p>
+        </header>
+        <main id="main">
+            <div id="toolbars">
+                <div id="container">
+                    <input id="crypt" type="button" value="CRYPT" onclick="crypt()"/>
+                    <input id="uncrypt" type="button" value="UNCRYPT" onclick="document.getElementById('file').click()"/>
+                    <input id="file" type="file" onchange="uncrypt()"/>
+                </div>
+            </div>
+            <textarea id="myText" placeholder="CRYPT : message => image | UNCRYPT : image => message"></textarea>
+        </main>
+        <footer>
+            <p id="copyright">© Rekku</p>
+        </footer>
+        <script src="./script/main.js"></script>
+    </body>
+</html>

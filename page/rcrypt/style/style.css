@@ -1,0 +1,42 @@
+#main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#toolbar {
+    margin: auto;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myText {
+    height: 50vh;
+    width: 80vw;
+    margin: auto;
+    font-size: large;
+    text-align: justify;
+    text-align-last: center;
+    padding: 8px 12px;
+}
+
+input[type=button] {
+    color: #F5F6F0;
+    padding: 8px 12px;
+    background-color: #17BA9E;
+    border: 1px solid #35356e;
+    cursor: pointer;
+    margin: 10px 5px;
+}
+
+input[type=button]:hover {
+    background-color: #019191;
+}
+
+#file {
+    display: none;
+}
