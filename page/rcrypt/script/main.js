@@ -89,19 +89,19 @@ function crypt() {
 function uncrypt() {
     let ctx = document.createElement("canvas").getContext("2d")
 
-    let img = new Image;
+    let img = new Image
     img.onload = function () {
         ctx.drawImage(img, 0, 0)
         let imageData = ctx.getImageData(0, 0, img.naturalWidth, img.naturalHeight)
-        readImage(imageData);
+        readImage(imageData)
     }
-    img.src = URL.createObjectURL(document.getElementById("file").files[0]);
+    img.src = URL.createObjectURL(document.getElementById("file").files[0])
 }
 
 function readImage(imageData) {
     let array = imageData.data
     let res = ""
-    for (let i = 0; i + 4 < array.length; i += 4) {
+    for (let i = 0; i < array.length; i += 4) {
         if(array[i] == 0 && array[i + 1] == 0 && array[i + 2] == 0) break
         res += rgbToHex(array[i], array[i + 1], array[i + 2])
     }
