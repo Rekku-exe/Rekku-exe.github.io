@@ -1,0 +1,16 @@
+#main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.videoTitle {
+    text-align: center;
+}
+
+.videoIframe {
+    width: 640;
+    height: 360;
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
+}
