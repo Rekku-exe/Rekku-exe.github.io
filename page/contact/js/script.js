@@ -1,4 +1,5 @@
 function submitForm() {
+    alert('Ne fonctionne pas :c')
     body = JSON.stringify({
         name: document.getElementById('nameInput').value,
         object: document.getElementById('objectInput').value,
@@ -6,7 +7,7 @@ function submitForm() {
         via: document.URL
     })
     xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://162.248.100.96:61405/contact', true);
+    xhr.open('POST', 'https://162.248.100.96:61405/contact', true);
     xhr.setRequestHeader('Content-Type', 'application/json')
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4) {
