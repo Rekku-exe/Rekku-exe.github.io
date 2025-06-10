@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tchat</title>
+        <link rel="icon" href="img/Logo-Tchat.ico"/>
+        <link rel="stylesheet" type="text/css" href="../../common/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <a id="linklogo" href="../../index.html"><img id="logo" src="../../common/img/D.png"></a>
+            <div id="boxName">
+                <form id="serverForm">
+                    <input type="text" id="t-server" class="all-name" placeholder="Serveur" autocomplete="off"/>
+                </form>
+                <form id="nameForm">
+                    <div class="input-group">
+                        <input type="text" id="t-room" class="all-name" placeholder="Room" autocomplete="off"/>
+                        <button type="button" id="btn-random-room" class="icon-button" title="Générer une room aléatoire">
+                            <i class="fas fa-random"></i>
+                        </button>
+                        <button type="button" id="btn-copy-url" class="icon-button" title="Copier l'URL de la room">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <input type="text" id="t-name" class="all-name" placeholder="Nom" autocomplete="off"/>
+                </form>
+            </div>
+        </header>
+        <main id="main">
+            <div id="chat_inner">
+                <div id="chat_box">
+
+                </div>
+                <div class="chat_text-container">
+                    <form id="msgForm">
+                        <input name="text" id="t-entre" type="text" placeholder="Envoyer un message" autocomplete="off"/>
+                        <input type="submit" class="chat_text-btn" value="Envoyer"/>
+                    </form>
+                </div>
+            </div>
+            </main>
+        <footer>
+            <p id="copyright">Rekkou & Cara</p>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+        <script src="js/client.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const roomInput = document.getElementById('t-room');
+                const serverInput = document.getElementById('t-server');
+                const randomButton = document.getElementById('btn-random-room');
+                const copyButton = document.getElementById('btn-copy-url');
+
+                // Fonction pour générer une chaîne aléatoire de 15 caractères
+                function generateRandomString(length) {
+                    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                    let result = '';
+                    const charactersLength = characters.length;
+                    for (let i = 0; i < length; i++) {
+                        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                    }
+                    return result;
+                }
+
+                // Gérer le clic sur le bouton "Aléatoire"
+                randomButton.addEventListener('click', () => {
+                    roomInput.value = generateRandomString(15);
+                });
+
+                // Gérer le clic sur le bouton "Copier l'URL"
+                copyButton.addEventListener('click', () => {
+                    const serverValue = serverInput.value;
+                    const roomValue = roomInput.value;
+                    let url = window.location.origin + window.location.pathname;
+
+                    // Construire les paramètres de l'URL
+                    const params = new URLSearchParams();
+                    if (serverValue) {
+                        params.append('u', serverValue);
+                    }
+                    if (roomValue) {
+                        params.append('r', roomValue);
+                    }
+
+                    if (params.toString()) {
+                        url += '?' + params.toString();
+                    }
+
+                    navigator.clipboard.writeText(url).then(() => {
+                        alert('URL copiée : ' + url);
+                    }).catch(err => {
+                        console.error('Erreur lors de la copie de l\'URL : ', err);
+                    });
+                });
+
+                // Mettre à jour la visibilité du bouton de copie lors de la saisie
+                roomInput.addEventListener('input', updateCopyButtonVisibility);
+            });
+        </script>
+    </body>
+</html>
