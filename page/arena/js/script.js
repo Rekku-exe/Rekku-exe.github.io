@@ -77,7 +77,7 @@ if (!champs) {
         "maokai": false,
         "masteryi": false,
         "missfortune": false,
-        "monkeyking": false,
+        "wukong": false,//"monkeyking": false,
         "mordekaiser": false,
         "morgana": false,
         "nami": false,
@@ -158,23 +158,35 @@ if (!champs) {
     };
 }
 function loading() {
+    let count = 0;
+    let countMax = 0;
     for (const c in champs) {
         const icon = document.createElement('img');
         icon.src = `./img/champs/${c}.png`;
         icon.id = c;
         icon.className = 'champ';
-        icon.style.opacity = champs[c] ? '10%' : '100%';
+        if (champs[c]) {
+            icon.style.opacity = '10%';
+            count++;
+        } else {
+            icon.style.opacity = '100%';
+        }
         icon.onclick = onClickChamp;
         main.append(icon);
+        countMax++;
     }
+    document.getElementById('champCheckCount').innerText = count;
+    document.getElementById('champMaxCount').innerText = countMax;
 }
 
 function onClickChamp() {
     champs[this.id] = !champs[this.id];
     if (champs[this.id]) {
         this.style.opacity = '10%';
+        document.getElementById('champCheckCount').innerText++;
     } else {
         this.style.opacity = '100%';
+        document.getElementById('champCheckCount').innerText--;
     }
     localStorage.setItem('champs', JSON.stringify(champs));
 }

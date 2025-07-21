@@ -2,3 +2,7 @@
     width: 300px;
     cursor: pointer;
 }
+
+#champCount {
+    display: flex;
+}
