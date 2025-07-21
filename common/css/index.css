@@ -137,6 +137,9 @@ h3 {
 #boxEchec {
     background-image: url("../img/index/echec.png");
 }
+#boxArena {
+    background-image: url("../img/index/arena.jpg");
+}
 
 #texteProvisoire{
     width: 80%;
