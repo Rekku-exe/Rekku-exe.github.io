@@ -160,7 +160,7 @@ if (!champs) {
 function loading() {
     for (const c in champs) {
         const icon = document.createElement('img');
-        icon.src = `./champs/${c}.png`;
+        icon.src = `./img/champs/${c}.png`;
         icon.id = c;
         icon.className = 'champ';
         icon.style.opacity = champs[c] ? '10%' : '100%';
