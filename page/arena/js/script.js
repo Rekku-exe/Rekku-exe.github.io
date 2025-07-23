@@ -171,7 +171,7 @@ let champs = {
 }
 
 function loading() {
-    const champsStorage = JSON.parse(localStorage.getItem('champs'));
+    const champsStorage = localStorage.getItem('champs') ? JSON.parse(localStorage.getItem('champs')) : {};
     let count = 0;
     let countMax = 0;
     for (const c in champs) {
