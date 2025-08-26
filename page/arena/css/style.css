@@ -1,8 +1,35 @@
 .champ {
-    height: 200px;
     cursor: pointer;
+    display: grid;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
 }
 
 #champCount {
     display: flex;
+}
+
+.iconChamp {
+    max-height: 190px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.labelChamp {
+    text-align: center;
+    margin: auto;
+}
+
+#main {
+    display: grid;
+    row-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 25%);
+}
+
+.containerChamp {
+    position: relative;
+    height: 200px;
 }

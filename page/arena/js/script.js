@@ -179,9 +179,9 @@ function loading() {
             champs[c] = champsStorage[c];
         }
         const icon = document.createElement('img');
+        icon.className = 'iconChamp';
         icon.src = `./img/champs/${c}.png`;
         icon.id = c;
-        icon.className = 'champ';
         if (champs[c]) {
             icon.style.opacity = '10%';
             count++;
@@ -189,7 +189,16 @@ function loading() {
             icon.style.opacity = '100%';
         }
         icon.onclick = onClickChamp;
-        main.append(icon);
+        const label = document.createElement('span');
+        label.className = "labelChamp";
+        label.innerText = c;
+        const tile = document.createElement('div');
+        tile.className = 'champ';
+        tile.append(icon, label);
+        const container = document.createElement('div');
+        container.className = "containerChamp"
+        container.append(tile);
+        main.append(container);
         countMax++;
     }
     document.getElementById('champCheckCount').innerText = count;
